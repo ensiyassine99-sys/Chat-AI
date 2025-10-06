@@ -1,0 +1,31 @@
+{
+    "auth": {
+        "invalidVerificationToken": "Invalid verification token",
+        "verificationLinkExpired": "Verification link expired",
+        "userNotFound": "User not found",
+        "emailAlreadyVerified": "Email already verified",
+        "emailVerifiedSuccess": "Email verified successfully",
+        "invalidCredentials": "Invalid email or password",
+        "accountLocked": "Account locked",
+        "accountDeactivated": "Account deactivated",
+        "pleaseVerifyEmail": "Please verify your email. A new verification link has been sent.",
+        "emailVerified": "Email verified successfully",
+        "logoutSuccess": "Successfully logged out!",
+        "signupSuccess": "Account created successfully!",
+        "signupFailed": "Signup failed",
+        "emailExists": "Email already exists",
+        "usernameExists": "Username already exists",
+        "newUserSummary": "New user - no conversation history yet",
+        "refreshTokenRequired": "Refresh token required",
+        "invalidRefreshToken": "Invalid refresh token",
+        "resetLinkMismatch": "Reset link does not match",
+        "resetTokenValid": "Token is valid",
+        "invalidResetTokenType": "Invalid token type",
+        "resetLinkExpired": "Reset link has expired",
+        "invalidResetToken": "Invalid reset token",
+        "resetLinkUsed": "This reset link has already been used",
+        "passwordResetSuccess": "Password reset successfully",
+        "currentPasswordIncorrect": "Current password is incorrect",
+        "passwordChangedSuccess": "Password changed successfully"
+    }
+}

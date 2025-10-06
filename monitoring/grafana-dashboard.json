@@ -1,0 +1,94 @@
+{
+    "dashboard": {
+        "title": "AI Chatbot Monitoring",
+        "panels": [
+            {
+                "id": 1,
+                "title": "Request Rate",
+                "type": "graph",
+                "targets": [
+                    {
+                        "expr": "rate(http_requests_total[5m])",
+                        "legendFormat": "{{method}} {{route}}"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Response Time",
+                "type": "graph",
+                "targets": [
+                    {
+                        "expr": "http_request_duration_ms",
+                        "legendFormat": "{{route}}"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Active Users",
+                "type": "stat",
+                "targets": [
+                    {
+                        "expr": "active_users_total"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "title": "AI Model Usage",
+                "type": "piechart",
+                "targets": [
+                    {
+                        "expr": "sum by (model) (ai_requests_total)",
+                        "legendFormat": "{{model}}"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Error Rate",
+                "type": "graph",
+                "targets": [
+                    {
+                        "expr": "rate(http_errors_total[5m])",
+                        "legendFormat": "{{status_code}}"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Database Queries",
+                "type": "graph",
+                "targets": [
+                    {
+                        "expr": "rate(database_queries_total[5m])",
+                        "legendFormat": "{{operation}}"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Redis Operations",
+                "type": "graph",
+                "targets": [
+                    {
+                        "expr": "rate(redis_commands_total[5m])",
+                        "legendFormat": "{{command}}"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Memory Usage",
+                "type": "graph",
+                "targets": [
+                    {
+                        "expr": "process_resident_memory_bytes",
+                        "legendFormat": "{{service}}"
+                    }
+                ]
+            }
+        ]
+    }
+}

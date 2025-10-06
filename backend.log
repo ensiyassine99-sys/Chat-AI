@@ -1,0 +1,722 @@
+
+> ai-chatbot-backend@1.0.0 start
+> node server.js
+
+2025-10-06 08:33:47 [[32minfo[39m]: Google Gemini provider initialized
+2025-10-06 08:33:47 [[32minfo[39m]: Hugging Face provider initialized
+2025-10-06 08:33:47 [[32minfo[39m]: Rate limiting using memory store (Redis disabled)
+--- Starting server initialization ---
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): SELECT 1+1 AS result
+2025-10-06 08:33:47 [[32minfo[39m]: Database connection established successfully
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): SELECT name FROM `sqlite_master` WHERE type='table' and name!='sqlite_sequence';
+2025-10-06 08:33:47 [[32minfo[39m]: Existing tables: User, Chat, Message, UserSummary
+2025-10-06 08:33:47 [[32minfo[39m]: Missing tables: Users, UserSummaries, Chats, Messages
+2025-10-06 08:33:47 [[32minfo[39m]: Creating missing tables...
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='User';
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_LIST(`User`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_User_1`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_User_2`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='Chat';
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_LIST(`Chat`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_Chat_1`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`chat_user_id`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`chat_is_archived`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`chat_is_pinned`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`chat_last_message_at`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='Message';
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_LIST(`Message`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`message_chat_id`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`message_user_id`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`message_role`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`message_created_at`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='UserSummary';
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_LIST(`UserSummary`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_UserSummary_1`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`user_summary_user_id`)
+2025-10-06 08:33:47 [[34mdebug[39m]: Executing (default): PRAGMA INDEX_INFO(`user_summary_last_updated`)
+2025-10-06 08:33:47 [[32minfo[39m]: Missing tables created
+2025-10-06 08:33:47 [[32minfo[39m]: 
+        🚀 Server is running!
+        🔊 Listening on port 5000
+        📱 Environment: development
+        🌐 Frontend URL: http://localhost:3000
+        ⏰ Started at: 2025-10-06T07:33:47.367Z
+      
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759735246,
+  exp: 1759736146,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:34:46 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: NULL
+🔓 User isActive: undefined
+❌ User non trouvé ou inactif
+2025-10-06 08:34:46 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:34:46 +0000] "GET /api/v1/auth/me HTTP/1.1" 200 38 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:34:46 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759735246,
+  exp: 1759736146,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:34:46 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: NULL
+🔓 User isActive: undefined
+❌ User non trouvé ou inactif
+2025-10-06 08:34:46 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:34:46 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:34:46 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759735246,
+  exp: 1759736146,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:35:14 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: NULL
+🔓 User isActive: undefined
+❌ User non trouvé ou inactif
+2025-10-06 08:35:14 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:35:14 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:35:14 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759735246,
+  exp: 1759736146,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:35:14 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: NULL
+🔓 User isActive: undefined
+❌ User non trouvé ou inactif
+2025-10-06 08:35:14 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:35:14 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:35:14 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759735246,
+  exp: 1759736146,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:35:41 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: NULL
+🔓 User isActive: undefined
+❌ User non trouvé ou inactif
+2025-10-06 08:35:41 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:35:41 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:35:41 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759735246,
+  exp: 1759736146,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:35:41 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: NULL
+🔓 User isActive: undefined
+❌ User non trouvé ou inactif
+2025-10-06 08:35:41 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:35:41 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:35:41 [[32minfo[39m]: [object Object]
+2025-10-06 08:36:44 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`email` = 'yassine.assiani@ensi-uma.tn' OR `User`.`username` = 'yassine')) LIMIT 1;
+2025-10-06 08:36:44 [[34mdebug[39m]: Executing (default): INSERT INTO `User` (`id`,`username`,`email`,`password`,`language`,`theme`,`role`,`isActive`,`emailVerified`,`resetPasswordUsed`,`loginAttempts`,`preferences`,`metadata`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14);
+2025-10-06 08:36:44 [[34mdebug[39m]: Executing (default): INSERT INTO `UserSummary` (`id`,`userId`,`summary`,`summaryAr`,`interests`,`topics`,`preferredModels`,`statistics`,`lastUpdated`,`generatedBy`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11);
+2025-10-06 08:36:46 [[32minfo[39m]: Email sent successfully to yassine.assiani@ensi-uma.tn: <9b62328b-2066-83ad-1840-1bd92d5c7bb3@example.com>
+2025-10-06 08:36:46 [[32minfo[39m]: New user registered: yassine.assiani@ensi-uma.tn
+2025-10-06 08:36:46 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:46 +0000] "POST /api/v1/auth/signup HTTP/1.1" 201 124 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:46 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+❌ Erreur token: jwt expired
+2025-10-06 08:36:57 [[34mdebug[39m]: Optional auth token error: {
+  "0": "j",
+  "1": "w",
+  "2": "t",
+  "3": " ",
+  "4": "e",
+  "5": "x",
+  "6": "p",
+  "7": "i",
+  "8": "r",
+  "9": "e",
+  "10": "d"
+}
+2025-10-06 08:36:57 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:57 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:57 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+❌ Erreur token: jwt expired
+2025-10-06 08:36:57 [[34mdebug[39m]: Optional auth token error: {
+  "0": "j",
+  "1": "w",
+  "2": "t",
+  "3": " ",
+  "4": "e",
+  "5": "x",
+  "6": "p",
+  "7": "i",
+  "8": "r",
+  "9": "e",
+  "10": "d"
+}
+2025-10-06 08:36:57 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:57 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:57 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+❌ Erreur token: jwt expired
+2025-10-06 08:36:57 [[34mdebug[39m]: Optional auth token error: {
+  "0": "j",
+  "1": "w",
+  "2": "t",
+  "3": " ",
+  "4": "e",
+  "5": "x",
+  "6": "p",
+  "7": "i",
+  "8": "r",
+  "9": "e",
+  "10": "d"
+}
+2025-10-06 08:36:57 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:57 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:57 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNTI0NiwiZXhwIjoxNzU5NzM2MTQ2LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.NHOmlDA2qtBesEM2lB9hdskvMg9imq57OMAjl3OKFX8
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+❌ Erreur token: jwt expired
+2025-10-06 08:36:57 [[34mdebug[39m]: Optional auth token error: {
+  "0": "j",
+  "1": "w",
+  "2": "t",
+  "3": " ",
+  "4": "e",
+  "5": "x",
+  "6": "p",
+  "7": "i",
+  "8": "r",
+  "9": "e",
+  "10": "d"
+}
+2025-10-06 08:36:57 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:57 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:57 [[32minfo[39m]: [object Object]
+2025-10-06 08:36:57 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:36:57 [[34mdebug[39m]: Executing (default): UPDATE `User` SET `emailVerified`=$1,`isActive`=$2,`updatedAt`=$3 WHERE `id` = $4
+2025-10-06 08:36:57 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:57 +0000] "GET /api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6ImVtYWlsX3ZlcmlmaWNhdGlvbiIsImlhdCI6MTc1OTczNjIwNCwiZXhwIjoxNzU5ODIyNjA0fQ.fjZjwf9xOygAVY4BevJv9bRNAlTVVSQjPxgaV82dfpo HTTP/1.1" 200 599 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:57 [[32minfo[39m]: [object Object]
+2025-10-06 08:36:57 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:36:57 [[33mwarn[39m]: [object Object]
+2025-10-06 08:36:57 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:57 +0000] "GET /api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6ImVtYWlsX3ZlcmlmaWNhdGlvbiIsImlhdCI6MTc1OTczNjIwNCwiZXhwIjoxNzU5ODIyNjA0fQ.fjZjwf9xOygAVY4BevJv9bRNAlTVVSQjPxgaV82dfpo HTTP/1.1" 400 533 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:57 [[32minfo[39m]: [object Object]
+2025-10-06 08:36:57 [[32minfo[39m]: User 1 connected
+2025-10-06 08:36:59 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:36:59 [[32minfo[39m]: User 1 connected
+2025-10-06 08:36:59 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:59 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:59 [[32minfo[39m]: [object Object]
+2025-10-06 08:36:59 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:36:59 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:36:59 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:36:59 [[32minfo[39m]: [object Object]
+2025-10-06 08:37:18 [[32minfo[39m]: User 1 disconnected
+2025-10-06 08:37:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:37:18 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:37:18 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:37:18 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:37:18 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:37:18 [[32minfo[39m]: [object Object]
+2025-10-06 08:37:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:37:18 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:37:18 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:37:18 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:37:18 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:37:18 [[32minfo[39m]: [object Object]
+2025-10-06 08:37:21 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:37:21 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:37:21 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:37:21 [[32minfo[39m]: [object Object]
+2025-10-06 08:37:21 [[32minfo[39m]: User 1 connected
+2025-10-06 08:37:21 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:37:21 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:37:21 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:37:21 [[32minfo[39m]: [object Object]
+2025-10-06 08:37:39 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:37:39 [[34mdebug[39m]: Executing (72f14345-f54c-4876-af6b-7c8e51ebca9c): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:37:39 [[34mdebug[39m]: Executing (72f14345-f54c-4876-af6b-7c8e51ebca9c): INSERT INTO `Chat` (`id`,`userId`,`title`,`model`,`language`,`messageCount`,`totalTokens`,`isArchived`,`isPinned`,`tags`,`metadata`,`lastMessageAt`,`settings`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15);
+2025-10-06 08:37:39 [[34mdebug[39m]: Executing (72f14345-f54c-4876-af6b-7c8e51ebca9c): INSERT INTO `Message` (`id`,`chatId`,`userId`,`role`,`content`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:37:39 [[34mdebug[39m]: Executing (72f14345-f54c-4876-af6b-7c8e51ebca9c): COMMIT;
+2025-10-06 08:37:39 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd') ORDER BY `Message`.`createdAt` ASC LIMIT 20;
+2025-10-06 08:37:45 [[34mdebug[39m]: Executing (default): INSERT INTO `Message` (`id`,`chatId`,`role`,`content`,`model`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:37:45 [[34mdebug[39m]: Executing (default): UPDATE `Chat` SET `messageCount`=messageCount + 2,`totalTokens`=totalTokens + 548,`lastMessageAt`=$1,`updatedAt`=$2 WHERE (`deletedAt` IS NULL AND `id` = $3)
+2025-10-06 08:37:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:37:45 +0000] "POST /api/v1/chat/message HTTP/1.1" 200 625 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:37:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:37:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:37:45 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:37:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:37:45 +0000] "GET /api/v1/chat/chat/9107f7f4-27ba-48cd-8f20-d1a51affc5cd HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:37:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:38:50 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:38:50 [[34mdebug[39m]: Executing (ed6396a8-a366-4ab9-acb2-e99667810c55): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:38:50 [[34mdebug[39m]: Executing (ed6396a8-a366-4ab9-acb2-e99667810c55): SELECT `id`, `userId`, `title`, `summary`, `model`, `language`, `messageCount`, `totalTokens`, `isArchived`, `isPinned`, `tags`, `metadata`, `lastMessageAt`, `settings`, `createdAt`, `updatedAt`, `deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:38:50 [[34mdebug[39m]: Executing (ed6396a8-a366-4ab9-acb2-e99667810c55): INSERT INTO `Message` (`id`,`chatId`,`userId`,`role`,`content`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:38:50 [[34mdebug[39m]: Executing (ed6396a8-a366-4ab9-acb2-e99667810c55): COMMIT;
+2025-10-06 08:38:50 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd') ORDER BY `Message`.`createdAt` ASC LIMIT 20;
+2025-10-06 08:39:02 [[34mdebug[39m]: Executing (default): INSERT INTO `Message` (`id`,`chatId`,`role`,`content`,`model`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:39:02 [[34mdebug[39m]: Executing (default): UPDATE `Chat` SET `messageCount`=messageCount + 2,`totalTokens`=totalTokens + 1189,`lastMessageAt`=$1,`updatedAt`=$2 WHERE (`deletedAt` IS NULL AND `id` = $3)
+2025-10-06 08:39:02 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:39:02 +0000] "POST /api/v1/chat/message HTTP/1.1" 200 957 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:39:02 [[32minfo[39m]: [object Object]
+2025-10-06 08:39:12 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:39:12 [[34mdebug[39m]: Executing (default): SELECT `Message`.`id`, `Message`.`chatId`, `Message`.`userId`, `Message`.`role`, `Message`.`content`, `Message`.`model`, `Message`.`tokens`, `Message`.`isEdited`, `Message`.`editedAt`, `Message`.`parentMessageId`, `Message`.`feedback`, `Message`.`metadata`, `Message`.`attachments`, `Message`.`createdAt`, `Message`.`updatedAt`, `Message`.`deletedAt`, `chat`.`id` AS `chat.id`, `chat`.`userId` AS `chat.userId`, `chat`.`title` AS `chat.title`, `chat`.`summary` AS `chat.summary`, `chat`.`model` AS `chat.model`, `chat`.`language` AS `chat.language`, `chat`.`messageCount` AS `chat.messageCount`, `chat`.`totalTokens` AS `chat.totalTokens`, `chat`.`isArchived` AS `chat.isArchived`, `chat`.`isPinned` AS `chat.isPinned`, `chat`.`tags` AS `chat.tags`, `chat`.`metadata` AS `chat.metadata`, `chat`.`lastMessageAt` AS `chat.lastMessageAt`, `chat`.`settings` AS `chat.settings`, `chat`.`createdAt` AS `chat.createdAt`, `chat`.`updatedAt` AS `chat.updatedAt`, `chat`.`deletedAt` AS `chat.deletedAt` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`id` = '4' AND `Message`.`role` = 'assistant'));
+2025-10-06 08:39:12 [[34mdebug[39m]: Executing (default): UPDATE `Message` SET `feedback`=$1,`updatedAt`=$2 WHERE `id` = $3
+2025-10-06 08:39:12 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:39:12 +0000] "POST /api/v1/chat/message/4/feedback HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:39:12 [[32minfo[39m]: [object Object]
+2025-10-06 08:39:13 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:39:13 [[34mdebug[39m]: Executing (default): SELECT `Message`.`id`, `Message`.`chatId`, `Message`.`userId`, `Message`.`role`, `Message`.`content`, `Message`.`model`, `Message`.`tokens`, `Message`.`isEdited`, `Message`.`editedAt`, `Message`.`parentMessageId`, `Message`.`feedback`, `Message`.`metadata`, `Message`.`attachments`, `Message`.`createdAt`, `Message`.`updatedAt`, `Message`.`deletedAt`, `chat`.`id` AS `chat.id`, `chat`.`userId` AS `chat.userId`, `chat`.`title` AS `chat.title`, `chat`.`summary` AS `chat.summary`, `chat`.`model` AS `chat.model`, `chat`.`language` AS `chat.language`, `chat`.`messageCount` AS `chat.messageCount`, `chat`.`totalTokens` AS `chat.totalTokens`, `chat`.`isArchived` AS `chat.isArchived`, `chat`.`isPinned` AS `chat.isPinned`, `chat`.`tags` AS `chat.tags`, `chat`.`metadata` AS `chat.metadata`, `chat`.`lastMessageAt` AS `chat.lastMessageAt`, `chat`.`settings` AS `chat.settings`, `chat`.`createdAt` AS `chat.createdAt`, `chat`.`updatedAt` AS `chat.updatedAt`, `chat`.`deletedAt` AS `chat.deletedAt` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`id` = '4');
+2025-10-06 08:39:13 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Message`.`role` = 'user' AND `Message`.`createdAt` < '2025-10-06 07:39:02.455 +00:00')) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:39:13 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Message`.`createdAt` < '2025-10-06 07:38:50.780 +00:00')) ORDER BY `Message`.`createdAt` ASC LIMIT 20;
+2025-10-06 08:39:16 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:39:16 [[34mdebug[39m]: Executing (default): SELECT `Message`.`id`, `Message`.`chatId`, `Message`.`userId`, `Message`.`role`, `Message`.`content`, `Message`.`model`, `Message`.`tokens`, `Message`.`isEdited`, `Message`.`editedAt`, `Message`.`parentMessageId`, `Message`.`feedback`, `Message`.`metadata`, `Message`.`attachments`, `Message`.`createdAt`, `Message`.`updatedAt`, `Message`.`deletedAt`, `chat`.`id` AS `chat.id`, `chat`.`userId` AS `chat.userId`, `chat`.`title` AS `chat.title`, `chat`.`summary` AS `chat.summary`, `chat`.`model` AS `chat.model`, `chat`.`language` AS `chat.language`, `chat`.`messageCount` AS `chat.messageCount`, `chat`.`totalTokens` AS `chat.totalTokens`, `chat`.`isArchived` AS `chat.isArchived`, `chat`.`isPinned` AS `chat.isPinned`, `chat`.`tags` AS `chat.tags`, `chat`.`metadata` AS `chat.metadata`, `chat`.`lastMessageAt` AS `chat.lastMessageAt`, `chat`.`settings` AS `chat.settings`, `chat`.`createdAt` AS `chat.createdAt`, `chat`.`updatedAt` AS `chat.updatedAt`, `chat`.`deletedAt` AS `chat.deletedAt` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`id` = '4');
+2025-10-06 08:39:16 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Message`.`role` = 'user' AND `Message`.`createdAt` < '2025-10-06 07:39:02.455 +00:00')) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:39:16 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Message`.`createdAt` < '2025-10-06 07:38:50.780 +00:00')) ORDER BY `Message`.`createdAt` ASC LIMIT 20;
+2025-10-06 08:39:25 [[34mdebug[39m]: Executing (default): UPDATE `Message` SET `content`=$1,`tokens`=$2,`isEdited`=$3,`editedAt`=$4,`updatedAt`=$5 WHERE `id` = $6
+2025-10-06 08:39:25 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:39:25 +0000] "POST /api/v1/chat/message/4/regenerate HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:39:25 [[32minfo[39m]: [object Object]
+2025-10-06 08:39:31 [[34mdebug[39m]: Executing (default): UPDATE `Message` SET `content`=$1,`tokens`=$2,`isEdited`=$3,`editedAt`=$4,`updatedAt`=$5 WHERE `id` = $6
+2025-10-06 08:39:31 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:39:31 +0000] "POST /api/v1/chat/message/4/regenerate HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:39:31 [[32minfo[39m]: [object Object]
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+═══════════════════════════════════════
+🔧 EDIT MESSAGE - DÉBUT
+MessageId à éditer: 3
+Nouveau contenu: my name is yassine
+═══════════════════════════════════════
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): SELECT `Message`.`id`, `Message`.`chatId`, `Message`.`userId`, `Message`.`role`, `Message`.`content`, `Message`.`model`, `Message`.`tokens`, `Message`.`isEdited`, `Message`.`editedAt`, `Message`.`parentMessageId`, `Message`.`feedback`, `Message`.`metadata`, `Message`.`attachments`, `Message`.`createdAt`, `Message`.`updatedAt`, `Message`.`deletedAt`, `chat`.`id` AS `chat.id`, `chat`.`userId` AS `chat.userId`, `chat`.`title` AS `chat.title`, `chat`.`summary` AS `chat.summary`, `chat`.`model` AS `chat.model`, `chat`.`language` AS `chat.language`, `chat`.`messageCount` AS `chat.messageCount`, `chat`.`totalTokens` AS `chat.totalTokens`, `chat`.`isArchived` AS `chat.isArchived`, `chat`.`isPinned` AS `chat.isPinned`, `chat`.`tags` AS `chat.tags`, `chat`.`metadata` AS `chat.metadata`, `chat`.`lastMessageAt` AS `chat.lastMessageAt`, `chat`.`settings` AS `chat.settings`, `chat`.`createdAt` AS `chat.createdAt`, `chat`.`updatedAt` AS `chat.updatedAt`, `chat`.`deletedAt` AS `chat.deletedAt` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`id` = '3' AND `Message`.`role` = 'user'));
+✅ Message trouvé:
+  - ID: 3
+  - Content: my name is yassine i am a computer science   engineer
+  - createdAt: 2025-10-06T07:38:50.780Z
+  - chatId: 9107f7f4-27ba-48cd-8f20-d1a51affc5cd
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): SELECT `id`, `role`, `content`, `createdAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd') ORDER BY `Message`.`createdAt` ASC;
+
+📋 TOUS LES MESSAGES DU CHAT:
+  1 | user | Mon Oct 06 2025 08:37:39 GMT+0100 (heure normale d’Afrique de l’Ouest) | hello...
+  2 | assistant | Mon Oct 06 2025 08:37:45 GMT+0100 (heure normale d’Afrique de l’Ouest) | Hello! Hello again! How can I ...
+  3 | user | Mon Oct 06 2025 08:38:50 GMT+0100 (heure normale d’Afrique de l’Ouest) | my name is yassine i am a comp...
+  4 | assistant | Mon Oct 06 2025 08:39:02 GMT+0100 (heure normale d’Afrique de l’Ouest) | Hello Yassine, it's a pleasure...
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): SELECT `id`, `role`, `createdAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Message`.`createdAt` > '2025-10-06 07:38:50.780 +00:00'));
+
+🗑️ MESSAGES À SUPPRIMER (createdAt > Mon Oct 06 2025 08:38:50 GMT+0100 (heure normale d’Afrique de l’Ouest)):
+  ID: 4 | Role: assistant | CreatedAt: Mon Oct 06 2025 08:39:02 GMT+0100 (heure normale d’Afrique de l’Ouest)
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): UPDATE `Message` SET `deletedAt`=$1 WHERE `deletedAt` IS NULL AND `chatId` = $2 AND `createdAt` > '2025-10-06 07:38:50.780 +00:00'
+
+✂️ SUPPRESSION: 1 messages supprimés
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): UPDATE `Message` SET `content`=$1,`isEdited`=$2,`editedAt`=$3,`updatedAt`=$4 WHERE `id` = $5
+✅ Message mis à jour
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (1c20d301-16c2-4687-ba96-f37d620466ad): COMMIT;
+
+🤖 Génération de la réponse IA...
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `title`, `summary`, `model`, `language`, `messageCount`, `totalTokens`, `isArchived`, `isPinned`, `tags`, `metadata`, `lastMessageAt`, `settings`, `createdAt`, `updatedAt`, `deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd');
+2025-10-06 08:39:40 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd') ORDER BY `Message`.`createdAt` ASC LIMIT 20;
+2025-10-06 08:39:41 [[34mdebug[39m]: Executing (default): INSERT INTO `Message` (`id`,`chatId`,`role`,`content`,`model`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:39:41 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`id` = '3');
+✅ EDIT MESSAGE - FIN
+═══════════════════════════════════════
+
+2025-10-06 08:39:41 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:39:41 +0000] "PATCH /api/v1/chat/message/3/edit HTTP/1.1" 200 730 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:39:41 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:18 [[32minfo[39m]: User 1 disconnected
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` IN ('9107f7f4-27ba-48cd-8f20-d1a51affc5cd') AND (`Message`.`deletedAt` IS NULL))) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:40:18 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:18 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 200 683 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:18 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` IN ('9107f7f4-27ba-48cd-8f20-d1a51affc5cd') AND (`Message`.`deletedAt` IS NULL))) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:40:18 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:18 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:18 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `title`, `summary`, `model`, `language`, `messageCount`, `totalTokens`, `isArchived`, `isPinned`, `tags`, `metadata`, `lastMessageAt`, `settings`, `createdAt`, `updatedAt`, `deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): UPDATE `Chat` SET `title`=$1,`updatedAt`=$2 WHERE `id` = $3
+2025-10-06 08:40:32 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:32 +0000] "PATCH /api/v1/chat/chat/9107f7f4-27ba-48cd-8f20-d1a51affc5cd/rename HTTP/1.1" 200 487 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:32 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:32 [[34mdebug[39m]: Executing (default): SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` IN ('9107f7f4-27ba-48cd-8f20-d1a51affc5cd') AND (`Message`.`deletedAt` IS NULL))) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:40:32 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:32 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 200 684 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:32 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:36 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:36 [[32minfo[39m]: User 1 connected
+2025-10-06 08:40:36 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:36 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:36 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:36 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:36 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:36 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:36 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:42 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:42 [[34mdebug[39m]: Executing (84f37e02-ca06-4875-afcd-b0341cf85cc7): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:40:42 [[34mdebug[39m]: Executing (84f37e02-ca06-4875-afcd-b0341cf85cc7): INSERT INTO `Chat` (`id`,`userId`,`title`,`model`,`language`,`messageCount`,`totalTokens`,`isArchived`,`isPinned`,`tags`,`metadata`,`lastMessageAt`,`settings`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15);
+2025-10-06 08:40:42 [[34mdebug[39m]: Executing (84f37e02-ca06-4875-afcd-b0341cf85cc7): INSERT INTO `Message` (`id`,`chatId`,`userId`,`role`,`content`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:40:42 [[34mdebug[39m]: Executing (84f37e02-ca06-4875-afcd-b0341cf85cc7): COMMIT;
+2025-10-06 08:40:42 [[34mdebug[39m]: Executing (default): SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05') ORDER BY `Message`.`createdAt` ASC LIMIT 20;
+2025-10-06 08:40:43 [[34mdebug[39m]: Executing (default): INSERT INTO `Message` (`id`,`chatId`,`role`,`content`,`model`,`tokens`,`isEdited`,`metadata`,`attachments`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10);
+2025-10-06 08:40:43 [[34mdebug[39m]: Executing (default): UPDATE `Chat` SET `messageCount`=messageCount + 2,`totalTokens`=totalTokens + 44,`lastMessageAt`=$1,`updatedAt`=$2 WHERE (`deletedAt` IS NULL AND `id` = $3)
+2025-10-06 08:40:43 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:43 +0000] "POST /api/v1/chat/message HTTP/1.1" 200 611 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:43 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:43 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:43 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' AND `Chat`.`userId` = 1));
+2025-10-06 08:40:43 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:43 +0000] "GET /api/v1/chat/chat/584c66e7-748c-4cdd-bdbb-1eb36db35c05 HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:43 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:45 [[32minfo[39m]: User 1 disconnected
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:40:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:45 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:45 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:40:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:45 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:48 [[32minfo[39m]: User 1 connected
+2025-10-06 08:40:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:48 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:48 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' AND `Chat`.`userId` = 1));
+2025-10-06 08:40:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:48 +0000] "GET /api/v1/chat/chat/584c66e7-748c-4cdd-bdbb-1eb36db35c05 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:48 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:48 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' AND `Chat`.`userId` = 1));
+2025-10-06 08:40:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:48 +0000] "GET /api/v1/chat/chat/584c66e7-748c-4cdd-bdbb-1eb36db35c05 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:50 [[32minfo[39m]: User 1 disconnected
+2025-10-06 08:40:50 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:50 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:50 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:50 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:40:51 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:51 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:51 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:51 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:51 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:51 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:51 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:40:51 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:51 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:51 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `title`, `summary`, `model`, `language`, `messageCount`, `totalTokens`, `isArchived`, `isPinned`, `tags`, `metadata`, `lastMessageAt`, `settings`, `createdAt`, `updatedAt`, `deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' AND `Chat`.`userId` = 1));
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): UPDATE `Chat` SET `isArchived`=$1,`updatedAt`=$2 WHERE `id` = $3
+2025-10-06 08:40:54 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:54 +0000] "PATCH /api/v1/chat/chat/584c66e7-748c-4cdd-bdbb-1eb36db35c05/archive HTTP/1.1" 200 506 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:54 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:54 [[34mdebug[39m]: Executing (default): SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` IN ('9107f7f4-27ba-48cd-8f20-d1a51affc5cd') AND (`Message`.`deletedAt` IS NULL))) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:40:54 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:54 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 200 684 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:54 [[32minfo[39m]: [object Object]
+2025-10-06 08:40:59 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:40:59 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 1));
+2025-10-06 08:40:59 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 1)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:40:59 [[34mdebug[39m]: Executing (default): SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`chatId` IN ('584c66e7-748c-4cdd-bdbb-1eb36db35c05') AND (`Message`.`deletedAt` IS NULL))) ORDER BY `Message`.`createdAt` DESC LIMIT 1;
+2025-10-06 08:40:59 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:40:59 +0000] "GET /api/v1/chat/history?archived=true HTTP/1.1" 200 637 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:40:59 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:06 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:06 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `title`, `summary`, `model`, `language`, `messageCount`, `totalTokens`, `isArchived`, `isPinned`, `tags`, `metadata`, `lastMessageAt`, `settings`, `createdAt`, `updatedAt`, `deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' AND `Chat`.`userId` = 1));
+2025-10-06 08:41:06 [[34mdebug[39m]: Executing (default): UPDATE `Chat` SET `isArchived`=$1,`updatedAt`=$2 WHERE `id` = $3
+2025-10-06 08:41:07 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:07 +0000] "PATCH /api/v1/chat/chat/584c66e7-748c-4cdd-bdbb-1eb36db35c05/archive HTTP/1.1" 200 509 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:07 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:07 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:07 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 1));
+2025-10-06 08:41:07 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 1)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:41:07 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:07 +0000] "GET /api/v1/chat/history?archived=true HTTP/1.1" 200 72 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:07 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:10 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:10 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:41:10 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:41:10 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:41:10 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:10 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:10 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT COUNT(`id`) AS `totalChats`, SUM(`messageCount`) AS `totalMessages`, AVG(`messageCount`) AS `avgMessagesPerChat`, SUM(`totalTokens`) AS `totalTokensUsed` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`userId` = 1) LIMIT 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `Message`.`model` AS `model`, COUNT('*') AS `count` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'assistant') GROUP BY `Message`.`model` ORDER BY count DESC LIMIT 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT strftime('%w', `Message`.`createdAt`) AS `dayOfWeek`, COUNT('*') AS `count` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL) GROUP BY `dayOfWeek`;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT AVG(LENGTH(`content`)) AS `avgLength` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`userId` = 1 AND `Message`.`role` = 'user')) LIMIT 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `tags` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`tags` != '[]'));
+2025-10-06 08:41:25 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:25 +0000] "GET /api/v1/user/statistics HTTP/1.1" 200 225 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:25 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT COUNT(`id`) AS `totalChats`, SUM(`messageCount`) AS `totalMessages`, AVG(`messageCount`) AS `avgMessagesPerChat`, SUM(`totalTokens`) AS `totalTokensUsed` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`userId` = 1) LIMIT 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `Message`.`model` AS `model`, COUNT('*') AS `count` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'assistant') GROUP BY `Message`.`model` ORDER BY count DESC LIMIT 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `summary`, `summaryAr`, `interests`, `topics`, `preferredModels`, `conversationStyle`, `statistics`, `lastUpdated`, `generatedBy`, `createdAt`, `updatedAt` FROM `UserSummary` AS `UserSummary` WHERE `UserSummary`.`userId` = 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT strftime('%w', `Message`.`createdAt`) AS `dayOfWeek`, COUNT('*') AS `count` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL) GROUP BY `dayOfWeek`;
+2025-10-06 08:41:25 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:25 +0000] "GET /api/v1/user/summary HTTP/1.1" 200 574 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:25 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT AVG(LENGTH(`content`)) AS `avgLength` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`userId` = 1 AND `Message`.`role` = 'user')) LIMIT 1;
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `tags` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`tags` != '[]'));
+2025-10-06 08:41:25 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:25 +0000] "GET /api/v1/user/statistics HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:25 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:25 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `summary`, `summaryAr`, `interests`, `topics`, `preferredModels`, `conversationStyle`, `statistics`, `lastUpdated`, `generatedBy`, `createdAt`, `updatedAt` FROM `UserSummary` AS `UserSummary` WHERE `UserSummary`.`userId` = 1;
+2025-10-06 08:41:25 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:25 +0000] "GET /api/v1/user/summary HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:25 [[32minfo[39m]: [object Object]
+2025-10-06 08:41:41 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:41 [[34mdebug[39m]: Executing (default): SELECT `User`.`id`, `User`.`username`, `User`.`email`, `User`.`language`, `User`.`theme`, `User`.`role`, `User`.`isActive`, `User`.`emailVerified`, `User`.`emailVerificationToken`, `User`.`resetPasswordToken`, `User`.`resetPasswordExpires`, `User`.`resetPasswordUsed`, `User`.`lastLogin`, `User`.`loginAttempts`, `User`.`lockUntil`, `User`.`preferences`, `User`.`metadata`, `User`.`createdAt`, `User`.`updatedAt`, `User`.`deletedAt`, `summary`.`id` AS `summary.id`, `summary`.`userId` AS `summary.userId`, `summary`.`summary` AS `summary.summary`, `summary`.`summaryAr` AS `summary.summaryAr`, `summary`.`interests` AS `summary.interests`, `summary`.`topics` AS `summary.topics`, `summary`.`preferredModels` AS `summary.preferredModels`, `summary`.`conversationStyle` AS `summary.conversationStyle`, `summary`.`statistics` AS `summary.statistics`, `summary`.`lastUpdated` AS `summary.lastUpdated`, `summary`.`generatedBy` AS `summary.generatedBy`, `summary`.`createdAt` AS `summary.createdAt`, `summary`.`updatedAt` AS `summary.updatedAt`, `chats`.`id` AS `chats.id`, `chats`.`userId` AS `chats.userId`, `chats`.`title` AS `chats.title`, `chats`.`summary` AS `chats.summary`, `chats`.`model` AS `chats.model`, `chats`.`language` AS `chats.language`, `chats`.`messageCount` AS `chats.messageCount`, `chats`.`totalTokens` AS `chats.totalTokens`, `chats`.`isArchived` AS `chats.isArchived`, `chats`.`isPinned` AS `chats.isPinned`, `chats`.`tags` AS `chats.tags`, `chats`.`metadata` AS `chats.metadata`, `chats`.`lastMessageAt` AS `chats.lastMessageAt`, `chats`.`settings` AS `chats.settings`, `chats`.`createdAt` AS `chats.createdAt`, `chats`.`updatedAt` AS `chats.updatedAt`, `chats`.`deletedAt` AS `chats.deletedAt`, `chats->messages`.`id` AS `chats.messages.id`, `chats->messages`.`chatId` AS `chats.messages.chatId`, `chats->messages`.`userId` AS `chats.messages.userId`, `chats->messages`.`role` AS `chats.messages.role`, `chats->messages`.`content` AS `chats.messages.content`, `chats->messages`.`model` AS `chats.messages.model`, `chats->messages`.`tokens` AS `chats.messages.tokens`, `chats->messages`.`isEdited` AS `chats.messages.isEdited`, `chats->messages`.`editedAt` AS `chats.messages.editedAt`, `chats->messages`.`parentMessageId` AS `chats.messages.parentMessageId`, `chats->messages`.`feedback` AS `chats.messages.feedback`, `chats->messages`.`metadata` AS `chats.messages.metadata`, `chats->messages`.`attachments` AS `chats.messages.attachments`, `chats->messages`.`createdAt` AS `chats.messages.createdAt`, `chats->messages`.`updatedAt` AS `chats.messages.updatedAt`, `chats->messages`.`deletedAt` AS `chats.messages.deletedAt` FROM `User` AS `User` LEFT OUTER JOIN `UserSummary` AS `summary` ON `User`.`id` = `summary`.`userId` LEFT OUTER JOIN `Chat` AS `chats` ON `User`.`id` = `chats`.`userId` AND (`chats`.`deletedAt` IS NULL) LEFT OUTER JOIN `Message` AS `chats->messages` ON `chats`.`id` = `chats->messages`.`chatId` AND (`chats->messages`.`deletedAt` IS NULL) WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:41:41 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:41:41 +0000] "POST /api/v1/user/export-data HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:41:41 [[32minfo[39m]: [object Object]
+2025-10-06 08:42:06 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:42:06 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:42:06 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`username` = 'yassine123');
+2025-10-06 08:42:06 [[34mdebug[39m]: Executing (default): UPDATE `User` SET `username`=$1,`updatedAt`=$2 WHERE `id` = $3
+2025-10-06 08:42:06 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:42:06 +0000] "PATCH /api/v1/user/profile HTTP/1.1" 200 480 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:42:06 [[32minfo[39m]: [object Object]
+2025-10-06 08:42:18 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:42:18 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`userId` = 1) ORDER BY `Chat`.`lastMessageAt` DESC LIMIT 20;
+2025-10-06 08:42:18 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'user'))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' LIMIT 10) AS sub UNION SELECT * FROM (SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'user'))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' LIMIT 10) AS sub) AS `Message`;
+2025-10-06 08:42:31 [[34mdebug[39m]: Executing (0896d805-5e92-4fcc-9f0f-8c4c161df937): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:42:31 [[34mdebug[39m]: Executing (0896d805-5e92-4fcc-9f0f-8c4c161df937): SELECT `id`, `userId`, `summary`, `summaryAr`, `interests`, `topics`, `preferredModels`, `conversationStyle`, `statistics`, `lastUpdated`, `generatedBy`, `createdAt`, `updatedAt` FROM `UserSummary` AS `UserSummary` WHERE `UserSummary`.`userId` = 1;
+2025-10-06 08:42:31 [[34mdebug[39m]: Executing (0896d805-5e92-4fcc-9f0f-8c4c161df937): COMMIT;
+2025-10-06 08:42:31 [[34mdebug[39m]: Executing (default): UPDATE `UserSummary` SET `summary`=$1,`summaryAr`=$2,`interests`=$3,`statistics`=$4,`lastUpdated`=$5,`updatedAt`=$6 WHERE `id` = $7
+2025-10-06 08:42:31 [[32minfo[39m]: User summary generated for user 1
+2025-10-06 08:42:31 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:42:31 +0000] "POST /api/v1/user/summary/generate HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:42:31 [[32minfo[39m]: [object Object]
+2025-10-06 08:42:41 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:42:41 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`userId` = 1) ORDER BY `Chat`.`lastMessageAt` DESC LIMIT 20;
+2025-10-06 08:42:41 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'user'))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' LIMIT 10) AS sub UNION SELECT * FROM (SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'user'))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' LIMIT 10) AS sub) AS `Message`;
+2025-10-06 08:42:56 [[34mdebug[39m]: Executing (c1818242-45d1-41be-8875-2be72762fdf1): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:42:56 [[34mdebug[39m]: Executing (c1818242-45d1-41be-8875-2be72762fdf1): SELECT `id`, `userId`, `summary`, `summaryAr`, `interests`, `topics`, `preferredModels`, `conversationStyle`, `statistics`, `lastUpdated`, `generatedBy`, `createdAt`, `updatedAt` FROM `UserSummary` AS `UserSummary` WHERE `UserSummary`.`userId` = 1;
+2025-10-06 08:42:56 [[34mdebug[39m]: Executing (c1818242-45d1-41be-8875-2be72762fdf1): COMMIT;
+2025-10-06 08:42:56 [[34mdebug[39m]: Executing (default): UPDATE `UserSummary` SET `summary`=$1,`summaryAr`=$2,`lastUpdated`=$3,`updatedAt`=$4 WHERE `id` = $5
+2025-10-06 08:42:56 [[32minfo[39m]: User summary generated for user 1
+2025-10-06 08:42:56 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:42:56 +0000] "POST /api/v1/user/summary/generate HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:42:56 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT COUNT(`id`) AS `totalChats`, SUM(`messageCount`) AS `totalMessages`, AVG(`messageCount`) AS `avgMessagesPerChat`, SUM(`totalTokens`) AS `totalTokensUsed` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`userId` = 1) LIMIT 1;
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT `Message`.`model` AS `model`, COUNT('*') AS `count` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'assistant') GROUP BY `Message`.`model` ORDER BY count DESC LIMIT 1;
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT strftime('%w', `Message`.`createdAt`) AS `dayOfWeek`, COUNT('*') AS `count` FROM `Message` AS `Message` INNER JOIN `Chat` AS `chat` ON `Message`.`chatId` = `chat`.`id` AND (`chat`.`deletedAt` IS NULL AND `chat`.`userId` = 1) WHERE (`Message`.`deletedAt` IS NULL) GROUP BY `dayOfWeek`;
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT AVG(LENGTH(`content`)) AS `avgLength` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND (`Message`.`userId` = 1 AND `Message`.`role` = 'user')) LIMIT 1;
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT `tags` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`tags` != '[]'));
+2025-10-06 08:43:07 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:07 +0000] "GET /api/v1/user/statistics HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:07 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:07 [[34mdebug[39m]: Executing (default): SELECT `id`, `userId`, `summary`, `summaryAr`, `interests`, `topics`, `preferredModels`, `conversationStyle`, `statistics`, `lastUpdated`, `generatedBy`, `createdAt`, `updatedAt` FROM `UserSummary` AS `UserSummary` WHERE `UserSummary`.`userId` = 1;
+2025-10-06 08:43:07 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:07 +0000] "GET /api/v1/user/summary HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:07 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:12 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:12 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND `Chat`.`userId` = 1) ORDER BY `Chat`.`lastMessageAt` DESC LIMIT 20;
+2025-10-06 08:43:12 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'user'))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' LIMIT 10) AS sub UNION SELECT * FROM (SELECT `id`, `chatId`, `userId`, `role`, `content`, `model`, `tokens`, `isEdited`, `editedAt`, `parentMessageId`, `feedback`, `metadata`, `attachments`, `createdAt`, `updatedAt`, `deletedAt` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL AND `Message`.`role` = 'user'))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' LIMIT 10) AS sub) AS `Message`;
+2025-10-06 08:43:26 [[34mdebug[39m]: Executing (aaefe2e6-488e-4975-ab02-3464158bb924): BEGIN DEFERRED TRANSACTION;
+2025-10-06 08:43:26 [[34mdebug[39m]: Executing (aaefe2e6-488e-4975-ab02-3464158bb924): SELECT `id`, `userId`, `summary`, `summaryAr`, `interests`, `topics`, `preferredModels`, `conversationStyle`, `statistics`, `lastUpdated`, `generatedBy`, `createdAt`, `updatedAt` FROM `UserSummary` AS `UserSummary` WHERE `UserSummary`.`userId` = 1;
+2025-10-06 08:43:26 [[34mdebug[39m]: Executing (aaefe2e6-488e-4975-ab02-3464158bb924): COMMIT;
+2025-10-06 08:43:26 [[34mdebug[39m]: Executing (default): UPDATE `UserSummary` SET `summary`=$1,`summaryAr`=$2,`lastUpdated`=$3,`updatedAt`=$4 WHERE `id` = $5
+2025-10-06 08:43:26 [[32minfo[39m]: User summary generated for user 1
+2025-10-06 08:43:26 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:26 +0000] "POST /api/v1/user/summary/generate HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:26 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:43:35 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:35 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:35 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:43:35 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:43:35 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:35 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:35 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:48 [[32minfo[39m]: User 1 connected
+2025-10-06 08:43:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:48 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:48 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:43:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:48 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:48 +0000] "GET /api/v1/chat/chat/9107f7f4-27ba-48cd-8f20-d1a51affc5cd HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:43:48 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:43:48 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:43:48 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:43:48 +0000] "GET /api/v1/chat/chat/9107f7f4-27ba-48cd-8f20-d1a51affc5cd HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:43:48 [[32minfo[39m]: [object Object]
+2025-10-06 08:44:10 [[32minfo[39m]: User 1 disconnected
+2025-10-06 08:44:10 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:44:10 [[32minfo[39m]: User logged out: yassine.assiani@ensi-uma.tn
+2025-10-06 08:44:10 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:44:10 +0000] "POST /api/v1/auth/logout HTTP/1.1" 200 53 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:44:10 [[32minfo[39m]: [object Object]
+2025-10-06 08:44:39 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`email` = 'yassine.assiani@ensi-uma.tn');
+2025-10-06 08:44:39 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:44:39 +0000] "POST /api/v1/auth/check-email HTTP/1.1" 200 54 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:44:39 [[32minfo[39m]: [object Object]
+2025-10-06 08:44:39 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`email` = 'yassine.assiani@ensi-uma.tn');
+2025-10-06 08:44:39 [[34mdebug[39m]: Executing (default): UPDATE `User` SET `resetPasswordToken`=$1,`resetPasswordExpires`=$2,`updatedAt`=$3 WHERE `id` = $4
+2025-10-06 08:44:41 [[32minfo[39m]: Email sent successfully to yassine.assiani@ensi-uma.tn: <5fcc4966-299d-59f1-2311-b6fde92f3aed@example.com>
+2025-10-06 08:44:41 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:44:41 +0000] "POST /api/v1/auth/forgot-password HTTP/1.1" 200 72 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:44:41 [[32minfo[39m]: [object Object]
+2025-10-06 08:44:53 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:44:53 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:44:53 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 200 65 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:44:53 [[32minfo[39m]: [object Object]
+2025-10-06 08:44:53 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:44:53 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:44:53 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:44:53 [[32minfo[39m]: [object Object]
+error SyntaxError: Unterminated string in JSON at position 90
+    at JSON.parse (<anonymous>)
+    at Object.jwsDecode [as decode] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jws\lib\verify-stream.js:71:20)
+    at module.exports (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\decode.js:5:21)
+    at module.exports [as verify] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\verify.js:76:20)
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\controllers\authController.js:421:23
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\middleware\errorHandler.js:104:19
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+2025-10-06 08:45:04 [[33mwarn[39m]: [object Object]
+2025-10-06 08:45:04 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:04 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3GVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 400 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:04 [[32minfo[39m]: [object Object]
+error SyntaxError: Unterminated string in JSON at position 90
+    at JSON.parse (<anonymous>)
+    at Object.jwsDecode [as decode] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jws\lib\verify-stream.js:71:20)
+    at module.exports (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\decode.js:5:21)
+    at module.exports [as verify] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\verify.js:76:20)
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\controllers\authController.js:421:23
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\middleware\errorHandler.js:104:19
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+2025-10-06 08:45:04 [[33mwarn[39m]: [object Object]
+2025-10-06 08:45:04 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:04 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3GVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 400 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:04 [[32minfo[39m]: [object Object]
+error SyntaxError: Unterminated string in JSON at position 90
+    at JSON.parse (<anonymous>)
+    at Object.jwsDecode [as decode] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jws\lib\verify-stream.js:71:20)
+    at module.exports (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\decode.js:5:21)
+    at module.exports [as verify] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\verify.js:76:20)
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\controllers\authController.js:421:23
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\middleware\errorHandler.js:104:19
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+2025-10-06 08:45:12 [[33mwarn[39m]: [object Object]
+2025-10-06 08:45:12 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:12 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3GVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 400 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:12 [[32minfo[39m]: [object Object]
+error SyntaxError: Unterminated string in JSON at position 90
+    at JSON.parse (<anonymous>)
+    at Object.jwsDecode [as decode] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jws\lib\verify-stream.js:71:20)
+    at module.exports (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\decode.js:5:21)
+    at module.exports [as verify] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\jsonwebtoken\verify.js:76:20)
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\controllers\authController.js:421:23
+    at C:\Users\Yassine\Desktop\AI-chat\backend\src\middleware\errorHandler.js:104:19
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Yassine\Desktop\AI-chat\backend\node_modules\express\lib\router\layer.js:95:5)
+2025-10-06 08:45:12 [[33mwarn[39m]: [object Object]
+2025-10-06 08:45:12 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:12 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3GVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 400 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:12 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:17 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:45:17 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:17 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:17 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:17 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:45:17 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:17 +0000] "GET /api/v1/auth/verify-reset-token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:17 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:35 [[34mdebug[39m]: Executing (default): SELECT `id`, `username`, `email`, `password`, `language`, `theme`, `role`, `isActive`, `emailVerified`, `emailVerificationToken`, `resetPasswordToken`, `resetPasswordExpires`, `resetPasswordUsed`, `lastLogin`, `loginAttempts`, `lockUntil`, `preferences`, `metadata`, `createdAt`, `updatedAt`, `deletedAt` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND (`User`.`id` = 1 AND `User`.`email` = 'yassine.assiani@ensi-uma.tn'));
+2025-10-06 08:45:35 [[34mdebug[39m]: Executing (default): UPDATE `User` SET `password`=$1,`resetPasswordToken`=$2,`resetPasswordExpires`=$3,`resetPasswordUsed`=$4,`updatedAt`=$5 WHERE `id` = $6
+2025-10-06 08:45:35 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:35 +0000] "POST /api/v1/auth/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoieWFzc2luZS5hc3NpYW5pQGVuc2ktdW1hLnRuIiwidHlwZSI6InBhc3N3b3JkX3Jlc2V0IiwiaWF0IjoxNzU5NzM2Njc5LCJleHAiOjE3NTk3NDAyNzl9.e3OgroZTu2FBRx1sQJq0hbvgko_dvVaxL0-Sr08OA4k HTTP/1.1" 200 636 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:35 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:35 [[32minfo[39m]: User 1 connected
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNjczNSwiZXhwIjoxNzU5NzM3NjM1LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.p8J09a1_hR6kMCFDVhjPhvFfjfH6866QjhHeSGW3JR4
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759736735,
+  exp: 1759737635,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:45:37 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: {
+  id: 1,
+  email: 'yassine.assiani@ensi-uma.tn',
+  username: 'yassine123',
+  language: 'en',
+  isActive: true
+}
+🔓 User isActive: true
+✅ Utilisateur authentifié: yassine.assiani@ensi-uma.tn
+2025-10-06 08:45:37 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:37 +0000] "GET /api/v1/auth/me HTTP/1.1" 200 147 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:37 [[32minfo[39m]: [object Object]
+📨 Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc1OTczNjczNSwiZXhwIjoxNzU5NzM3NjM1LCJhdWQiOiJhaS1jaGF0Ym90LXVzZXJzIiwiaXNzIjoiYWktY2hhdGJvdCJ9.p8J09a1_hR6kMCFDVhjPhvFfjfH6866QjhHeSGW3JR4
+🔑 Token extrait: eyJhbGciOiJIUzI1NiIs...
+✅ Token décodé: {
+  userId: 1,
+  iat: 1759736735,
+  exp: 1759737635,
+  aud: 'ai-chatbot-users',
+  iss: 'ai-chatbot'
+}
+2025-10-06 08:45:37 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+👤 User trouvé: {
+  id: 1,
+  email: 'yassine.assiani@ensi-uma.tn',
+  username: 'yassine123',
+  language: 'en',
+  isActive: true
+}
+🔓 User isActive: true
+✅ Utilisateur authentifié: yassine.assiani@ensi-uma.tn
+2025-10-06 08:45:37 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:37 +0000] "GET /api/v1/auth/me HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:37 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:38 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:38 [[32minfo[39m]: User 1 connected
+2025-10-06 08:45:38 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:38 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:38 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:38 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:38 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:38 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:38 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:43 [[32minfo[39m]: User 1 disconnected
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:45:43 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:43 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:43 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT count(`Chat`.`id`) AS `count` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0));
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt` FROM `Chat` AS `Chat` WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`userId` = 1 AND `Chat`.`isArchived` = 0)) ORDER BY `Chat`.`isPinned` DESC, `Chat`.`lastMessageAt` DESC LIMIT 0, 10;
+2025-10-06 08:45:43 [[34mdebug[39m]: Executing (default): SELECT `Message`.* FROM (SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '584c66e7-748c-4cdd-bdbb-1eb36db35c05' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub UNION SELECT * FROM (SELECT `id`, `content`, `createdAt`, `chatId` FROM `Message` AS `Message` WHERE (`Message`.`deletedAt` IS NULL AND ((`Message`.`deletedAt` IS NULL))) AND `Message`.`chatId` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' ORDER BY `Message`.`createdAt` DESC LIMIT 1) AS sub) AS `Message`;
+2025-10-06 08:45:43 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:43 +0000] "GET /api/v1/chat/history?archived=false HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:43 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:45 [[32minfo[39m]: User 1 connected
+2025-10-06 08:45:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:45 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:45 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:45:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:45 +0000] "GET /api/v1/chat/chat/9107f7f4-27ba-48cd-8f20-d1a51affc5cd HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:45 +0000] "GET /api/v1/chat/models HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:45 [[32minfo[39m]: [object Object]
+2025-10-06 08:45:45 [[34mdebug[39m]: Executing (default): SELECT `id`, `email`, `username`, `language`, `role`, `isActive` FROM `User` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = 1);
+2025-10-06 08:45:45 [[34mdebug[39m]: Executing (default): SELECT `Chat`.`id`, `Chat`.`userId`, `Chat`.`title`, `Chat`.`summary`, `Chat`.`model`, `Chat`.`language`, `Chat`.`messageCount`, `Chat`.`totalTokens`, `Chat`.`isArchived`, `Chat`.`isPinned`, `Chat`.`tags`, `Chat`.`metadata`, `Chat`.`lastMessageAt`, `Chat`.`settings`, `Chat`.`createdAt`, `Chat`.`updatedAt`, `Chat`.`deletedAt`, `messages`.`id` AS `messages.id`, `messages`.`chatId` AS `messages.chatId`, `messages`.`userId` AS `messages.userId`, `messages`.`role` AS `messages.role`, `messages`.`content` AS `messages.content`, `messages`.`model` AS `messages.model`, `messages`.`tokens` AS `messages.tokens`, `messages`.`isEdited` AS `messages.isEdited`, `messages`.`editedAt` AS `messages.editedAt`, `messages`.`parentMessageId` AS `messages.parentMessageId`, `messages`.`feedback` AS `messages.feedback`, `messages`.`metadata` AS `messages.metadata`, `messages`.`attachments` AS `messages.attachments`, `messages`.`createdAt` AS `messages.createdAt`, `messages`.`updatedAt` AS `messages.updatedAt`, `messages`.`deletedAt` AS `messages.deletedAt` FROM `Chat` AS `Chat` LEFT OUTER JOIN `Message` AS `messages` ON `Chat`.`id` = `messages`.`chatId` AND (`messages`.`deletedAt` IS NULL) WHERE (`Chat`.`deletedAt` IS NULL AND (`Chat`.`id` = '9107f7f4-27ba-48cd-8f20-d1a51affc5cd' AND `Chat`.`userId` = 1));
+2025-10-06 08:45:45 [[32minfo[39m]: ::1 - - [06/Oct/2025:07:45:45 +0000] "GET /api/v1/chat/chat/9107f7f4-27ba-48cd-8f20-d1a51affc5cd HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+2025-10-06 08:45:45 [[32minfo[39m]: [object Object]
+2025-10-06 09:06:41 [[32minfo[39m]: User 1 disconnected
+2025-10-06 09:06:41 [[32minfo[39m]: User 1 disconnected
+2025-10-06 09:06:41 [[32minfo[39m]: User 1 disconnected
+2025-10-06 09:31:52 [[32minfo[39m]: Received shutdown signal, closing server gracefully...
+2025-10-06 09:31:52 [[32minfo[39m]: HTTP server closed
+2025-10-06 09:31:52 [[32minfo[39m]: Database connection closed

@@ -1,0 +1,31 @@
+{
+    "auth": {
+        "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+        "accountLocked": "تم قفل الحساب",
+        "accountDeactivated": "تم تعطيل الحساب",
+        "emailVerified": "تم التحقق من البريد الإلكتروني بنجاح",
+        "logoutSuccess": "تم تسجيل الخروج بنجاح!",
+        "signupSuccess": "تم إنشاء الحساب بنجاح!",
+        "signupFailed": "فشل إنشاء الحساب",
+        "emailExists": "البريد الإلكتروني مستخدم بالفعل",
+        "usernameExists": "اسم المستخدم مستخدم بالفعل",
+        "newUserSummary": "مستخدم جديد - لا يوجد سجل محادثات بعد",
+        "pleaseVerifyEmail": "يرجى التحقق من بريدك الإلكتروني. تم إرسال رابط تحقق جديد.",
+        "refreshTokenRequired": "رمز التحديث مطلوب",
+        "invalidRefreshToken": "رمز التحديث غير صالح",
+        "invalidVerificationToken": "رمز التحقق غير صالح",
+        "verificationLinkExpired": "انتهت صلاحية رابط التحقق",
+        "emailAlreadyVerified": "تم التحقق من البريد الإلكتروني مسبقًا",
+        "emailVerifiedSuccess": "تم التحقق من البريد الإلكتروني بنجاح",
+        "resetLinkMismatch": "رابط إعادة التعيين غير مطابق",
+        "resetTokenValid": "الرمز صالح",
+        "invalidResetTokenType": "نوع الرمز غير صالح",
+        "resetLinkExpired": "انتهت صلاحية رابط إعادة التعيين",
+        "invalidResetToken": "رمز إعادة التعيين غير صالح",
+        "userNotFound": "المستخدم غير موجود",
+        "resetLinkUsed": "تم استخدام رابط إعادة التعيين هذا من قبل",
+        "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور بنجاح",
+        "currentPasswordIncorrect": "كلمة المرور الحالية غير صحيحة",
+    "passwordChangedSuccess": "تم تغيير كلمة المرور بنجاح"
+    }
+}

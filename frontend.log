@@ -1,0 +1,18 @@
+
+> front-ai@0.0.0 start
+> vite
+
+
+  [32m[1mVITE[22m v5.4.20[39m  [2mready in [0m[1m596[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+
+PWA v0.17.5
+mode      generateSW
+precache  2 entries (0.12 KiB)
+files generated
+  dev-dist\sw.js.map
+  dev-dist\sw.js
+  dev-dist\workbox-54d0af47.js.map
+  dev-dist\workbox-54d0af47.js
