@@ -1,4 +1,4 @@
-name: Deploy Chatbot Application
+name: Build and Deploy Chatbot Application
 
 on:
   push:
@@ -7,10 +7,94 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+env:
+  DOCKER_REGISTRY: ghcr.io
+  IMAGE_PREFIX: ensiyassine99-sys
+  BACKEND_IMAGE: chatbot-backend
+  FRONTEND_IMAGE: chatbot-frontend
+  VITE_API_URL: http://srv830042.hstgr.cloud/api/v1
+  VITE_WS_URL: ws://srv830042.hstgr.cloud/ws
+
 jobs:
+  build:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata for Backend
+        id: meta-backend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.BACKEND_IMAGE }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Extract metadata for Frontend
+        id: meta-frontend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push Backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./docker/Dockerfile.backend
+          push: true
+          tags: ${{ steps.meta-backend.outputs.tags }}
+          labels: ${{ steps.meta-backend.outputs.labels }}
+          cache-from: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.BACKEND_IMAGE }}:buildcache
+          cache-to: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.BACKEND_IMAGE }}:buildcache,mode=max
+
+      - name: Build and push Frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./docker/Dockerfile.frontend
+          push: true
+          tags: ${{ steps.meta-frontend.outputs.tags }}
+          labels: ${{ steps.meta-frontend.outputs.labels }}
+          build-args: |
+            VITE_API_URL=${{ env.VITE_API_URL }}
+            VITE_WS_URL=${{ env.VITE_WS_URL }}
+          cache-from: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache
+          cache-to: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache,mode=max
+
+      - name: Image build summary
+        run: |
+          echo "✅ Backend image built and pushed"
+          echo "   Tag: ${{ steps.meta-backend.outputs.tags }}"
+          echo "✅ Frontend image built and pushed"
+          echo "   Tag: ${{ steps.meta-frontend.outputs.tags }}"
+
   deploy:
     name: Deploy to Production Server
     runs-on: ubuntu-latest
+    needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     steps:
@@ -22,10 +106,13 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Add server to known hosts
+      - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          echo "Host ${{ secrets.SERVER_IP }}" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "  UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+          chmod 600 ~/.ssh/config
 
       - name: Prepare environment on server
         run: |
@@ -46,10 +133,6 @@ jobs:
           mkdir -p ~/chatbot-app/backend &&
           echo '- Repertoire backend reinitialise' &&
           
-          rm -rf ~/chatbot-app/frontend &&
-          mkdir -p ~/chatbot-app/frontend &&
-          echo '- Repertoire frontend reinitialise' &&
-          
           mkdir -p ~/chatbot-app/database &&
           mkdir -p ~/chatbot-app/uploads &&
           mkdir -p ~/chatbot-app/logs &&
@@ -58,14 +141,13 @@ jobs:
           echo 'Environnement prepare avec succes'
           "
 
-      - name: Copy source code to server
+      - name: Copy configuration files to server
         run: |
-          echo "Copie du code source vers le serveur..."
+          echo "Copie des fichiers de configuration..."
           scp docker-compose.prod.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker-compose.yml
-          scp -r docker/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/
-          scp -r backend/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/
-          scp -r frontend/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/
-          echo "Code source copie avec succes"
+          scp docker/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker/nginx.conf
+          scp backend/.env ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
+          echo "Fichiers copies avec succes"
 
       - name: Stop and remove existing containers
         run: |
@@ -94,15 +176,28 @@ jobs:
           docker container prune -f
           "
 
-      - name: Build and start services
+      - name: Login to registry and pull images
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          cd ~/chatbot-app &&
+          echo 'Connexion au registre Docker...' &&
+          echo '${{ secrets.GITHUB_TOKEN }}' | docker login -u '${{ github.actor }}' --password-stdin '${{ env.DOCKER_REGISTRY }}' &&
+          
+          export COMPOSE_PROJECT_NAME=chatbot-app &&
+          
+          echo 'Telechargement des images...' &&
+          docker-compose -f docker-compose.yml pull &&
+          
+          echo 'Images telechargees avec succes'
+          "
+
+      - name: Start services
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
           cd ~/chatbot-app &&
           
-          export COMPOSE_PROJECT_NAME=chatbot-app &&
-          
-          echo 'Construction et demarrage des services' &&
-          docker-compose -f docker-compose.yml up -d --build &&
+          echo 'Demarrage des services...' &&
+          docker-compose -f docker-compose.yml up -d &&
           
           echo 'Services demarres avec succes'
           "
@@ -110,13 +205,13 @@ jobs:
       - name: Verify deployment
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          echo 'Verification des conteneurs' &&
+          echo 'Verification des conteneurs...' &&
           sleep 30 &&
           
           echo 'Statut des conteneurs:' &&
           docker ps &&
           
-          echo 'Nettoyage des images inutilisees' &&
+          echo 'Nettoyage des images inutilisees...' &&
           docker image prune -f &&
           
           echo 'Deploiement termine avec succes'
@@ -125,18 +220,25 @@ jobs:
   notify:
     name: Deployment Status
     runs-on: ubuntu-latest
-    needs: [deploy]
+    needs: [build, deploy]
     if: always()
     
     steps:
       - name: Check deployment result
         run: |
-          if [ "${{ needs.deploy.result }}" == "success" ]; then
-            echo "Deploiement reussi sur srv830042.hstgr.cloud"
-            echo "Backend: http://srv830042.hstgr.cloud/api/v1"
-            echo "Frontend: http://srv830042.hstgr.cloud"
+          if [ "${{ needs.build.result }}" == "success" ] && [ "${{ needs.deploy.result }}" == "success" ]; then
+            echo "🚀 Deploiement complet reussi!"
+            echo "✅ Images built: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
+            echo "✅ Images built: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
+            echo "🌐 Application: http://srv830042.hstgr.cloud"
+            echo "🔗 API: http://srv830042.hstgr.cloud/api/v1"
+          elif [ "${{ needs.build.result }}" == "failure" ]; then
+            echo "❌ Echec du build des images"
+            exit 1
+          elif [ "${{ needs.deploy.result }}" == "failure" ]; then
+            echo "❌ Echec du deploiement sur le serveur"
+            exit 1
           else
-            echo "Echec du deploiement"
+            echo "⚠️ Workflow incomplet"
             exit 1
           fi
-          
