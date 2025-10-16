@@ -239,7 +239,23 @@ const resources = {
         signupAgain: "Sign Up Again",
         backToLogin: "Back to Login",
         needHelp: "Need help?",
-        contactSupport: "Contact Support"
+        contactSupport: "Contact Support",
+        resetLinkExpired: "Reset Link Expired",
+        passwordTooShort: "Password must be at least 8 characters",
+        passwordRequirements: "Password must contain uppercase, lowercase, and number",
+        passwordsMustMatch: "Passwords must match",
+        failedToResetPassword: "Failed to reset password",
+        resetEmailSent: "Password reset email sent successfully",
+        resendFailed: "Failed to send reset email",
+        resetLinkExpired: "انتهت صلاحية رابط إعادة التعيين",
+        passwordTooShort: "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+        passwordRequirements: "يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير ورقم",
+        passwordsMustMatch: "يجب أن تتطابق كلمات المرور",
+        failedToResetPassword: "فشل في إعادة تعيين كلمة المرور",
+        resetEmailSent: "تم إرسال رسالة إعادة تعيين كلمة المرور بنجاح",
+        resendFailed: "فشل في إرسال رسالة إعادة التعيين",
+        continueWithGoogle: "Continue with Google"
+
 
 
       },
@@ -302,6 +318,12 @@ const resources = {
         yourAISummary: 'Your AI Summary',
         noSummary: 'No summary generated yet',
         generateSummary: 'Generate Summary',
+        favoriteModel: 'Favorite Model',
+        memberSince: 'Member Since',
+        totalChats: 'Total Chats',
+        totalMessages: 'Total Messages',
+        tokensUsed: 'Tokens Used',
+        avgMessageLength: 'Avg Message Length',
       },
 
       // History
@@ -378,6 +400,25 @@ const resources = {
 
       // Errors
       errors: {
+        username_min: 'Username must be at least 3 characters',
+        username_max: 'Username must be less than 50 characters',
+        username_regex: 'Username can only contain letters, numbers, and underscores',
+        username_required: 'Username is required',
+
+        email_invalid: 'Invalid email address',
+        email_required: 'Email is required',
+
+        password_min: 'Password must be at least 8 characters',
+        password_pattern: 'Password must contain uppercase, lowercase, and number',
+        password_required: 'Password is required',
+
+        confirmPassword_match: 'Passwords must match',
+        confirmPassword_required: 'Please confirm your password',
+
+        language_oneOf: 'Invalid language selected',
+        terms_oneOf: 'You must accept the terms and conditions',
+
+        // ===== GENERAL ERRORS =====
         loginFailed: 'Login failed',
         signupFailed: 'Signup failed',
         emailExists: 'Email already exists',
@@ -398,7 +439,7 @@ const resources = {
         regenerateFailed: 'Failed to regenerate response',
         editFailed: 'Failed to edit message',
         pageNotFound: 'Oops! Page not found',
-        pageNotFoundDescription: 'The page you are looking for might have been removed or is temporarily unavailable.',
+        pageNotFoundDescription: 'The page you are looking for might have been removed or is temporarily unavailable.'
       },
     },
   },
@@ -666,7 +707,9 @@ const resources = {
         signupAgain: "إنشاء حساب جديد",
         backToLogin: "العودة إلى تسجيل الدخول",
         needHelp: "هل تحتاج إلى مساعدة؟",
-        contactSupport: "اتصل بالدعم"
+        contactSupport: "اتصل بالدعم",
+        continueWithGoogle: "متابعة مع جوجل"
+
 
       },
 
@@ -728,6 +771,12 @@ const resources = {
         yourAISummary: 'ملخصك الذكائي',
         noSummary: 'لم يتم إنشاء أي ملخص بعد',
         generateSummary: 'إنشاء ملخص',
+        favoriteModel: 'النموذج المفضل',
+        memberSince: 'عضو منذ',
+        totalChats: 'إجمالي المحادثات',
+        totalMessages: 'إجمالي الرسائل',
+        tokensUsed: 'الرموز المستخدمة',
+        avgMessageLength: 'متوسط طول الرسالة',
       },
 
       // History
@@ -778,8 +827,30 @@ const resources = {
 
       // Errors
       errors: {
+        // ===== FORM VALIDATION =====
+        username_min: 'يجب أن يحتوي اسم المستخدم على 3 أحرف على الأقل',
+        username_max: 'يجب أن يحتوي اسم المستخدم على أقل من 50 حرفًا',
+        username_regex: 'يمكن أن يحتوي اسم المستخدم فقط على أحرف وأرقام وشرطات سفلية (_)',
+        username_required: 'اسم المستخدم إجباري',
+
+        email_invalid: 'عنوان البريد الإلكتروني غير صالح',
+        email_required: 'البريد الإلكتروني إجباري',
+
+        password_min: 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل',
+        password_pattern: 'يجب أن تحتوي كلمة المرور على حرف كبير، وحرف صغير، ورقم',
+        password_required: 'كلمة المرور مطلوبة',
+
+        confirmPassword_match: 'يجب أن تتطابق كلمتا المرور',
+        confirmPassword_required: 'يرجى تأكيد كلمة المرور',
+
+        language_oneOf: 'تم اختيار لغة غير صالحة',
+        terms_oneOf: 'يجب أن توافق على الشروط والأحكام',
+
+        // ===== GENERAL ERRORS =====
         loginFailed: 'فشل تسجيل الدخول',
         signupFailed: 'فشل إنشاء الحساب',
+        emailExists: 'البريد الإلكتروني مستخدم بالفعل',
+        usernameExists: 'اسم المستخدم مستخدم بالفعل',
         network: 'خطأ في الشبكة. يرجى التحقق من الاتصال.',
         server: 'خطأ في الخادم. يرجى المحاولة لاحقاً.',
         validation: 'يرجى التحقق من بيانات الإدخال.',
@@ -796,9 +867,7 @@ const resources = {
         regenerateFailed: 'فشل في إعادة توليد الرد',
         editFailed: 'فشل في تعديل الرسالة',
         pageNotFound: 'عذراً! الصفحة غير موجودة',
-        pageNotFoundDescription: 'قد تكون الصفحة التي تبحث عنها قد أُزيلت أو غير متاحة مؤقتاً.',
-        emailExists: 'البريد الإلكتروني مستخدم بالفعل',
-        usernameExists: 'اسم المستخدم مستخدم بالفعل',
+        pageNotFoundDescription: 'قد تكون الصفحة التي تبحث عنها قد أُزيلت أو غير متاحة مؤقتاً.'
 
       },
     },

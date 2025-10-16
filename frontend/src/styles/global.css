@@ -15,7 +15,8 @@
     text-size-adjust: 100%;
     font-size: 16px;
     /* FIX: Même couleur que le body pour éviter la bande blanche */
-    @apply bg-gray-50 dark:bg-gray-900;
+    /* Option 3 - Avec teinte bleue légère */
+    @apply bg-slate-50/50 dark:bg-slate-950;
   }
 
   body {
@@ -24,7 +25,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* FIX: Empêcher le scroll élastique de montrer du blanc */
-    @apply bg-gray-50 dark:bg-gray-900;
+    @apply bg-slate-50 dark:bg-slate-950;
     overflow-x: hidden;
   }
 

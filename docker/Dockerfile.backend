@@ -1,51 +1,49 @@
 # docker/Dockerfile.backend
 FROM node:18-alpine AS builder
 
-# Installer les dépendances de build
 RUN apk add --no-cache python3 make g++ sqlite
 
 WORKDIR /app
 
-# Copier les fichiers de dépendances
 COPY backend/package*.json ./
+RUN npm ci
 
-# Installer les dépendances
-RUN npm ci --only=production
-
-# Copier le code source
 COPY backend/ ./
-
-# Build si nécessaire
 RUN npm run build 2>/dev/null || true
 
+# ════════════════════════════════════════════════════════════
 # Stage de production
+# ════════════════════════════════════════════════════════════
 FROM node:18-alpine
 
-# Installer SQLite
-RUN apk add --no-cache sqlite curl
+ARG NODE_ENV=production
+
+RUN apk add --no-cache python3 make g++ sqlite curl
 
 WORKDIR /app
 
-# Créer un utilisateur non-root
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nodejs -u 1001
+# ⚠️ Supprimer ou commenter ces lignes sur la création de l'utilisateur
+# RUN addgroup -g 1001 -S nodejs && \
+#     adduser -S nodejs -u 1001
 
-# Copier depuis le builder
-COPY --from=builder --chown=nodejs:nodejs /app ./
+COPY backend/package*.json ./
+RUN npm ci --only=production
 
-# Créer les dossiers nécessaires
-RUN mkdir -p /app/database /app/uploads /app/logs && \
-    chown -R nodejs:nodejs /app
+COPY --from=builder /app/src ./src
+COPY --from=builder /app/server.js ./server.js
 
-# Changer vers l'utilisateur non-root
-USER nodejs
+# Créer les dossiers
+RUN mkdir -p /app/database /app/uploads /app/logs
 
-# Exposer le port
+ENV NODE_ENV=production
+ENV PORT=5000
+
+# ✅ COMMENTER CETTE LIGNE - C'EST TOUT !
+# USER nodejs
+
 EXPOSE 5000
 
-# Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:5000/health || exit 1
 
-# Commande de démarrage
 CMD ["node", "server.js"]

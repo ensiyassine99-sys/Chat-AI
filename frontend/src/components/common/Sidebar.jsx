@@ -54,7 +54,7 @@ const Sidebar = () => {
     const handleLogout = () => {
         dispatch(logout());
         navigate('/login');
-        toast.success(t('auth.logoutSuccess'));
+
     };
 
     const getUserInitials = () => {
@@ -76,7 +76,7 @@ const Sidebar = () => {
             >
                 {/* SVG AVEC ROTATION CSS */}
                 <svg
-                    className={`h-6 w-6 transition-transform duration-300 ${isRTL ? (isOpen ?  'rotate-180':'') : (isOpen ? '':'rotate-180')
+                    className={`h-6 w-6 transition-transform duration-300 ${isRTL ? (isOpen ? 'rotate-180' : '') : (isOpen ? '' : 'rotate-180')
                         }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -127,11 +127,11 @@ const Sidebar = () => {
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={handleNewChat}
-                                    className="w-full group relative overflow-hidden rounded-xl p-3 mb-2"
+                                    className="w-full group relative overflow-hidden rounded-full p-1 mb-2"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90 group-hover:opacity-100 transition-opacity" />
+                                    <div className="absolute inset-0  opacity-90 group-hover:opacity-100 transition-opacity" />
                                     <div className="relative flex items-center gap-3">
-                                        <div className="h-8 w-8 rounded-lg bg-white/20 flex items-center justify-center">
+                                        <div className="h-8 w-8 rounded-full  flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600" >
                                             <PlusIcon className="h-5 w-5 text-white" />
                                         </div>
                                         <span className="font-semibold text-white">{t('chat.newChat')}</span>
@@ -237,7 +237,7 @@ const Sidebar = () => {
                                 )}
                             </AnimatePresence>
 
-                            <div className="p-4 border-t border-slate-700/50">
+                            <div className="p-4  border-slate-700/50">
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
@@ -250,7 +250,6 @@ const Sidebar = () => {
                                         </div>
                                         <div className="text-left rtl:text-right">
                                             <p className="text-sm font-semibold">{user?.username}</p>
-                                            <p className="text-xs text-slate-400">Online</p>
                                         </div>
                                     </div>
                                     <ChevronDownIcon

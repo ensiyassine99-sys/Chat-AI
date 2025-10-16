@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
+import { formatDistanceToNow } from 'date-fns';
 import { ar, enUS, fr } from 'date-fns/locale';
 import {
   ChatBubbleLeftRightIcon,
@@ -44,6 +45,13 @@ const HistoryPage = () => {
 
   const isRTL = i18n.language === 'ar';
 
+
+  const formatTimeAgo = (dateString) => {
+    return formatDistanceToNow(new Date(dateString), {
+      addSuffix: true,
+      locale: getDateLocale()
+    });
+  };
   // Get the appropriate locale for date-fns
   const getDateLocale = () => {
     switch (i18n.language) {
@@ -183,9 +191,8 @@ const HistoryPage = () => {
 
             <Link
               to="/chat"
-              className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl ${
-                isRTL ? 'flex-row-reverse' : ''
-              }`}
+              className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse' : ''
+                }`}
             >
               <PlusIcon className="h-5 w-5" />
               <span>{t('chat.newChat')}</span>
@@ -270,7 +277,7 @@ const HistoryPage = () => {
                       transition={{ duration: 0.2 }}
                       onClick={() => {
                         selectedChats.forEach(id => {
-                          const e = { stopPropagation: () => {} };
+                          const e = { stopPropagation: () => { } };
                           handleArchiveChat(e, id);
                         });
                       }}
@@ -481,10 +488,9 @@ const HistoryPage = () => {
                         )}
 
                         <div className={`flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
-                          <span className={`flex items-center gap-1 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                          <span className={`flex items-center gap-1`}>
                             <ClockIcon className="h-4 w-4" />
-                            {format(new Date(chat.lastMessageAt), 'PPp', { locale: getDateLocale() })}
-                          </span>
+                            {formatTimeAgo(chat.lastMessageAt)}                          </span>
                           <span className="font-medium">
                             {chat.messageCount} {t('history.messages')}
                           </span>
@@ -500,9 +506,8 @@ const HistoryPage = () => {
                             {chat.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 ${
-                                  isRTL ? 'flex-row-reverse' : ''
-                                }`}
+                                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 ${isRTL ? 'flex-row-reverse' : ''
+                                  }`}
                               >
                                 <TagIcon className="h-3 w-3" />
                                 {tag}

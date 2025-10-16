@@ -38,6 +38,8 @@ const authService = {
 
   checkEmail: async (email) => {
     const response = await api.post(`/auth/check-email`, { email });
+
+    console.log('Response from checkEmail:', response); // Log de débogage  
     return response;
   },
 
@@ -66,6 +68,18 @@ const authService = {
       localStorage.removeItem('persist:root'); // Si using redux-persist
     }
   },
+  handleOAuthCallback: async (token, refreshToken) => {
+    // Sauvegarder les tokens d'abord
+    if (token && refreshToken) {
+      localStorage.setItem('accessToken', token);
+      localStorage.setItem('refreshToken', refreshToken);
+    }
+
+    // Récupérer les infos utilisateur
+    const response = await api.get('/auth/me');
+    return response;
+  },
+
 
   // Vérifier l'authentification
   checkAuth: async () => {

@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 import {
     LockClosedIcon,
     EyeIcon,
@@ -20,12 +21,13 @@ import authService from '../services/authService';
 import { useAuth } from '../hooks/useAuth';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 
+
 const ResetPasswordPage = () => {
     const { token } = useParams();
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
     const isRTL = i18n.language === 'ar';
-    const { error, clearError, verifyResetToken, resetPassword: resetPass } = useAuth();
+    const { error, clearError, verifyResetToken, resetPassword: resetPass, clearUser } = useAuth();
 
     const [status, setStatus] = useState('verifying');
     const [password, setPassword] = useState('');
@@ -50,6 +52,7 @@ const ResetPasswordPage = () => {
     });
 
     useEffect(() => {
+        clearUser();
         if (!token) {
             setStatus('error');
             setErrorType('invalid');
@@ -64,8 +67,6 @@ const ResetPasswordPage = () => {
 
     useEffect(() => {
         if (error) {
-            console.log("error")
-            setErrorType(error);
             clearError();
         }
     }, [error, clearError]);
@@ -116,18 +117,19 @@ const ResetPasswordPage = () => {
         setPasswordTouched(true);
         setConfirmTouched(true);
 
+        // ✅ CHANGEMENT: Utilisation des traductions
         if (!validations.minLength) {
-            toast.error('Password must be at least 8 characters');
+            toast.error(t('auth.passwordTooShort'));
             return;
         }
 
         if (!validations.hasUpper || !validations.hasLower || !validations.hasNumber) {
-            toast.error('Password must contain uppercase, lowercase, and number');
+            toast.error(t('auth.passwordRequirements'));
             return;
         }
 
         if (!validations.passwordsMatch) {
-            toast.error('Passwords do not match');
+            toast.error(t('auth.passwordsMustMatch'));
             return;
         }
 
@@ -137,21 +139,24 @@ const ResetPasswordPage = () => {
 
         if (result.success) {
             setStatus('success');
-            toast.success('Password reset successfully!');
+            // ✅ CHANGEMENT: Utilisation des traductions
+            toast.success(t('auth.passwordResetSuccess'));
 
             setTimeout(() => {
                 navigate('/chat', { replace: true });
             }, 2000);
         } else {
-            toast.error(result.error || 'Failed to reset password');
+            // ✅ CHANGEMENT: Utilisation des traductions
+            toast.error(result.error || t('auth.failedToResetPassword'));
         }
 
         setIsLoading(false);
     };
 
     const handleResendEmail = async () => {
+        // ✅ CHANGEMENT: Utilisation des traductions
         if (!resendEmail || !resendEmail.includes('@')) {
-            toast.error('Please enter a valid email address');
+            toast.error(t('auth.enterValidEmail'));
             return;
         }
 
@@ -159,10 +164,12 @@ const ResetPasswordPage = () => {
 
         try {
             await authService.forgotPassword(resendEmail);
-            toast.success('Password reset email sent!');
+            // ✅ CHANGEMENT: Utilisation des traductions
+            toast.success(t('auth.resetEmailSent'));
             setResendEmail('');
         } catch (error) {
-            toast.error('Failed to send reset email');
+            // ✅ CHANGEMENT: Utilisation des traductions
+            toast.error(t('auth.resendFailed'));
         } finally {
             setIsResending(false);
         }
@@ -175,6 +182,7 @@ const ResetPasswordPage = () => {
         return 'bg-green-500';
     };
 
+    // ✅ CHANGEMENT: Utilisation des traductions
     const getStrengthText = () => {
         if (passwordStrength <= 2) return t('auth.strengthWeak');
         if (passwordStrength === 3) return t('auth.strengthFair');
@@ -219,23 +227,26 @@ const ResetPasswordPage = () => {
                     {status === 'verifying' && (
                         <div className="text-center">
                             <LoadingSpinner size="large" />
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white">
                                 {t('auth.verifyingResetLink')}
                             </h2>
                             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                                {t('common.pleaseWait')}
+                                {t('auth.pleaseWait')}
                             </p>
                         </div>
                     )}
 
                     {status === 'form' && (
                         <>
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             <h2 className="text-2xl font-bold text-center text-slate-900 dark:text-white mb-6">
                                 {t('auth.resetYourPassword')}
                             </h2>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
+                                    {/* ✅ CHANGEMENT: Utilisation des traductions */}
                                     <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
                                         {t('auth.newPassword')}
                                     </label>
@@ -270,6 +281,7 @@ const ResetPasswordPage = () => {
                                                 className="mt-3"
                                             >
                                                 <div className="flex items-center justify-between mb-2">
+                                                    {/* ✅ CHANGEMENT: Utilisation des traductions */}
                                                     <span className="text-xs text-slate-600 dark:text-slate-400">
                                                         {t('auth.passwordStrength')}
                                                     </span>
@@ -288,6 +300,7 @@ const ResetPasswordPage = () => {
                                                     />
                                                 </div>
 
+                                                {/* ✅ CHANGEMENT: Utilisation des traductions */}
                                                 <div className="mt-3 space-y-2">
                                                     <ValidationItem valid={validations.minLength} text={t('auth.validationMinLength')} />
                                                     <ValidationItem valid={validations.hasUpper} text={t('auth.validationUpper')} />
@@ -301,6 +314,7 @@ const ResetPasswordPage = () => {
                                 </div>
 
                                 <div>
+                                    {/* ✅ CHANGEMENT: Utilisation des traductions */}
                                     <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
                                         {t('auth.confirmPassword')}
                                     </label>
@@ -326,6 +340,7 @@ const ResetPasswordPage = () => {
                                         </button>
                                     </div>
 
+                                    {/* ✅ CHANGEMENT: Utilisation des traductions */}
                                     {confirmTouched && confirmPassword.length > 0 && (
                                         <motion.p
                                             initial={{ opacity: 0, y: -10 }}
@@ -348,6 +363,7 @@ const ResetPasswordPage = () => {
                                     )}
                                 </div>
 
+                                {/* ✅ CHANGEMENT: Utilisation des traductions */}
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
@@ -370,6 +386,7 @@ const ResetPasswordPage = () => {
                                 </motion.button>
                             </form>
 
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             <div className="mt-6 text-center">
                                 <Link to="/login" className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                                     ← {t('auth.backToLogin')}
@@ -392,6 +409,7 @@ const ResetPasswordPage = () => {
                             >
                                 <CheckCircleIcon className="h-12 w-12 text-green-600 dark:text-green-400" />
                             </motion.div>
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white">
                                 {t('auth.passwordResetSuccess')}
                             </h2>
@@ -415,14 +433,18 @@ const ResetPasswordPage = () => {
                                 <XCircleIcon className="h-12 w-12 text-red-600 dark:text-red-400" />
                             </motion.div>
 
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white">
-                                {t('auth.resetLinkInvalid')} {errorType === 'used' ? t('auth.alreadyUsed') : ''}
+                                {errorType === 'expired' ? t('auth.resetLinkExpired') :
+                                    errorType === 'used' ? t('auth.alreadyUsed') :
+                                        t('auth.resetLinkInvalid')}
                             </h2>
 
                             <p className="mt-3 text-sm text-red-600 dark:text-red-400">
                                 {error || (errorType === 'used' ? t('auth.linkAlreadyUsed') : t('auth.invalidOrExpiredLink'))}
                             </p>
 
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             {(errorType === 'expired' || errorType === 'used') && (
                                 <div className="mt-8 space-y-4">
                                     <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -435,34 +457,16 @@ const ResetPasswordPage = () => {
                                                 value={resendEmail}
                                                 onChange={(e) => setResendEmail(e.target.value)}
                                                 onKeyPress={(e) => e.key === 'Enter' && handleResendEmail()}
-                                                placeholder="your@email.com"
+                                                placeholder={t('auth.emailPlaceholder')}
                                                 className="appearance-none block w-full px-4 py-3 pl-11 border border-slate-200 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-700/50 dark:text-white placeholder-slate-400 transition-all"
                                             />
                                             <EnvelopeIcon className="h-5 w-5 text-slate-400 absolute left-3.5 top-3.5 group-focus-within:text-blue-600 transition-colors" />
                                         </div>
-                                        <motion.button
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.98 }}
-                                            onClick={handleResendEmail}
-                                            disabled={isResending}
-                                            className="group relative w-full flex justify-center items-center py-3.5 px-4 border border-transparent text-sm font-semibold rounded-xl text-white overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl"
-                                        >
-                                            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600" />
-                                            <span className="relative flex items-center">
-                                                {isResending ? (
-                                                    <LoadingSpinner size="small" color="white" />
-                                                ) : (
-                                                    <>
-                                                        <ArrowPathIcon className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                                                        {t('auth.sendNewResetLink')}
-                                                    </>
-                                                )}
-                                            </span>
-                                        </motion.button>
                                     </div>
                                 </div>
                             )}
 
+                            {/* ✅ CHANGEMENT: Utilisation des traductions */}
                             <div className="mt-6">
                                 <Link to="/login" className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                                     ← {t('auth.backToLogin')}

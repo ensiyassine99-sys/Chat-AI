@@ -1,4 +1,4 @@
-const { validationResult } = require('express-validator'); // ← AJOUTÉ
+const { validationResult } = require('express-validator');
 const logger = require('../utils/logger');
 
 class AppError extends Error {
@@ -15,7 +15,9 @@ const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
-  // Log de l'erreur
+  const t = req.t || ((key) => key); // fallback si i18n non dispo
+
+  // 🔹 Logger (différent selon gravité)
   if (err.statusCode >= 500 || !err.isOperational) {
     logger.error({
       error: err.message,
@@ -34,59 +36,59 @@ const errorHandler = (err, req, res, next) => {
     });
   }
 
-  // Erreur de validation Sequelize
+  // 🔹 Sequelize Validation
   if (err.name === 'SequelizeValidationError') {
     const errors = err.errors.map(e => ({
       field: e.path,
       message: e.message,
     }));
     error.statusCode = 400;
-    error.message = 'Validation error';
+    error.message = t('auth.validationError');
     error.errors = errors;
   }
 
-  // Erreur de contrainte unique Sequelize
+  // 🔹 Sequelize unique constraint
   if (err.name === 'SequelizeUniqueConstraintError') {
     const field = Object.keys(err.fields)[0];
     error.statusCode = 409;
-    error.message = `${field} already exists`;
+    error.message = t('auth.fieldExists', { field });
   }
 
-  // Erreur de cast MongoDB (si utilisé)
+  // 🔹 Mongo CastError
   if (err.name === 'CastError') {
     error.statusCode = 400;
-    error.message = 'Invalid ID format';
+    error.message = t('auth.invalidId');
   }
 
-  // Erreur de duplication MongoDB (si utilisé)
+  // 🔹 Mongo duplicate key
   if (err.code === 11000) {
     const field = Object.keys(err.keyValue)[0];
     error.statusCode = 409;
-    error.message = `${field} already exists`;
+    error.message = t('auth.fieldExists', { field });
   }
 
-  // Erreur de validation
+  // 🔹 Generic validation error
   if (err.name === 'ValidationError') {
     error.statusCode = 400;
-    error.message = 'Validation error';
+    error.message = t('auth.validationError');
   }
 
-  // Erreur JWT
+  // 🔹 JWT errors
   if (err.name === 'JsonWebTokenError') {
     error.statusCode = 401;
-    error.message = 'Invalid token';
+    error.message = t('auth.invalidToken');
   }
 
   if (err.name === 'TokenExpiredError') {
     error.statusCode = 401;
-    error.message = 'Token expired';
+    error.message = t('auth.tokenExpired');
   }
 
-  // Réponse d'erreur
+  // 🔹 Réponse JSON
   res.status(error.statusCode || 500).json({
     success: false,
     error: {
-      message: error.message || 'Server error',
+      message: error.message || t('auth.serverError'),
       code: error.code,
       ...(process.env.NODE_ENV === 'development' && {
         stack: err.stack,
@@ -99,35 +101,36 @@ const errorHandler = (err, req, res, next) => {
   });
 };
 
-// Wrapper pour les fonctions async
+// ✅ Wrapper async
 const asyncHandler = (fn) => (req, res, next) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
 
-// Middleware de validation pour express-validator
+// ✅ Validation middleware (express-validator)
 const validate = (req, res, next) => {
   const errors = validationResult(req);
-  
+  const t = req.t || ((key) => key);
+
   if (!errors.isEmpty()) {
     const formattedErrors = errors.array().map(error => ({
       field: error.path || error.param,
-      message: error.msg,
+      message: error.msg || t('auth.validationError'),
       value: error.value,
     }));
-    
+
     return res.status(400).json({
       success: false,
-      error: 'Validation error',
+      error: t('auth.validationError'),
       errors: formattedErrors,
     });
   }
-  
+
   next();
 };
 
-module.exports = { 
-  errorHandler, 
-  AppError, 
-  asyncHandler, 
-  validate 
+module.exports = {
+  errorHandler,
+  AppError,
+  asyncHandler,
+  validate,
 };

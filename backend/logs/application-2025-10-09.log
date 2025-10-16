@@ -1,0 +1,2410 @@
+2025-10-09 12:25:05 [info]: Database directory created
+2025-10-09 12:25:05 [info]: Google Gemini provider initialized
+2025-10-09 12:25:05 [info]: Hugging Face provider initialized
+2025-10-09 12:25:06 [info]: Rate limiting using Redis store
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 12:25:06 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:06 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:06 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:06 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:06 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:06 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:07 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:07 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:07 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:08 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:08 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:09 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:10 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:10 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:11 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:12 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:13 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:13 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:14 [error]: Redis error: {
+  "0": "c",
+  "1": "o",
+  "2": "n",
+  "3": "n",
+  "4": "e",
+  "5": "c",
+  "6": "t",
+  "7": " ",
+  "8": "E",
+  "9": "C",
+  "10": "O",
+  "11": "N",
+  "12": "N",
+  "13": "R",
+  "14": "E",
+  "15": "F",
+  "16": "U",
+  "17": "S",
+  "18": "E",
+  "19": "D",
+  "20": " ",
+  "21": "1",
+  "22": "2",
+  "23": "7",
+  "24": ".",
+  "25": "0",
+  "26": ".",
+  "27": "0",
+  "28": ".",
+  "29": "1",
+  "30": ":",
+  "31": "6",
+  "32": "3",
+  "33": "7",
+  "34": "9"
+}
+2025-10-09 12:25:15 [error]: Failed to start server: getaddrinfo ENOTFOUND postgres {
+  "name": "SequelizeHostNotFoundError",
+  "parent": {
+    "errno": -3008,
+    "code": "ENOTFOUND",
+    "syscall": "getaddrinfo",
+    "hostname": "postgres"
+  },
+  "original": "[Circular Reference]",
+  "stack": "SequelizeHostNotFoundError: getaddrinfo ENOTFOUND postgres\n    at Client._connectionCallback (C:\\Users\\Yassine\\Desktop\\AI-chat\\backend\\node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js:136:24)\n    at Client._handleErrorWhileConnecting (C:\\Users\\Yassine\\Desktop\\AI-chat\\backend\\node_modules\\pg\\lib\\client.js:336:19)\n    at Client._handleErrorEvent (C:\\Users\\Yassine\\Desktop\\AI-chat\\backend\\node_modules\\pg\\lib\\client.js:346:19)\n    at Connection.emit (node:events:524:28)\n    at Socket.reportStreamError (C:\\Users\\Yassine\\Desktop\\AI-chat\\backend\\node_modules\\pg\\lib\\connection.js:57:12)\n    at Socket.emit (node:events:524:28)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"
+}
+2025-10-09 11:55:34 [info]: Google Gemini provider initialized
+2025-10-09 11:55:34 [info]: Hugging Face provider initialized
+2025-10-09 11:55:34 [info]: Rate limiting using Redis store
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:34 [info]: Redis connected for rate limiting
+2025-10-09 11:55:35 [info]: ✅ Database connection established successfully
+2025-10-09 11:55:35 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:55:35 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:55:35 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:55:38 [info]: Google Gemini provider initialized
+2025-10-09 11:55:38 [info]: Hugging Face provider initialized
+2025-10-09 11:55:38 [info]: Rate limiting using Redis store
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:38 [info]: Redis connected for rate limiting
+2025-10-09 11:55:38 [info]: ✅ Database connection established successfully
+2025-10-09 11:55:38 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:55:38 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:55:39 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:55:41 [info]: Google Gemini provider initialized
+2025-10-09 11:55:41 [info]: Hugging Face provider initialized
+2025-10-09 11:55:41 [info]: Rate limiting using Redis store
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:41 [info]: Redis connected for rate limiting
+2025-10-09 11:55:42 [info]: ✅ Database connection established successfully
+2025-10-09 11:55:42 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:55:42 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:55:42 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:55:45 [info]: Google Gemini provider initialized
+2025-10-09 11:55:45 [info]: Hugging Face provider initialized
+2025-10-09 11:55:45 [info]: Rate limiting using Redis store
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:45 [info]: Redis connected for rate limiting
+2025-10-09 11:55:45 [info]: ✅ Database connection established successfully
+2025-10-09 11:55:45 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:55:45 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:55:46 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:55:49 [info]: Google Gemini provider initialized
+2025-10-09 11:55:49 [info]: Hugging Face provider initialized
+2025-10-09 11:55:49 [info]: Rate limiting using Redis store
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:49 [info]: Redis connected for rate limiting
+2025-10-09 11:55:49 [info]: ✅ Database connection established successfully
+2025-10-09 11:55:49 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:55:49 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:55:49 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:55:53 [info]: Google Gemini provider initialized
+2025-10-09 11:55:53 [info]: Hugging Face provider initialized
+2025-10-09 11:55:53 [info]: Rate limiting using Redis store
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:55:54 [info]: Redis connected for rate limiting
+2025-10-09 11:55:54 [info]: ✅ Database connection established successfully
+2025-10-09 11:55:54 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:55:54 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:55:54 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:56:00 [info]: Google Gemini provider initialized
+2025-10-09 11:56:00 [info]: Hugging Face provider initialized
+2025-10-09 11:56:00 [info]: Rate limiting using Redis store
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:00 [info]: Redis connected for rate limiting
+2025-10-09 11:56:00 [info]: ✅ Database connection established successfully
+2025-10-09 11:56:00 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:56:00 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:56:01 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:56:13 [info]: Google Gemini provider initialized
+2025-10-09 11:56:13 [info]: Hugging Face provider initialized
+2025-10-09 11:56:13 [info]: Rate limiting using Redis store
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:14 [info]: Redis connected for rate limiting
+2025-10-09 11:56:14 [info]: ✅ Database connection established successfully
+2025-10-09 11:56:14 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:56:14 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:56:16 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:56:31 [info]: Google Gemini provider initialized
+2025-10-09 11:56:31 [info]: Hugging Face provider initialized
+2025-10-09 11:56:31 [info]: Rate limiting using Redis store
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:56:31 [info]: Redis connected for rate limiting
+2025-10-09 11:56:32 [info]: ✅ Database connection established successfully
+2025-10-09 11:56:32 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:56:32 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:56:32 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:57:00 [info]: Google Gemini provider initialized
+2025-10-09 11:57:00 [info]: Hugging Face provider initialized
+2025-10-09 11:57:00 [info]: Rate limiting using Redis store
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:00 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:01 [info]: Redis connected for rate limiting
+2025-10-09 11:57:01 [info]: ✅ Database connection established successfully
+2025-10-09 11:57:01 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:57:01 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:57:01 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:57:56 [info]: Google Gemini provider initialized
+2025-10-09 11:57:56 [info]: Hugging Face provider initialized
+2025-10-09 11:57:56 [info]: Rate limiting using Redis store
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:57:56 [info]: Redis connected for rate limiting
+2025-10-09 11:57:56 [info]: ✅ Database connection established successfully
+2025-10-09 11:57:56 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:57:56 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:57:58 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}
+2025-10-09 11:59:03 [info]: Google Gemini provider initialized
+2025-10-09 11:59:03 [info]: Hugging Face provider initialized
+2025-10-09 11:59:04 [info]: Rate limiting using Redis store
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [error]: Unhandled Rejection at: {
+  "0": "r",
+  "1": "e",
+  "2": "a",
+  "3": "s",
+  "4": "o",
+  "5": "n",
+  "6": ":"
+}
+2025-10-09 11:59:04 [info]: Redis connected for rate limiting
+2025-10-09 11:59:04 [info]: ✅ Database connection established successfully
+2025-10-09 11:59:04 [info]: 📦 Loaded models: User, Chat, Message, UserSummary
+2025-10-09 11:59:04 [info]: 🔄 Syncing database with alter...
+2025-10-09 11:59:06 [error]: Failed to start server: relation "Messages" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 106,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "433",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));"
+  },
+  "original": "[Circular Reference]",
+  "sql": "CREATE TABLE IF NOT EXISTS \"Message\" (\"id\"  SERIAL , \"chatId\" UUID NOT NULL REFERENCES \"Chat\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"userId\" INTEGER REFERENCES \"User\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"role\" \"public\".\"enum_Message_role\" NOT NULL, \"content\" TEXT NOT NULL, \"model\" VARCHAR(50), \"tokens\" INTEGER DEFAULT 0, \"isEdited\" BOOLEAN DEFAULT false, \"editedAt\" TIMESTAMP WITH TIME ZONE, \"parentMessageId\" INTEGER REFERENCES \"Messages\" (\"id\") ON DELETE SET NULL ON UPDATE CASCADE, \"feedback\" \"public\".\"enum_Message_feedback\", \"metadata\" JSON DEFAULT '{}', \"attachments\" JSON DEFAULT '[]', \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"deletedAt\" TIMESTAMP WITH TIME ZONE, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (/app/node_modules/sequelize/lib/dialects/postgres/query.js:50:25)\n    at /app/node_modules/sequelize/lib/sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)\n    at async Message.sync (/app/node_modules/sequelize/lib/model.js:942:7)\n    at async Sequelize.sync (/app/node_modules/sequelize/lib/sequelize.js:377:9)\n    at async startServer (/app/server.js:290:13)"
+}

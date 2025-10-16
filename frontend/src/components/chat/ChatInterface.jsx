@@ -315,7 +315,7 @@ const ChatInterface = () => {
             <motion.div
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 shadow-sm"
+                className="flex-shrink-0 flex items-center justify-center px-6 py-4"
             >
                 <div className="flex items-center gap-3">
                     {currentChatId && (
@@ -323,8 +323,7 @@ const ChatInterface = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 onClick={() => setMenuOpen(!menuOpen)}
-                                className={`flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${isRTL ? 'flex-row-reverse' : ''
-                                    }`}
+                                className={`flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}
                             >
                                 <h1 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                                     {currentChat?.title || t('chat.newConversation')}
@@ -346,16 +345,14 @@ const ChatInterface = () => {
                                                 setRenameModalOpen(true);
                                                 setMenuOpen(false);
                                             }}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors ${isRTL ? 'flex-row-reverse' : ''
-                                                }`}
+                                            className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}
                                         >
                                             <PencilIcon className="h-5 w-5 text-slate-500" />
                                             <span className="text-sm text-slate-700 dark:text-slate-300">{t('chat.renameConversation')}</span>
                                         </button>
                                         <button
                                             onClick={handleDeleteChat}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors border-t border-slate-200 dark:border-slate-700 ${isRTL ? 'flex-row-reverse' : ''
-                                                }`}
+                                            className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors border-t border-slate-200 dark:border-slate-700 ${isRTL ? 'flex-row-reverse' : ''}`}
                                         >
                                             <TrashIcon className="h-5 w-5 text-red-500" />
                                             <span className="text-sm text-red-600 dark:text-red-400">{t('common.delete')}</span>
@@ -372,25 +369,36 @@ const ChatInterface = () => {
                         </h1>
                     )}
                 </div>
-
-                <div className="flex items-center gap-3">
-                    <div className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
-                        <span className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            {selectedModel}
-                        </span>
-                    </div>
-                </div>
             </motion.div>
 
             {/* Messages Container */}
             <div
                 ref={messagesContainerRef}
                 onScroll={handleScroll}
-                className={`flex-1 overflow-y-auto px-6 ${localMessages.length === 0 ? 'py-0' : 'py-6'}`}
+                className={`flex-1 overflow-y-auto px-6 ${localMessages.length === 0 ? 'py-0 flex items-center justify-center' : 'py-6'}`}
             >
                 <AnimatePresence mode="wait">
                     {localMessages.length === 0 ? (
-                        <div className="h-full" />
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex flex-col items-center justify-center mb-8"
+                        >
+                            <div className="relative mb-8">
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
+                                <div className="relative h-24 w-24 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl">
+                                    <ChatBubbleLeftRightIcon className="h-12 w-12 text-white" />
+                                </div>
+                            </div>
+                            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">
+                                {t('chat.startConversation')} {user?.username}
+                            </h2>
+                            <p className="text-slate-600 dark:text-slate-400 text-center text-base">
+                                {t('chat.selectModelHint')}
+                            </p>
+                        </motion.div>
+
                     ) : (
                         <div className="max-w-4xl mx-auto">
                             <MessageList
@@ -442,31 +450,12 @@ const ChatInterface = () => {
             {/* Input Area - TOUJOURS EN BAS */}
             <div className="flex-shrink-0 px-6 py-5 bg-gradient-to-t from-white via-white to-transparent dark:from-slate-900 dark:via-slate-900 z-30">
                 {/* Empty State Content - Au-dessus de l'input */}
-                {localMessages.length === 0 && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex flex-col items-center justify-center mb-8"
-                    >
-                        <div className="relative mb-6">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
-                            <div className="relative h-20 w-20 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl">
-                                <ChatBubbleLeftRightIcon className="h-10 w-10 text-white" />
-                            </div>
-                        </div>
-                        <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                            {t('chat.startConversation')} {user?.username}
-                        </h2>
-                        <p className="text-slate-600 dark:text-slate-400 text-center text-sm">
-                            {t('chat.selectModelHint')}
-                        </p>
-                    </motion.div>
-                )}
+
 
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         layout
-                        className="relative bg-white dark:bg-slate-800 rounded-3xl shadow-2xl hover:shadow-3xl transition-all border border-slate-200 dark:border-slate-700"
+                        className="relative bg-white dark:bg-slate-800 rounded-3xl shadow-2xl hover:shadow-3xl transition-all"
                     >
                         <textarea
                             ref={inputRef}
@@ -475,8 +464,7 @@ const ChatInterface = () => {
                             onKeyPress={handleKeyPress}
                             placeholder={t('chat.placeholder')}
                             disabled={sendMessageMutation.isLoading}
-                            className={`w-full px-6 py-4 bg-transparent resize-none text-slate-900 dark:text-white focus:outline-none rounded-3xl ${isRTL ? 'text-right' : 'text-left'
-                                }`}
+                            className={`border-none outline-none focus:outline-none focus:ring-0 focus:border-none w-full px-6 py-4 bg-transparent resize-none text-slate-900 dark:text-white focus:outline-none rounded-3xl ${isRTL ? 'text-right' : 'text-left'}`}
                             rows={1}
                             style={{
                                 minHeight: '3.5rem',
@@ -485,18 +473,14 @@ const ChatInterface = () => {
                             }}
                         />
 
-                        <div className="flex justify-end p-3 border-t border-gray-100 dark:border-gray-700">
-                            <div
-                                className={`flex items-center gap-3 
-                                        }`}
-                            >
+                        <div className="flex justify-end p-3">
+                            <div className="flex items-center gap-3">
                                 {/* Sélecteur du modèle */}
                                 <div className="relative">
                                     <ModelSelector
                                         value={selectedModel}
                                         onChange={setSelectedModel}
                                         disabled={sendMessageMutation.isLoading}
-                                        // texte à droite en arabe, à gauche sinon
                                         className={`${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
                                     />
                                 </div>
@@ -513,13 +497,11 @@ const ChatInterface = () => {
                                         }`}
                                 >
                                     <PaperAirplaneIcon
-                                        className={`h-5 w-5 transition-transform duration-300 ${i18n.language === 'ar' ? 'rotate-180' : ''
-                                            }`}
+                                        className={`h-5 w-5 transition-transform duration-300 ${i18n.language === 'ar' ? 'rotate-180' : ''}`}
                                     />
                                 </motion.button>
                             </div>
                         </div>
-
                     </motion.div>
 
                     {localMessages.length > 0 && (
@@ -567,8 +549,7 @@ const ChatInterface = () => {
                                         handleRenameChat();
                                     }
                                 }}
-                                className={`w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white mb-4 ${isRTL ? 'text-right' : 'text-left'
-                                    }`}
+                                className={`w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white mb-4 ${isRTL ? 'text-right' : 'text-left'}`}
                                 placeholder={t('chat.newTitle')}
                                 autoFocus
                             />

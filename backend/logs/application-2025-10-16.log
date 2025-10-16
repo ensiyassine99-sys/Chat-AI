@@ -1,0 +1,20 @@
+2025-10-16 11:57:41 [info]: ✅ apiLimiter created with dynamic store
+2025-10-16 11:57:41 [info]: ✅ authLimiter created with dynamic store
+2025-10-16 11:57:41 [info]: ✅ chatLimiter created with dynamic store
+2025-10-16 11:57:41 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-16 11:57:41 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-16 11:57:41 [info]: ✅ strictLimiter created with dynamic store
+2025-10-16 11:57:41 [info]: Google Gemini provider initialized
+2025-10-16 11:57:41 [info]: Hugging Face provider initialized
+2025-10-16 11:57:41 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-16 11:57:41 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-16 11:57:41 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-16 11:57:41 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-16 11:57:41 [info]: ✅ Database connection established successfully
+2025-10-16 11:57:41 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-16 11:57:41 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-16 12:04:08 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-16 12:04:08 [info]: ✅ HTTP server closed
+2025-10-16 12:04:08 [info]: ℹ️  Redis was not connected
+2025-10-16 12:04:08 [info]: ✅ Socket.io connections closed
+2025-10-16 12:04:08 [info]: ✅ Database connection closed

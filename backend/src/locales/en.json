@@ -26,6 +26,23 @@
         "resetLinkUsed": "This reset link has already been used",
         "passwordResetSuccess": "Password reset successfully",
         "currentPasswordIncorrect": "Current password is incorrect",
-        "passwordChangedSuccess": "Password changed successfully"
+        "passwordChangedSuccess": "Password changed successfully",
+        "languageInvalid": "Language must be either en or ar",
+        "themeInvalid": "Theme must be light, dark, or auto",
+        "notificationsBoolean": "Notifications must be a boolean",
+        "emailNotificationsBoolean": "Email notifications must be a boolean",
+        "soundEnabledBoolean": "Sound enabled must be a boolean",
+        "autoSaveBoolean": "Auto save must be a boolean",
+        "invalidFileType": "Invalid file type. Only JPEG, PNG and GIF are allowed.",
+        "usernameLength": "Username must be between 3 and 50 characters",
+        "validEmail": "Please provide a valid email",
+        "validationError": "Validation error",
+        "serverError": "Server error",
+        "fieldExists": "{{field}} already exists",
+        "invalidId": "Invalid ID format",
+        "invalidToken": "Invalid token",
+        "tokenExpired": "Token expired",
+    
+        "useGoogleLogin": "This account uses Google login. Please sign in with Google."
     }
 }

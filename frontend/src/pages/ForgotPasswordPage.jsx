@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-hot-toast';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
     EnvelopeIcon,
     ArrowLeftIcon,

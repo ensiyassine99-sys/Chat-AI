@@ -1,3 +1,4 @@
+# Stage 1: Build
 FROM node:18-alpine AS builder
 
 WORKDIR /app
@@ -8,10 +9,16 @@ ARG VITE_WS_URL
 ARG VITE_APP_NAME="AI Chatbot"
 ARG VITE_DEFAULT_LANGUAGE="en"
 
+# Variables d'environnement pour le build
+ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_WS_URL=$VITE_WS_URL
+ENV VITE_APP_NAME=$VITE_APP_NAME
+ENV VITE_DEFAULT_LANGUAGE=$VITE_DEFAULT_LANGUAGE
+
 # Copier les fichiers de dépendances
 COPY frontend/package*.json ./
 
-# Installer les dépendances
+# ✅ CORRECTION : Installer TOUTES les dépendances (y compris dev) pour le build
 RUN npm ci
 
 # Copier le code source
@@ -20,21 +27,27 @@ COPY frontend/ ./
 # Build de production
 RUN npm run build
 
-# Stage de production avec Nginx
+# Stage 2: Production avec Nginx
 FROM nginx:alpine
 
-# Copier la configuration Nginx
+# Installer wget pour le healthcheck
+RUN apk add --no-cache wget
+
+# Copier la configuration Nginx du frontend
 COPY docker/nginx-frontend.conf /etc/nginx/conf.d/default.conf
 
-# Copier les fichiers buildés
+# Copier les fichiers buildés depuis le stage builder
 COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Vérifier que les fichiers sont bien copiés
+RUN ls -la /usr/share/nginx/html/
 
 # Exposer le port 80
 EXPOSE 80
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:80 || exit 1
+# Health check avec wget au lieu de curl
+HEALTHCHECK --interval=15s --timeout=3s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:80/ || exit 1
 
 # Démarrer Nginx
 CMD ["nginx", "-g", "daemon off;"]

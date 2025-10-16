@@ -26,6 +26,26 @@
         "resetLinkUsed": "تم استخدام رابط إعادة التعيين هذا من قبل",
         "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور بنجاح",
         "currentPasswordIncorrect": "كلمة المرور الحالية غير صحيحة",
-    "passwordChangedSuccess": "تم تغيير كلمة المرور بنجاح"
+        "passwordChangedSuccess": "تم تغيير كلمة المرور بنجاح",
+        "themeInvalid": "يجب أن يكون النمط فاتحًا أو داكنًا أو تلقائيًا",
+        "notificationsBoolean": "يجب أن تكون الإشعارات قيمة منطقية (صواب أو خطأ)",
+        "emailNotificationsBoolean": "يجب أن تكون إشعارات البريد الإلكتروني قيمة منطقية",
+        "soundEnabledBoolean": "يجب أن يكون تفعيل الصوت قيمة منطقية",
+        "autoSaveBoolean": "يجب أن يكون الحفظ التلقائي قيمة منطقية",
+        "invalidFileType": "نوع الملف غير صالح. يُسمح فقط بصور JPEG وPNG وGIF.",
+        "usernameLength": "يجب أن يكون اسم المستخدم بين 3 و50 حرفًا",
+        "validEmail": "يرجى إدخال بريد إلكتروني صالح",
+        "usernameAlphanumeric": "يجب أن يحتوي اسم المستخدم فقط على أحرف وأرقام",
+        "passwordMin": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+        "passwordPattern": "يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير ورقم واحد على الأقل",
+        "passwordRequired": "كلمة المرور مطلوبة",
+        "currentPasswordRequired": "كلمة المرور الحالية مطلوبة",
+        "validationError": "خطأ في التحقق من البيانات",
+        "serverError": "خطأ في الخادم",
+        "fieldExists": "{{field}} مستخدم بالفعل",
+        "invalidId": "معرّف غير صالح",
+        "invalidToken": "رمز الدخول غير صالح",
+        "tokenExpired": "انتهت صلاحية الرمز",
+        "useGoogleLogin": "يستخدم هذا الحساب تسجيل الدخول عبر Google. يرجى تسجيل الدخول باستخدام Google."
     }
 }

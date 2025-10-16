@@ -17,14 +17,14 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('accessToken');
-    
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    
+
     // Ajouter la langue actuelle
     config.headers['Accept-Language'] = i18n.language;
-    
+
     return config;
   },
   (error) => {
@@ -44,7 +44,7 @@ const processQueue = (error, token = null) => {
       prom.resolve(token);
     }
   });
-  
+
   failedQueue = [];
 };
 
@@ -54,15 +54,15 @@ api.interceptors.response.use(
   },
   async (error) => {
     const originalRequest = error.config;
-    
+
     // Gestion du refresh token
-    if (error.response?.status === 401 && !originalRequest._retry && !originalRequest.url.includes('/auth/login') && !originalRequest.url.includes('/auth/signup') ) {
+    if (error.response?.status === 401 && !originalRequest._retry && !originalRequest.url.includes('/auth/login') && !originalRequest.url.includes('/auth/signup')) {
       if (originalRequest.url.includes('/auth/refresh-token')) {
         store.dispatch(logout());
         window.location.href = '/login';
         return Promise.reject(error);
       }
-      
+
       if (isRefreshing) {
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
@@ -73,27 +73,27 @@ api.interceptors.response.use(
           return Promise.reject(err);
         });
       }
-      
+
       originalRequest._retry = true;
       isRefreshing = true;
-      
+
       const refreshToken = localStorage.getItem('refreshToken');
-      
+
       if (!refreshToken) {
         store.dispatch(logout());
         window.location.href = '/login';
         return Promise.reject(error);
       }
-      
+
       try {
         const response = await api.post('/auth/refresh-token', { refreshToken });
         const { accessToken } = response;
-        
+
         localStorage.setItem('accessToken', accessToken);
         api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-        
+
         processQueue(null, accessToken);
-        
+
         return api(originalRequest);
       } catch (refreshError) {
         processQueue(refreshError, null);
@@ -104,16 +104,23 @@ api.interceptors.response.use(
         isRefreshing = false;
       }
     }
-    
+
     // Gestion des autres erreurs
     if (error.response) {
       const { status, data } = error.response;
-      
-      
+
+
       switch (status) {
         case 400:
-          toast.error(data.message || i18n.t('errors.validation'));
-          break;
+
+          console.error(data);
+          if (data && data.errors && Array.isArray(data.errors)) {
+            data.errors.forEach(err => {
+              toast.error(err.msg || err.message || i18n.t('errors.validation'));
+            });
+          } else {
+            // toast.error(i18n.t('errors.validation'));
+          } break;
         case 403:
           toast.error(data.message || i18n.t('errors.unauthorized'));
           break;
@@ -127,14 +134,14 @@ api.interceptors.response.use(
           toast.error(data.message || i18n.t('errors.server'));
           break;
         default:
-          // toast.error(data.message || i18n.t('errors.network'));
+        // toast.error(data.message || i18n.t('errors.network'));
       }
     } else if (error.request) {
       toast.error(i18n.t('errors.network'));
     } else {
       toast.error(error.message || i18n.t('errors.unknown'));
     }
-    
+
     return Promise.reject(error);
   }
 );

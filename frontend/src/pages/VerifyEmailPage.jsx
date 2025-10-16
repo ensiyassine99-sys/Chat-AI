@@ -19,7 +19,7 @@ const VerifyEmailPage = () => {
     const { token } = useParams();
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
-    const { isAuthenticated, error, clearError, verifyEmail } = useAuth();
+    const { isAuthenticated, error, clearError, verifyEmail, clearUser } = useAuth();
 
     const [status, setStatus] = useState('verifying');
     const [errorType, setErrorType] = useState('');
@@ -53,6 +53,7 @@ const VerifyEmailPage = () => {
     }, [error, clearError]);
 
     useEffect(() => {
+        clearUser()
         if (!token) {
             setStatus('error');
             setErrorType('invalid');
@@ -316,8 +317,8 @@ const VerifyEmailPage = () => {
                 >
                     <p className="text-xs text-slate-500 dark:text-slate-400">
                         {t('auth.needHelp')}{' '}
-                        
-                         <a   href="mailto:support@example.com"
+
+                        <a href="mailto:support@example.com"
                             className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
                         >
                             {t('auth.contactSupport')}

@@ -22,15 +22,17 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 const VerifyEmailPage = React.lazy(() => import('./pages/VerifyEmailPage'));
 const ForgotPasswordPage = React.lazy(() => import('./pages/ForgotPasswordPage'));
 const ResetPasswordPage = React.lazy(() => import('./pages/ResetPasswordPage'));
-import Footer from './components/common/Footer';
 
+import Footer from './components/common/Footer';
 
 // Components
 import Sidebar from './components/common/Sidebar';
 import Header from './components/common/Header';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import PublicRoute from './components/auth/PublicRoute';
 import ErrorBoundary from './components/common/ErrorBoundary';
+import AuthCallback from './pages/AuthCallback';
 
 // Configuration Query Client
 const queryClient = new QueryClient({
@@ -69,7 +71,7 @@ const Layout = ({ children }) => {
   const isHomePage = location.pathname === '/';
 
   // Routes publiques qui affichent le header séparé
-  const publicRoutesWithHeader = ['/login', '/signup', '/forgot-password', '/reset-password', '/verify-email'];
+  const publicRoutesWithHeader = ['/login', '/signup', '/forgot-password'];
   const showHeader = publicRoutesWithHeader.some(route =>
     location.pathname === route || location.pathname.startsWith(route)
   );
@@ -96,23 +98,17 @@ const Layout = ({ children }) => {
         <ErrorBoundary>
           <AnimatePresence mode="wait">
             {children}
-
           </AnimatePresence>
-
-
-        </ErrorBoundary >
+        </ErrorBoundary>
       ) : (
         // Autres pages publiques : avec container et padding
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-          <main className="pt-20 pb-8">
-
+        <div className="min-h-screen">
+          <main>
             <ErrorBoundary>
               <AnimatePresence mode="wait">
                 {children}
               </AnimatePresence>
             </ErrorBoundary>
-
-
           </main>
         </div>
       )}
@@ -162,13 +158,23 @@ function App() {
               <LayoutWrapper>
                 <Suspense fallback={<PageLoader />}>
                   <Routes>
-                    {/* Routes publiques */}
-                    <Route path="/" element={<HomePage />} />
+                    {/* Route publique avec redirection si authentifié */}
+                    <Route
+                      path="/"
+                      element={
+                        <PublicRoute>
+                          <HomePage />
+                        </PublicRoute>
+                      }
+                    />
+
+                    {/* Autres routes publiques */}
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<SignupPage />} />
                     <Route path="/verify-email/:token" element={<VerifyEmailPage />} />
                     <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                     <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+                    <Route path="/auth/callback" element={<AuthCallback />} />
 
                     {/* Routes protégées */}
                     <Route element={<ProtectedRoute />}>

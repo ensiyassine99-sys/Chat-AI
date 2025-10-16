@@ -9,7 +9,9 @@ import {
   clearError,
   verifyEmail,
   verifyResetToken,
-  resetPassword
+  resetPassword,
+  clearUser,
+  handleOAuthCallback, // ✅ Nouveau import
 } from '../store/authSlice';
 
 export const useAuth = () => {
@@ -60,7 +62,6 @@ export const useAuth = () => {
     navigate('/login');
   };
 
-  // ← AJOUTER cette fonction
   const handleVerifyEmail = async (token) => {
     const result = await dispatch(verifyEmail(token));
     if (verifyEmail.fulfilled.match(result)) {
@@ -69,9 +70,6 @@ export const useAuth = () => {
     return { success: false, error: result.payload };
   };
 
-  const clearAuthError = () => {
-    dispatch(clearError());
-  };
   const handleVerifyResetToken = async (token) => {
     const result = await dispatch(verifyResetToken(token));
     if (verifyResetToken.fulfilled.match(result)) {
@@ -88,6 +86,24 @@ export const useAuth = () => {
     return { success: false, error: result.payload };
   };
 
+  // ✅ NOUVEAU : Gérer le callback OAuth
+  const handleOAuthLogin = async (token, refreshToken) => {
+    const result = await dispatch(handleOAuthCallback({ token, refreshToken }));
+    if (handleOAuthCallback.fulfilled.match(result)) {
+      navigate('/chat', { replace: true });
+      return { success: true, data: result.payload };
+    }
+    return { success: false, error: result.payload };
+  };
+
+  const clearAuthError = () => {
+    dispatch(clearError());
+  };
+
+  const handleClearUser = () => {
+    dispatch(clearUser());
+  };
+
   return {
     user,
     isAuthenticated,
@@ -98,8 +114,10 @@ export const useAuth = () => {
     signup: handleSignup,
     logout: handleLogout,
     verifyEmail: handleVerifyEmail,
-    verifyResetToken: handleVerifyResetToken,  // ← Ajouter
-    resetPassword: handleResetPassword,        // ← Ajouter
+    verifyResetToken: handleVerifyResetToken,
+    resetPassword: handleResetPassword,
+    oauthLogin: handleOAuthLogin, // ✅ Nouveau
     clearError: clearAuthError,
+    clearUser: handleClearUser
   };
 };

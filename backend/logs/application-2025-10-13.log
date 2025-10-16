@@ -1,0 +1,803 @@
+2025-10-13 05:52:50 [info]: ::1 - - [13/Oct/2025:05:52:50 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:53:20 [info]: ::1 - - [13/Oct/2025:05:53:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:53:50 [info]: ::1 - - [13/Oct/2025:05:53:50 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 05:54:20 [info]: ::1 - - [13/Oct/2025:05:54:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:54:50 [info]: ::1 - - [13/Oct/2025:05:54:50 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:55:20 [info]: ::1 - - [13/Oct/2025:05:55:20 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 05:55:50 [info]: ::1 - - [13/Oct/2025:05:55:50 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:56:20 [info]: ::1 - - [13/Oct/2025:05:56:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:56:50 [info]: ::1 - - [13/Oct/2025:05:56:50 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:57:20 [info]: ::1 - - [13/Oct/2025:05:57:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:57:50 [info]: ::1 - - [13/Oct/2025:05:57:50 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 05:58:20 [info]: ::1 - - [13/Oct/2025:05:58:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:58:50 [info]: ::1 - - [13/Oct/2025:05:58:50 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:59:20 [info]: ::1 - - [13/Oct/2025:05:59:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 05:59:50 [info]: ::1 - - [13/Oct/2025:05:59:50 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 06:00:20 [info]: ::1 - - [13/Oct/2025:06:00:20 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:00:51 [info]: ::1 - - [13/Oct/2025:06:00:51 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 06:01:21 [info]: ::1 - - [13/Oct/2025:06:01:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:01:51 [info]: ::1 - - [13/Oct/2025:06:01:51 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:02:21 [info]: ::1 - - [13/Oct/2025:06:02:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:02:51 [info]: ::1 - - [13/Oct/2025:06:02:51 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:03:21 [info]: ::1 - - [13/Oct/2025:06:03:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:03:51 [info]: ::1 - - [13/Oct/2025:06:03:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:04:21 [info]: ::1 - - [13/Oct/2025:06:04:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:04:51 [info]: ::1 - - [13/Oct/2025:06:04:51 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:05:21 [info]: ::1 - - [13/Oct/2025:06:05:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:05:51 [info]: ::1 - - [13/Oct/2025:06:05:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:06:21 [info]: ::1 - - [13/Oct/2025:06:06:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:06:51 [info]: ::1 - - [13/Oct/2025:06:06:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:07:21 [info]: ::1 - - [13/Oct/2025:06:07:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:07:51 [info]: ::1 - - [13/Oct/2025:06:07:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:08:21 [info]: ::1 - - [13/Oct/2025:06:08:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:08:51 [info]: ::1 - - [13/Oct/2025:06:08:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:09:21 [info]: ::1 - - [13/Oct/2025:06:09:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:09:51 [info]: ::1 - - [13/Oct/2025:06:09:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:10:21 [info]: ::1 - - [13/Oct/2025:06:10:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:10:51 [info]: ::1 - - [13/Oct/2025:06:10:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:11:21 [info]: ::1 - - [13/Oct/2025:06:11:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:11:51 [info]: ::1 - - [13/Oct/2025:06:11:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:12:21 [info]: ::1 - - [13/Oct/2025:06:12:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 06:12:51 [info]: ::1 - - [13/Oct/2025:06:12:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:13:21 [info]: ::1 - - [13/Oct/2025:06:13:21 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:13:51 [info]: ::1 - - [13/Oct/2025:06:13:51 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 06:14:01 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 06:14:01 [info]: ✅ HTTP server closed
+2025-10-13 06:14:01 [info]: ℹ️  Redis was not connected
+2025-10-13 06:14:01 [info]: ✅ Socket.io connections closed
+2025-10-13 10:12:32 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 10:12:32 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 10:12:32 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 10:12:32 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 10:12:32 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 10:12:32 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 10:12:34 [info]: Google Gemini provider initialized
+2025-10-13 10:12:34 [info]: Hugging Face provider initialized
+2025-10-13 10:12:35 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 10:12:35 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 10:12:35 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 10:12:35 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 10:12:35 [info]: ✅ Database connection established successfully
+2025-10-13 10:12:35 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 10:12:35 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 10:12:35 [info]: ::1 - - [13/Oct/2025:10:12:35 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:13:05 [info]: ::1 - - [13/Oct/2025:10:13:05 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 10:13:34 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 10:13:34 [info]: ✅ HTTP server closed
+2025-10-13 10:13:34 [info]: ℹ️  Redis was not connected
+2025-10-13 10:13:34 [info]: ✅ Socket.io connections closed
+2025-10-13 10:18:19 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 10:18:19 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 10:18:19 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 10:18:19 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 10:18:19 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 10:18:19 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 10:18:19 [info]: Google Gemini provider initialized
+2025-10-13 10:18:19 [info]: Hugging Face provider initialized
+2025-10-13 10:18:19 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 10:18:19 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 10:18:19 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 10:18:19 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 10:18:19 [info]: ✅ Database connection established successfully
+2025-10-13 10:18:19 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 10:18:19 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 10:18:23 [info]: ::1 - - [13/Oct/2025:10:18:23 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 10:18:43 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 10:18:43 [info]: ✅ HTTP server closed
+2025-10-13 10:18:43 [info]: ℹ️  Redis was not connected
+2025-10-13 10:18:43 [info]: ✅ Socket.io connections closed
+2025-10-13 10:19:59 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 10:19:59 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 10:19:59 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 10:19:59 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 10:19:59 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 10:19:59 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 10:19:59 [info]: Google Gemini provider initialized
+2025-10-13 10:19:59 [info]: Hugging Face provider initialized
+2025-10-13 10:20:00 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 10:20:00 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 10:20:00 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 10:20:00 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 10:20:00 [info]: ✅ Database connection established successfully
+2025-10-13 10:20:00 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 10:20:00 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 10:20:04 [info]: ::1 - - [13/Oct/2025:10:20:04 +0000] "GET /health HTTP/1.1" 200 107 "-" "Wget"
+2025-10-13 10:20:34 [info]: ::1 - - [13/Oct/2025:10:20:34 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:21:04 [info]: ::1 - - [13/Oct/2025:10:21:04 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:21:34 [info]: ::1 - - [13/Oct/2025:10:21:34 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:22:04 [info]: ::1 - - [13/Oct/2025:10:22:04 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:22:34 [info]: ::1 - - [13/Oct/2025:10:22:34 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:23:04 [info]: ::1 - - [13/Oct/2025:10:23:04 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:23:34 [info]: ::1 - - [13/Oct/2025:10:23:34 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:24:04 [info]: ::1 - - [13/Oct/2025:10:24:04 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:24:34 [info]: ::1 - - [13/Oct/2025:10:24:34 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:25:04 [info]: ::1 - - [13/Oct/2025:10:25:04 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:25:34 [info]: ::1 - - [13/Oct/2025:10:25:34 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:26:04 [info]: ::1 - - [13/Oct/2025:10:26:04 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:26:34 [info]: ::1 - - [13/Oct/2025:10:26:34 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:27:04 [info]: ::1 - - [13/Oct/2025:10:27:04 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:27:31 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 10:27:31 [info]: ✅ HTTP server closed
+2025-10-13 10:27:31 [info]: ℹ️  Redis was not connected
+2025-10-13 10:27:31 [info]: ✅ Socket.io connections closed
+2025-10-13 10:28:08 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 10:28:08 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 10:28:08 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 10:28:08 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 10:28:08 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 10:28:08 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 10:28:08 [info]: Google Gemini provider initialized
+2025-10-13 10:28:08 [info]: Hugging Face provider initialized
+2025-10-13 10:28:08 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 10:28:08 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 10:28:08 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 10:28:08 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 10:28:08 [info]: ✅ Database connection established successfully
+2025-10-13 10:28:08 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 10:28:08 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 10:28:13 [info]: ::1 - - [13/Oct/2025:10:28:13 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 10:28:43 [info]: ::1 - - [13/Oct/2025:10:28:43 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:29:13 [info]: ::1 - - [13/Oct/2025:10:29:13 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:29:43 [info]: ::1 - - [13/Oct/2025:10:29:43 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:30:13 [info]: ::1 - - [13/Oct/2025:10:30:13 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:30:43 [info]: ::1 - - [13/Oct/2025:10:30:43 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:31:13 [info]: ::1 - - [13/Oct/2025:10:31:13 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 10:31:42 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 10:31:42 [info]: ✅ HTTP server closed
+2025-10-13 10:31:42 [info]: ℹ️  Redis was not connected
+2025-10-13 10:31:42 [info]: ✅ Socket.io connections closed
+2025-10-13 10:31:42 [info]: ✅ Database connection closed
+2025-10-13 10:32:57 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 10:32:57 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 10:32:57 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 10:32:57 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 10:32:57 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 10:32:57 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 10:32:58 [info]: Google Gemini provider initialized
+2025-10-13 10:32:58 [info]: Hugging Face provider initialized
+2025-10-13 10:32:58 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 10:32:58 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 10:32:58 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 10:32:58 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 10:32:58 [info]: ✅ Database connection established successfully
+2025-10-13 10:32:58 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 10:32:58 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 10:33:02 [info]: ::1 - - [13/Oct/2025:10:33:02 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 10:33:32 [info]: ::1 - - [13/Oct/2025:10:33:32 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:34:02 [info]: ::1 - - [13/Oct/2025:10:34:02 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:34:32 [info]: ::1 - - [13/Oct/2025:10:34:32 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:34:32 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 10:34:32 [info]: ✅ HTTP server closed
+2025-10-13 10:34:32 [info]: ℹ️  Redis was not connected
+2025-10-13 10:34:32 [info]: ✅ Socket.io connections closed
+2025-10-13 10:35:09 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 10:35:09 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 10:35:09 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 10:35:09 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 10:35:09 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 10:35:09 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 10:35:09 [info]: Google Gemini provider initialized
+2025-10-13 10:35:09 [info]: Hugging Face provider initialized
+2025-10-13 10:35:09 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 10:35:09 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 10:35:09 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 10:35:09 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 10:35:09 [info]: ✅ Database connection established successfully
+2025-10-13 10:35:09 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 10:35:09 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 10:35:14 [info]: ::1 - - [13/Oct/2025:10:35:14 +0000] "GET /health HTTP/1.1" 200 106 "-" "Wget"
+2025-10-13 10:35:44 [info]: ::1 - - [13/Oct/2025:10:35:44 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 10:36:14 [info]: ::1 - - [13/Oct/2025:10:36:14 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 10:36:44 [info]: ::1 - - [13/Oct/2025:10:36:44 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 11:54:47 [info]: ::1 - - [13/Oct/2025:11:54:47 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:55:17 [info]: ::1 - - [13/Oct/2025:11:55:17 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:55:47 [info]: ::1 - - [13/Oct/2025:11:55:47 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:56:17 [info]: ::1 - - [13/Oct/2025:11:56:17 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 11:56:47 [info]: ::1 - - [13/Oct/2025:11:56:47 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:57:17 [info]: ::1 - - [13/Oct/2025:11:57:17 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:57:47 [info]: ::1 - - [13/Oct/2025:11:57:47 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:58:17 [info]: ::1 - - [13/Oct/2025:11:58:17 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 11:58:48 [info]: ::1 - - [13/Oct/2025:11:58:48 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:05:21 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:05:21 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:05:21 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:05:21 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:05:21 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:05:21 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:05:21 [info]: Google Gemini provider initialized
+2025-10-13 15:05:21 [info]: Hugging Face provider initialized
+2025-10-13 15:05:21 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:05:21 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:05:21 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:05:21 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:05:21 [info]: ✅ Database connection established successfully
+2025-10-13 15:05:21 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:05:21 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:05:24 [info]: ::1 - - [13/Oct/2025:15:05:24 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:05:54 [info]: ::1 - - [13/Oct/2025:15:05:54 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:06:24 [info]: ::1 - - [13/Oct/2025:15:06:24 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:06:54 [info]: ::1 - - [13/Oct/2025:15:06:54 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:07:24 [info]: ::1 - - [13/Oct/2025:15:07:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:07:54 [info]: ::1 - - [13/Oct/2025:15:07:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:08:24 [info]: ::1 - - [13/Oct/2025:15:08:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:08:54 [info]: ::1 - - [13/Oct/2025:15:08:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:09:24 [info]: ::1 - - [13/Oct/2025:15:09:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:09:54 [info]: ::1 - - [13/Oct/2025:15:09:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:10:24 [info]: ::1 - - [13/Oct/2025:15:10:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:10:54 [info]: ::1 - - [13/Oct/2025:15:10:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:11:24 [info]: ::1 - - [13/Oct/2025:15:11:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:11:54 [info]: ::1 - - [13/Oct/2025:15:11:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:12:24 [info]: ::1 - - [13/Oct/2025:15:12:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:12:54 [info]: ::1 - - [13/Oct/2025:15:12:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:13:24 [info]: ::1 - - [13/Oct/2025:15:13:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:13:54 [info]: ::1 - - [13/Oct/2025:15:13:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:14:24 [info]: ::1 - - [13/Oct/2025:15:14:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:14:54 [info]: ::1 - - [13/Oct/2025:15:14:54 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:15:24 [info]: ::1 - - [13/Oct/2025:15:15:24 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:15:54 [info]: ::1 - - [13/Oct/2025:15:15:54 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:16:25 [info]: ::1 - - [13/Oct/2025:15:16:25 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:16:55 [info]: ::1 - - [13/Oct/2025:15:16:55 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:17:25 [info]: ::1 - - [13/Oct/2025:15:17:25 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:17:55 [info]: ::1 - - [13/Oct/2025:15:17:55 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:18:25 [info]: ::1 - - [13/Oct/2025:15:18:25 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:18:55 [info]: ::1 - - [13/Oct/2025:15:18:55 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:19:25 [info]: ::1 - - [13/Oct/2025:15:19:25 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:19:51 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:19:51 [info]: ✅ HTTP server closed
+2025-10-13 15:19:51 [info]: ℹ️  Redis was not connected
+2025-10-13 15:19:51 [info]: ✅ Socket.io connections closed
+2025-10-13 15:19:51 [info]: ✅ Database connection closed
+2025-10-13 15:19:54 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:19:54 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:19:54 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:19:54 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:19:54 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:19:54 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:19:54 [info]: Google Gemini provider initialized
+2025-10-13 15:19:54 [info]: Hugging Face provider initialized
+2025-10-13 15:19:54 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:19:54 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:19:54 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:19:54 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:19:54 [info]: ✅ Database connection established successfully
+2025-10-13 15:19:54 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:19:54 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:19:58 [info]: ::1 - - [13/Oct/2025:15:19:58 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:20:28 [info]: ::1 - - [13/Oct/2025:15:20:28 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:20:58 [info]: ::1 - - [13/Oct/2025:15:20:58 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:21:28 [info]: ::1 - - [13/Oct/2025:15:21:28 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:21:42 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:21:42 [info]: ✅ HTTP server closed
+2025-10-13 15:21:42 [info]: ℹ️  Redis was not connected
+2025-10-13 15:21:42 [info]: ✅ Socket.io connections closed
+2025-10-13 15:22:21 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:22:21 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:22:21 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:22:21 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:22:21 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:22:21 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:22:21 [info]: Google Gemini provider initialized
+2025-10-13 15:22:21 [info]: Hugging Face provider initialized
+2025-10-13 15:22:21 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:22:21 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:22:21 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:22:21 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:22:21 [info]: ✅ Database connection established successfully
+2025-10-13 15:22:21 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:22:21 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:22:25 [info]: ::1 - - [13/Oct/2025:15:22:25 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:22:55 [info]: ::1 - - [13/Oct/2025:15:22:55 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:23:26 [info]: ::1 - - [13/Oct/2025:15:23:26 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:23:46 [warn]: [object Object]
+2025-10-13 15:23:46 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:15:23:46 +0000] "POST /api/v1/auth/login HTTP/1.1" 401 160 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 15:23:46 [info]: [object Object]
+2025-10-13 15:23:56 [info]: ::1 - - [13/Oct/2025:15:23:56 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:24:26 [info]: ::1 - - [13/Oct/2025:15:24:26 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:24:56 [info]: ::1 - - [13/Oct/2025:15:24:56 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:25:26 [info]: ::1 - - [13/Oct/2025:15:25:26 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:25:56 [info]: ::1 - - [13/Oct/2025:15:25:56 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:26:26 [info]: ::1 - - [13/Oct/2025:15:26:26 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:26:56 [info]: ::1 - - [13/Oct/2025:15:26:56 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:27:26 [info]: ::1 - - [13/Oct/2025:15:27:26 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:27:56 [info]: ::1 - - [13/Oct/2025:15:27:56 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:28:26 [info]: ::1 - - [13/Oct/2025:15:28:26 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:28:34 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:28:34 [info]: ✅ HTTP server closed
+2025-10-13 15:28:34 [info]: ℹ️  Redis was not connected
+2025-10-13 15:28:34 [info]: ✅ Socket.io connections closed
+2025-10-13 15:29:16 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:29:16 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:29:16 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:29:16 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:29:16 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:29:16 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:29:16 [info]: Google Gemini provider initialized
+2025-10-13 15:29:16 [info]: Hugging Face provider initialized
+2025-10-13 15:29:16 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:29:16 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:29:16 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:29:16 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:29:16 [info]: ✅ Database connection established successfully
+2025-10-13 15:29:16 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:29:16 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:29:21 [info]: ::1 - - [13/Oct/2025:15:29:21 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:29:51 [info]: ::1 - - [13/Oct/2025:15:29:51 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:30:21 [info]: ::1 - - [13/Oct/2025:15:30:21 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:30:51 [info]: ::1 - - [13/Oct/2025:15:30:51 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:31:21 [info]: ::1 - - [13/Oct/2025:15:31:21 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:31:24 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:31:24 [info]: ✅ HTTP server closed
+2025-10-13 15:31:24 [info]: ℹ️  Redis was not connected
+2025-10-13 15:31:24 [info]: ✅ Socket.io connections closed
+2025-10-13 15:32:05 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:32:05 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:32:05 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:32:05 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:32:05 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:32:05 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:32:05 [info]: Google Gemini provider initialized
+2025-10-13 15:32:05 [info]: Hugging Face provider initialized
+2025-10-13 15:32:05 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:32:05 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:32:05 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:32:05 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:32:05 [info]: ✅ Database connection established successfully
+2025-10-13 15:32:05 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:32:05 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:32:09 [info]: ::1 - - [13/Oct/2025:15:32:09 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:32:39 [info]: ::1 - - [13/Oct/2025:15:32:39 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:33:09 [info]: ::1 - - [13/Oct/2025:15:33:09 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:33:39 [info]: ::1 - - [13/Oct/2025:15:33:39 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:34:09 [info]: ::1 - - [13/Oct/2025:15:34:09 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:34:39 [info]: ::1 - - [13/Oct/2025:15:34:39 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:35:09 [info]: ::1 - - [13/Oct/2025:15:35:09 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:35:37 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:35:37 [info]: ✅ HTTP server closed
+2025-10-13 15:35:37 [info]: ℹ️  Redis was not connected
+2025-10-13 15:35:37 [info]: ✅ Socket.io connections closed
+2025-10-13 15:36:28 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:36:28 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:36:28 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:36:28 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:36:28 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:36:28 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:36:28 [info]: Google Gemini provider initialized
+2025-10-13 15:36:28 [info]: Hugging Face provider initialized
+2025-10-13 15:36:29 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:36:29 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:36:29 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:36:29 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:36:29 [info]: ✅ Database connection established successfully
+2025-10-13 15:36:29 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:36:29 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:36:33 [info]: ::1 - - [13/Oct/2025:15:36:33 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:37:03 [info]: ::1 - - [13/Oct/2025:15:37:03 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:37:33 [info]: ::1 - - [13/Oct/2025:15:37:33 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:38:03 [info]: ::1 - - [13/Oct/2025:15:38:03 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:38:33 [info]: ::1 - - [13/Oct/2025:15:38:33 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:39:03 [info]: ::1 - - [13/Oct/2025:15:39:03 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:39:33 [info]: ::1 - - [13/Oct/2025:15:39:33 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:40:03 [info]: ::1 - - [13/Oct/2025:15:40:03 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:40:33 [info]: ::1 - - [13/Oct/2025:15:40:33 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:41:03 [info]: ::1 - - [13/Oct/2025:15:41:03 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:41:33 [info]: ::1 - - [13/Oct/2025:15:41:33 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:42:03 [info]: ::1 - - [13/Oct/2025:15:42:03 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:42:33 [info]: ::1 - - [13/Oct/2025:15:42:33 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:43:03 [info]: ::1 - - [13/Oct/2025:15:43:03 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:43:33 [info]: ::1 - - [13/Oct/2025:15:43:33 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:44:03 [info]: ::1 - - [13/Oct/2025:15:44:03 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:44:33 [info]: ::1 - - [13/Oct/2025:15:44:33 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:45:03 [info]: ::1 - - [13/Oct/2025:15:45:03 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:45:27 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:45:27 [info]: ✅ HTTP server closed
+2025-10-13 15:45:27 [info]: ℹ️  Redis was not connected
+2025-10-13 15:45:27 [info]: ✅ Socket.io connections closed
+2025-10-13 15:45:27 [info]: ✅ Database connection closed
+2025-10-13 15:46:17 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:46:17 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:46:17 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:46:17 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:46:17 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:46:17 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:46:17 [info]: Google Gemini provider initialized
+2025-10-13 15:46:17 [info]: Hugging Face provider initialized
+2025-10-13 15:46:17 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:46:17 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:46:17 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:46:17 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:46:17 [info]: ✅ Database connection established successfully
+2025-10-13 15:46:17 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:46:17 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:46:21 [info]: ::1 - - [13/Oct/2025:15:46:21 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 15:46:31 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:15:46:31 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:46:51 [info]: ::1 - - [13/Oct/2025:15:46:51 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:47:21 [info]: ::1 - - [13/Oct/2025:15:47:21 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:47:51 [info]: ::1 - - [13/Oct/2025:15:47:51 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 15:48:21 [info]: ::1 - - [13/Oct/2025:15:48:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:48:39 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:15:48:39 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:48:51 [info]: ::1 - - [13/Oct/2025:15:48:51 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:49:21 [info]: ::1 - - [13/Oct/2025:15:49:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:49:51 [info]: ::1 - - [13/Oct/2025:15:49:51 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:50:21 [info]: ::1 - - [13/Oct/2025:15:50:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:50:51 [info]: ::1 - - [13/Oct/2025:15:50:51 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:51:21 [info]: ::1 - - [13/Oct/2025:15:51:21 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:51:52 [info]: ::1 - - [13/Oct/2025:15:51:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:52:22 [info]: ::1 - - [13/Oct/2025:15:52:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:52:52 [info]: ::1 - - [13/Oct/2025:15:52:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:53:22 [info]: ::1 - - [13/Oct/2025:15:53:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:53:52 [info]: ::1 - - [13/Oct/2025:15:53:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:54:22 [info]: ::1 - - [13/Oct/2025:15:54:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:54:52 [info]: ::1 - - [13/Oct/2025:15:54:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:55:22 [info]: ::1 - - [13/Oct/2025:15:55:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:55:52 [info]: ::1 - - [13/Oct/2025:15:55:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:56:22 [info]: ::1 - - [13/Oct/2025:15:56:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:56:52 [info]: ::1 - - [13/Oct/2025:15:56:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:57:22 [info]: ::1 - - [13/Oct/2025:15:57:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:57:52 [info]: ::1 - - [13/Oct/2025:15:57:52 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:58:22 [info]: ::1 - - [13/Oct/2025:15:58:22 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 15:58:51 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 15:58:51 [info]: ✅ HTTP server closed
+2025-10-13 15:58:51 [info]: ℹ️  Redis was not connected
+2025-10-13 15:58:51 [info]: ✅ Socket.io connections closed
+2025-10-13 15:59:30 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 15:59:30 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 15:59:30 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 15:59:30 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 15:59:30 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 15:59:30 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 15:59:30 [info]: Google Gemini provider initialized
+2025-10-13 15:59:30 [info]: Hugging Face provider initialized
+2025-10-13 15:59:30 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 15:59:30 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 15:59:30 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 15:59:30 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 15:59:30 [info]: ✅ Database connection established successfully
+2025-10-13 15:59:30 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 15:59:30 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 15:59:35 [info]: ::1 - - [13/Oct/2025:15:59:35 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 16:00:05 [info]: ::1 - - [13/Oct/2025:16:00:05 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 16:00:35 [info]: ::1 - - [13/Oct/2025:16:00:35 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 16:00:45 [warn]: [object Object]
+2025-10-13 16:00:45 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:00:45 +0000] "POST /api/v1/auth/login HTTP/1.1" 401 160 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"
+2025-10-13 16:00:45 [info]: [object Object]
+2025-10-13 16:01:05 [info]: ::1 - - [13/Oct/2025:16:01:05 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 16:01:35 [info]: ::1 - - [13/Oct/2025:16:01:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:02:05 [info]: ::1 - - [13/Oct/2025:16:02:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:02:35 [info]: ::1 - - [13/Oct/2025:16:02:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:03:05 [info]: ::1 - - [13/Oct/2025:16:03:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:03:35 [info]: ::1 - - [13/Oct/2025:16:03:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:04:05 [info]: ::1 - - [13/Oct/2025:16:04:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:04:35 [info]: ::1 - - [13/Oct/2025:16:04:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:05:05 [info]: ::1 - - [13/Oct/2025:16:05:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:05:35 [info]: ::1 - - [13/Oct/2025:16:05:35 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 16:06:05 [info]: ::1 - - [13/Oct/2025:16:06:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:06:35 [info]: ::1 - - [13/Oct/2025:16:06:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:07:05 [info]: ::1 - - [13/Oct/2025:16:07:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:07:35 [info]: ::1 - - [13/Oct/2025:16:07:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:08:05 [info]: ::1 - - [13/Oct/2025:16:08:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:08:35 [info]: ::1 - - [13/Oct/2025:16:08:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:09:05 [info]: ::1 - - [13/Oct/2025:16:09:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:09:35 [info]: ::1 - - [13/Oct/2025:16:09:35 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:10:05 [info]: ::1 - - [13/Oct/2025:16:10:05 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:10:36 [info]: ::1 - - [13/Oct/2025:16:10:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:11:06 [info]: ::1 - - [13/Oct/2025:16:11:06 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:11:36 [info]: ::1 - - [13/Oct/2025:16:11:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:12:06 [info]: ::1 - - [13/Oct/2025:16:12:06 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:12:36 [info]: ::1 - - [13/Oct/2025:16:12:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:13:06 [info]: ::1 - - [13/Oct/2025:16:13:06 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:13:36 [info]: ::1 - - [13/Oct/2025:16:13:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:14:06 [info]: ::1 - - [13/Oct/2025:16:14:06 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:14:36 [info]: ::1 - - [13/Oct/2025:16:14:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:15:06 [info]: ::1 - - [13/Oct/2025:16:15:06 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:15:36 [info]: ::1 - - [13/Oct/2025:16:15:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:16:06 [info]: ::1 - - [13/Oct/2025:16:16:06 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:16:36 [info]: ::1 - - [13/Oct/2025:16:16:36 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:17:06 [info]: ::1 - - [13/Oct/2025:16:17:06 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:17:36 [info]: ::1 - - [13/Oct/2025:16:17:36 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:18:06 [info]: ::1 - - [13/Oct/2025:16:18:06 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:18:36 [info]: ::1 - - [13/Oct/2025:16:18:36 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:19:06 [info]: ::1 - - [13/Oct/2025:16:19:06 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:19:36 [info]: ::1 - - [13/Oct/2025:16:19:36 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:20:06 [info]: ::1 - - [13/Oct/2025:16:20:06 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:20:36 [info]: ::1 - - [13/Oct/2025:16:20:36 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:21:06 [info]: ::1 - - [13/Oct/2025:16:21:06 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:21:36 [info]: ::1 - - [13/Oct/2025:16:21:36 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:22:07 [info]: ::1 - - [13/Oct/2025:16:22:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:22:37 [info]: ::1 - - [13/Oct/2025:16:22:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:23:07 [info]: ::1 - - [13/Oct/2025:16:23:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:23:37 [info]: ::1 - - [13/Oct/2025:16:23:37 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:24:07 [info]: ::1 - - [13/Oct/2025:16:24:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:24:37 [info]: ::1 - - [13/Oct/2025:16:24:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:25:07 [info]: ::1 - - [13/Oct/2025:16:25:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:25:37 [info]: ::1 - - [13/Oct/2025:16:25:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:26:07 [info]: ::1 - - [13/Oct/2025:16:26:07 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:26:37 [info]: ::1 - - [13/Oct/2025:16:26:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:27:07 [info]: ::1 - - [13/Oct/2025:16:27:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:27:37 [info]: ::1 - - [13/Oct/2025:16:27:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:28:07 [info]: ::1 - - [13/Oct/2025:16:28:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:28:37 [info]: ::1 - - [13/Oct/2025:16:28:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:29:07 [info]: ::1 - - [13/Oct/2025:16:29:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:29:37 [info]: ::1 - - [13/Oct/2025:16:29:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:30:07 [info]: ::1 - - [13/Oct/2025:16:30:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:30:37 [info]: ::1 - - [13/Oct/2025:16:30:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:31:07 [info]: ::1 - - [13/Oct/2025:16:31:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:31:37 [info]: ::1 - - [13/Oct/2025:16:31:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:32:07 [info]: ::1 - - [13/Oct/2025:16:32:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:32:37 [info]: ::1 - - [13/Oct/2025:16:32:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:33:07 [info]: ::1 - - [13/Oct/2025:16:33:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:33:37 [info]: ::1 - - [13/Oct/2025:16:33:37 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:34:07 [info]: ::1 - - [13/Oct/2025:16:34:07 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:34:38 [info]: ::1 - - [13/Oct/2025:16:34:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:34:45 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:34:45 +0000] "GET /api/v1/auth/google?lng=fr-FR HTTP/1.1" 302 0 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:34:45 [info]: [object Object]
+2025-10-13 16:34:46 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:34:46 +0000] "GET /api/v1/auth/google?lng=fr-FR HTTP/1.1" 302 0 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:34:46 [info]: [object Object]
+2025-10-13 16:35:03 [warn]: [object Object]
+2025-10-13 16:35:03 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:35:03 +0000] "POST /api/v1/auth/login HTTP/1.1" 401 160 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:35:03 [info]: [object Object]
+2025-10-13 16:35:08 [info]: ::1 - - [13/Oct/2025:16:35:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:35:20 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:35:20 +0000] "POST /api/v1/auth/check-email HTTP/1.1" 200 54 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:35:20 [info]: [object Object]
+2025-10-13 16:35:23 [info]: Email sent successfully to yassine.assiani@ensi-uma.tn: <950d7fd3-3fa1-e7d0-cb13-a81b16d7bb88@example.com>
+2025-10-13 16:35:23 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:35:23 +0000] "POST /api/v1/auth/forgot-password HTTP/1.1" 200 72 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:35:23 [info]: [object Object]
+2025-10-13 16:35:34 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:35:34 +0000] "POST /api/v1/auth/check-email HTTP/1.1" 200 59 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:35:34 [info]: [object Object]
+2025-10-13 16:35:38 [info]: ::1 - - [13/Oct/2025:16:35:38 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 16:35:44 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:35:44 +0000] "POST /api/v1/auth/check-email HTTP/1.1" 200 59 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:35:44 [info]: [object Object]
+2025-10-13 16:36:08 [info]: ::1 - - [13/Oct/2025:16:36:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:36:38 [info]: ::1 - - [13/Oct/2025:16:36:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:37:08 [info]: ::1 - - [13/Oct/2025:16:37:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:37:38 [info]: ::1 - - [13/Oct/2025:16:37:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:38:08 [info]: ::1 - - [13/Oct/2025:16:38:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:38:38 [info]: ::1 - - [13/Oct/2025:16:38:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:39:08 [info]: ::1 - - [13/Oct/2025:16:39:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:39:38 [info]: ::1 - - [13/Oct/2025:16:39:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:40:08 [info]: ::1 - - [13/Oct/2025:16:40:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:40:38 [info]: ::1 - - [13/Oct/2025:16:40:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:41:08 [info]: ::1 - - [13/Oct/2025:16:41:08 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:41:38 [info]: ::1 - - [13/Oct/2025:16:41:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:42:08 [info]: ::1 - - [13/Oct/2025:16:42:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:42:38 [info]: ::1 - - [13/Oct/2025:16:42:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:43:08 [info]: ::1 - - [13/Oct/2025:16:43:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:43:38 [info]: ::1 - - [13/Oct/2025:16:43:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:44:08 [info]: ::1 - - [13/Oct/2025:16:44:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:44:38 [info]: ::1 - - [13/Oct/2025:16:44:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:45:08 [info]: ::1 - - [13/Oct/2025:16:45:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:45:38 [info]: ::1 - - [13/Oct/2025:16:45:38 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:46:08 [info]: ::1 - - [13/Oct/2025:16:46:08 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:46:39 [info]: ::1 - - [13/Oct/2025:16:46:39 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:47:09 [info]: ::1 - - [13/Oct/2025:16:47:09 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:47:39 [info]: ::1 - - [13/Oct/2025:16:47:39 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:48:09 [info]: ::1 - - [13/Oct/2025:16:48:09 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:48:39 [info]: ::1 - - [13/Oct/2025:16:48:39 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 16:48:43 [warn]: [object Object]
+2025-10-13 16:48:43 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:16:48:43 +0000] "POST /api/v1/auth/signup HTTP/1.1" 409 156 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 16:48:43 [info]: [object Object]
+2025-10-13 16:49:09 [info]: ::1 - - [13/Oct/2025:16:49:09 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:49:39 [info]: ::1 - - [13/Oct/2025:16:49:39 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:50:09 [info]: ::1 - - [13/Oct/2025:16:50:09 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 16:50:39 [info]: ::1 - - [13/Oct/2025:16:50:39 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 17:51:09 [info]: ::1 - - [13/Oct/2025:17:51:09 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:49:12 [info]: ::1 - - [13/Oct/2025:18:49:12 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:49:42 [info]: ::1 - - [13/Oct/2025:18:49:42 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:50:12 [info]: ::1 - - [13/Oct/2025:18:50:12 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:50:42 [info]: ::1 - - [13/Oct/2025:18:50:42 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:51:12 [info]: ::1 - - [13/Oct/2025:18:51:12 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:51:42 [info]: ::1 - - [13/Oct/2025:18:51:42 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:52:12 [info]: ::1 - - [13/Oct/2025:18:52:12 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:52:42 [info]: ::1 - - [13/Oct/2025:18:52:42 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:53:12 [info]: ::1 - - [13/Oct/2025:18:53:12 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:53:42 [info]: ::1 - - [13/Oct/2025:18:53:42 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:54:12 [info]: ::1 - - [13/Oct/2025:18:54:12 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:54:42 [info]: ::1 - - [13/Oct/2025:18:54:42 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:55:13 [info]: ::1 - - [13/Oct/2025:18:55:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:55:43 [info]: ::1 - - [13/Oct/2025:18:55:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:56:13 [info]: ::1 - - [13/Oct/2025:18:56:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:56:33 [warn]: [object Object]
+2025-10-13 18:56:33 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:18:56:33 +0000] "POST /api/v1/auth/signup HTTP/1.1" 409 156 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 18:56:33 [info]: [object Object]
+2025-10-13 18:56:35 [warn]: [object Object]
+2025-10-13 18:56:35 [info]: ::ffff:172.18.0.5 - - [13/Oct/2025:18:56:35 +0000] "POST /api/v1/auth/signup HTTP/1.1" 409 156 "http://localhost:81/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-13 18:56:35 [info]: [object Object]
+2025-10-13 18:56:43 [info]: ::1 - - [13/Oct/2025:18:56:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:57:13 [info]: ::1 - - [13/Oct/2025:18:57:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:57:43 [info]: ::1 - - [13/Oct/2025:18:57:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:58:13 [info]: ::1 - - [13/Oct/2025:18:58:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:58:43 [info]: ::1 - - [13/Oct/2025:18:58:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:59:13 [info]: ::1 - - [13/Oct/2025:18:59:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 18:59:43 [info]: ::1 - - [13/Oct/2025:18:59:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:00:13 [info]: ::1 - - [13/Oct/2025:19:00:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:00:43 [info]: ::1 - - [13/Oct/2025:19:00:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:01:13 [info]: ::1 - - [13/Oct/2025:19:01:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:01:43 [info]: ::1 - - [13/Oct/2025:19:01:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:02:13 [info]: ::1 - - [13/Oct/2025:19:02:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:02:43 [info]: ::1 - - [13/Oct/2025:19:02:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:03:13 [info]: ::1 - - [13/Oct/2025:19:03:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:03:43 [info]: ::1 - - [13/Oct/2025:19:03:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:04:13 [info]: ::1 - - [13/Oct/2025:19:04:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:04:43 [info]: ::1 - - [13/Oct/2025:19:04:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:05:13 [info]: ::1 - - [13/Oct/2025:19:05:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:05:43 [info]: ::1 - - [13/Oct/2025:19:05:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:06:13 [info]: ::1 - - [13/Oct/2025:19:06:13 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:06:43 [info]: ::1 - - [13/Oct/2025:19:06:43 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:07:14 [info]: ::1 - - [13/Oct/2025:19:07:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:07:44 [info]: ::1 - - [13/Oct/2025:19:07:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:08:14 [info]: ::1 - - [13/Oct/2025:19:08:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:08:44 [info]: ::1 - - [13/Oct/2025:19:08:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:09:14 [info]: ::1 - - [13/Oct/2025:19:09:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:09:44 [info]: ::1 - - [13/Oct/2025:19:09:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:10:14 [info]: ::1 - - [13/Oct/2025:19:10:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:10:44 [info]: ::1 - - [13/Oct/2025:19:10:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:11:14 [info]: ::1 - - [13/Oct/2025:19:11:14 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:11:44 [info]: ::1 - - [13/Oct/2025:19:11:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:12:14 [info]: ::1 - - [13/Oct/2025:19:12:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:12:44 [info]: ::1 - - [13/Oct/2025:19:12:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:13:14 [info]: ::1 - - [13/Oct/2025:19:13:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:13:44 [info]: ::1 - - [13/Oct/2025:19:13:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:14:14 [info]: ::1 - - [13/Oct/2025:19:14:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:14:44 [info]: ::1 - - [13/Oct/2025:19:14:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:15:14 [info]: ::1 - - [13/Oct/2025:19:15:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:15:44 [info]: ::1 - - [13/Oct/2025:19:15:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:16:14 [info]: ::1 - - [13/Oct/2025:19:16:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:16:44 [info]: ::1 - - [13/Oct/2025:19:16:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:17:14 [info]: ::1 - - [13/Oct/2025:19:17:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:17:44 [info]: ::1 - - [13/Oct/2025:19:17:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:18:14 [info]: ::1 - - [13/Oct/2025:19:18:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:18:44 [info]: ::1 - - [13/Oct/2025:19:18:44 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:19:14 [info]: ::1 - - [13/Oct/2025:19:19:14 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:19:44 [info]: ::1 - - [13/Oct/2025:19:19:44 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:20:15 [info]: ::1 - - [13/Oct/2025:19:20:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:20:45 [info]: ::1 - - [13/Oct/2025:19:20:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:21:15 [info]: ::1 - - [13/Oct/2025:19:21:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:21:45 [info]: ::1 - - [13/Oct/2025:19:21:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:22:15 [info]: ::1 - - [13/Oct/2025:19:22:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:22:45 [info]: ::1 - - [13/Oct/2025:19:22:45 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:23:15 [info]: ::1 - - [13/Oct/2025:19:23:15 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:23:45 [info]: ::1 - - [13/Oct/2025:19:23:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:24:15 [info]: ::1 - - [13/Oct/2025:19:24:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:24:45 [info]: ::1 - - [13/Oct/2025:19:24:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:25:15 [info]: ::1 - - [13/Oct/2025:19:25:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:25:45 [info]: ::1 - - [13/Oct/2025:19:25:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:26:15 [info]: ::1 - - [13/Oct/2025:19:26:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:26:45 [info]: ::1 - - [13/Oct/2025:19:26:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:27:15 [info]: ::1 - - [13/Oct/2025:19:27:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:27:45 [info]: ::1 - - [13/Oct/2025:19:27:45 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:28:15 [info]: ::1 - - [13/Oct/2025:19:28:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:28:45 [info]: ::1 - - [13/Oct/2025:19:28:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:29:15 [info]: ::1 - - [13/Oct/2025:19:29:15 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 19:29:45 [info]: ::1 - - [13/Oct/2025:19:29:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:30:15 [info]: ::1 - - [13/Oct/2025:19:30:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:30:45 [info]: ::1 - - [13/Oct/2025:19:30:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:31:15 [info]: ::1 - - [13/Oct/2025:19:31:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:31:45 [info]: ::1 - - [13/Oct/2025:19:31:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:32:15 [info]: ::1 - - [13/Oct/2025:19:32:15 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:32:45 [info]: ::1 - - [13/Oct/2025:19:32:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:33:15 [info]: ::1 - - [13/Oct/2025:19:33:15 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:33:45 [info]: ::1 - - [13/Oct/2025:19:33:45 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:34:16 [info]: ::1 - - [13/Oct/2025:19:34:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:34:46 [info]: ::1 - - [13/Oct/2025:19:34:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:35:16 [info]: ::1 - - [13/Oct/2025:19:35:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:35:46 [info]: ::1 - - [13/Oct/2025:19:35:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:36:16 [info]: ::1 - - [13/Oct/2025:19:36:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:36:46 [info]: ::1 - - [13/Oct/2025:19:36:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:37:16 [info]: ::1 - - [13/Oct/2025:19:37:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:37:46 [info]: ::1 - - [13/Oct/2025:19:37:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:38:16 [info]: ::1 - - [13/Oct/2025:19:38:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:38:46 [info]: ::1 - - [13/Oct/2025:19:38:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:39:16 [info]: ::1 - - [13/Oct/2025:19:39:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:39:46 [info]: ::1 - - [13/Oct/2025:19:39:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:40:16 [info]: ::1 - - [13/Oct/2025:19:40:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:40:46 [info]: ::1 - - [13/Oct/2025:19:40:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:41:16 [info]: ::1 - - [13/Oct/2025:19:41:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:41:46 [info]: ::1 - - [13/Oct/2025:19:41:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:42:16 [info]: ::1 - - [13/Oct/2025:19:42:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:42:46 [info]: ::1 - - [13/Oct/2025:19:42:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:43:16 [info]: ::1 - - [13/Oct/2025:19:43:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:43:46 [info]: ::1 - - [13/Oct/2025:19:43:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:44:16 [info]: ::1 - - [13/Oct/2025:19:44:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:44:46 [info]: ::1 - - [13/Oct/2025:19:44:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:45:16 [info]: ::1 - - [13/Oct/2025:19:45:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:45:46 [info]: ::1 - - [13/Oct/2025:19:45:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:46:16 [info]: ::1 - - [13/Oct/2025:19:46:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:46:46 [info]: ::1 - - [13/Oct/2025:19:46:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:47:16 [info]: ::1 - - [13/Oct/2025:19:47:16 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:47:46 [info]: ::1 - - [13/Oct/2025:19:47:46 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:48:17 [info]: ::1 - - [13/Oct/2025:19:48:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:48:47 [info]: ::1 - - [13/Oct/2025:19:48:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:49:17 [info]: ::1 - - [13/Oct/2025:19:49:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:49:47 [info]: ::1 - - [13/Oct/2025:19:49:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:50:17 [info]: ::1 - - [13/Oct/2025:19:50:17 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:50:47 [info]: ::1 - - [13/Oct/2025:19:50:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:51:17 [info]: ::1 - - [13/Oct/2025:19:51:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:51:47 [info]: ::1 - - [13/Oct/2025:19:51:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:52:17 [info]: ::1 - - [13/Oct/2025:19:52:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:52:47 [info]: ::1 - - [13/Oct/2025:19:52:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:53:17 [info]: ::1 - - [13/Oct/2025:19:53:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:53:47 [info]: ::1 - - [13/Oct/2025:19:53:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:53:58 [error]: [object Object]
+2025-10-13 19:53:58 [error]: [object Object]
+2025-10-13 19:54:17 [info]: ::1 - - [13/Oct/2025:19:54:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:54:47 [info]: ::1 - - [13/Oct/2025:19:54:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:55:17 [info]: ::1 - - [13/Oct/2025:19:55:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:55:47 [info]: ::1 - - [13/Oct/2025:19:55:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:56:17 [info]: ::1 - - [13/Oct/2025:19:56:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:56:47 [info]: ::1 - - [13/Oct/2025:19:56:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:57:17 [info]: ::1 - - [13/Oct/2025:19:57:17 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 19:57:47 [info]: ::1 - - [13/Oct/2025:19:57:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:58:17 [info]: ::1 - - [13/Oct/2025:19:58:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:58:47 [info]: ::1 - - [13/Oct/2025:19:58:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:59:17 [info]: ::1 - - [13/Oct/2025:19:59:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 19:59:47 [info]: ::1 - - [13/Oct/2025:19:59:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:00:17 [info]: ::1 - - [13/Oct/2025:20:00:17 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:00:47 [info]: ::1 - - [13/Oct/2025:20:00:47 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:01:18 [info]: ::1 - - [13/Oct/2025:20:01:18 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 20:01:48 [info]: ::1 - - [13/Oct/2025:20:01:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:02:18 [info]: ::1 - - [13/Oct/2025:20:02:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:02:48 [info]: ::1 - - [13/Oct/2025:20:02:48 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 20:03:18 [info]: ::1 - - [13/Oct/2025:20:03:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:03:48 [info]: ::1 - - [13/Oct/2025:20:03:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:04:18 [info]: ::1 - - [13/Oct/2025:20:04:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:04:20 [error]: [object Object]
+2025-10-13 20:04:20 [error]: [object Object]
+2025-10-13 20:04:48 [info]: ::1 - - [13/Oct/2025:20:04:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:05:18 [info]: ::1 - - [13/Oct/2025:20:05:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:05:48 [info]: ::1 - - [13/Oct/2025:20:05:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:06:18 [info]: ::1 - - [13/Oct/2025:20:06:18 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 20:06:48 [info]: ::1 - - [13/Oct/2025:20:06:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:07:18 [info]: ::1 - - [13/Oct/2025:20:07:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:07:48 [info]: ::1 - - [13/Oct/2025:20:07:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:08:18 [info]: ::1 - - [13/Oct/2025:20:08:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:08:48 [info]: ::1 - - [13/Oct/2025:20:08:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:09:18 [info]: ::1 - - [13/Oct/2025:20:09:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:09:20 [error]: [object Object]
+2025-10-13 20:09:20 [error]: [object Object]
+2025-10-13 20:09:48 [info]: ::1 - - [13/Oct/2025:20:09:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:10:02 [error]: [object Object]
+2025-10-13 20:10:18 [info]: ::1 - - [13/Oct/2025:20:10:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:10:48 [info]: ::1 - - [13/Oct/2025:20:10:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:11:09 [error]: [object Object]
+2025-10-13 20:11:18 [info]: ::1 - - [13/Oct/2025:20:11:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:11:48 [info]: ::1 - - [13/Oct/2025:20:11:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:12:18 [info]: ::1 - - [13/Oct/2025:20:12:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:12:48 [info]: ::1 - - [13/Oct/2025:20:12:48 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:13:18 [info]: ::1 - - [13/Oct/2025:20:13:18 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:13:49 [info]: ::1 - - [13/Oct/2025:20:13:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:14:19 [info]: ::1 - - [13/Oct/2025:20:14:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:14:49 [info]: ::1 - - [13/Oct/2025:20:14:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:15:19 [info]: ::1 - - [13/Oct/2025:20:15:19 +0000] "GET /health HTTP/1.1" 200 109 "-" "Wget"
+2025-10-13 20:15:49 [info]: ::1 - - [13/Oct/2025:20:15:49 +0000] "GET /health HTTP/1.1" 200 110 "-" "Wget"
+2025-10-13 20:16:19 [info]: ::1 - - [13/Oct/2025:20:16:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:16:49 [info]: ::1 - - [13/Oct/2025:20:16:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:17:19 [info]: ::1 - - [13/Oct/2025:20:17:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:17:49 [info]: ::1 - - [13/Oct/2025:20:17:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:18:19 [info]: ::1 - - [13/Oct/2025:20:18:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:18:49 [info]: ::1 - - [13/Oct/2025:20:18:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:19:19 [info]: ::1 - - [13/Oct/2025:20:19:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:19:49 [info]: ::1 - - [13/Oct/2025:20:19:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:20:19 [info]: ::1 - - [13/Oct/2025:20:20:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:20:49 [info]: ::1 - - [13/Oct/2025:20:20:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:21:19 [info]: ::1 - - [13/Oct/2025:20:21:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:21:49 [info]: ::1 - - [13/Oct/2025:20:21:49 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:22:19 [info]: ::1 - - [13/Oct/2025:20:22:19 +0000] "GET /health HTTP/1.1" 200 111 "-" "Wget"
+2025-10-13 20:27:02 [info]: ✅ apiLimiter created with dynamic store
+2025-10-13 20:27:02 [info]: ✅ authLimiter created with dynamic store
+2025-10-13 20:27:02 [info]: ✅ chatLimiter created with dynamic store
+2025-10-13 20:27:02 [info]: ✅ uploadLimiter created with dynamic store
+2025-10-13 20:27:02 [info]: ✅ aiSummaryLimiter created with dynamic store
+2025-10-13 20:27:02 [info]: ✅ strictLimiter created with dynamic store
+2025-10-13 20:27:02 [info]: Google Gemini provider initialized
+2025-10-13 20:27:02 [info]: Hugging Face provider initialized
+2025-10-13 20:27:02 [info]: 🔄 Step 1/4: Initializing Redis...
+2025-10-13 20:27:02 [info]: ✅ Rate limiting using memory store (Redis disabled)
+2025-10-13 20:27:02 [info]: ✅ Redis Status: {"enabled":false,"connected":false,"status":"disconnected","host":"redis","port":6379}
+2025-10-13 20:27:02 [info]: 🔄 Step 2/4: Connecting to database...
+2025-10-13 20:27:02 [info]: ✅ Database connection established successfully
+2025-10-13 20:27:02 [info]: 🔄 Step 3/4: Checking database schema...
+2025-10-13 20:27:02 [info]: 🔄 Step 4/4: Starting HTTP server...
+2025-10-13 20:27:06 [info]: ::1 - - [13/Oct/2025:20:27:06 +0000] "GET /health HTTP/1.1" 200 108 "-" "Wget"
+2025-10-13 20:27:08 [info]: 🛑 Received shutdown signal, closing gracefully...
+2025-10-13 20:27:08 [info]: ✅ HTTP server closed
+2025-10-13 20:27:08 [info]: ℹ️  Redis was not connected
+2025-10-13 20:27:08 [info]: ✅ Socket.io connections closed

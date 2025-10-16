@@ -8,6 +8,12 @@ export const extractErrorMessage = (error) => {
 
   if (!error) return null;
 
+
+
+  if (error.errors && Array.isArray(error.errors) && error.errors.length > 0) {
+    return error.errors[0].message || error.errors[0].msg || error.errors[0];
+  }
+
   // error.response.data.error.message
   if (error.response?.data?.error?.message) {
     return error.response.data.error.message;
@@ -63,10 +69,7 @@ export const extractErrorMessage = (error) => {
     return error[0].message || error[0].msg || error[0];
   }
 
-  // error.errors (array)
-  if (error.errors && Array.isArray(error.errors) && error.errors.length > 0) {
-    return error.errors[0].message || error.errors[0].msg || error.errors[0];
-  }
+
 
   // Retourne null si aucun message trouvé
   return null;
@@ -81,7 +84,7 @@ export const signup = createAsyncThunk(
       const response = await authService.signup(userData);
       return response;
     } catch (error) {
-
+      console.log("error", error)
       return rejectWithValue(extractErrorMessage(error));
 
     }
@@ -150,6 +153,21 @@ export const logout = createAsyncThunk(
     }
   }
 );
+// ✅ NOUVEAU : Gérer le callback OAuth
+export const handleOAuthCallback = createAsyncThunk(
+  'auth/oauthCallback',
+  async ({ token, refreshToken }, { rejectWithValue }) => {
+    try {
+      const response = await authService.handleOAuthCallback(token, refreshToken);
+      return response;
+    } catch (error) {
+      // Nettoyer les tokens en cas d'erreur
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      return rejectWithValue(extractErrorMessage(error));
+    }
+  }
+);
 
 export const checkAuth = createAsyncThunk(
   'auth/checkAuth',
@@ -207,6 +225,22 @@ const authSlice = createSlice({
     setInitialized: (state) => {
       state.isInitialized = true;
     },
+    clearUser: (state) => {
+      // 1. Réinitialiser le state Redux
+      state.user = null;
+      state.isAuthenticated = false;
+      state.error = null;
+      state.isLoading = false;
+
+      // 2. Nettoyer localStorage
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
+
+      // 3. Nettoyer sessionStorage (optionnel)
+      sessionStorage.clear();
+    },
   },
   extraReducers: (builder) => {
     // Signup
@@ -226,7 +260,7 @@ const authSlice = createSlice({
         state.error = typeof action.payload === 'string'
           ? action.payload
           : 'Signup failed';
-        toast.error(state.error);
+
 
       });
 
@@ -255,7 +289,25 @@ const authSlice = createSlice({
       });
 
 
-
+    builder
+      .addCase(handleOAuthCallback.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(handleOAuthCallback.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload.user;
+        state.isAuthenticated = true;
+        state.isInitialized = true;
+      })
+      .addCase(handleOAuthCallback.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user = null;
+        state.isAuthenticated = false;
+        state.error = typeof action.payload === 'string'
+          ? action.payload
+          : 'OAuth authentication failed';
+      });
 
 
     builder
@@ -283,7 +335,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.user = null;
         state.isAuthenticated = false;
-        toast.success('Logged out successfully');
+
       })
       .addCase(logout.rejected, (state, action) => {
         state.isLoading = false;
@@ -360,5 +412,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUser, clearError, updateUser, setInitialized } = authSlice.actions;
+export const { setUser, clearError, updateUser, setInitialized, clearUser } = authSlice.actions;
 export default authSlice.reducer;

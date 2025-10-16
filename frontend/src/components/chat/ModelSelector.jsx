@@ -86,9 +86,9 @@ const ModelSelector = ({ value, onChange, disabled }) => {
       <button
         onClick={() => !disabled && !isLoading && setIsOpen(!isOpen)}
         disabled={disabled || isLoading}
-        className="relative cursor-pointer rounded-xl bg-gray-800 hover:bg-gray-700 px-4 py-2.5 pr-10 text-left text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all border border-gray-700 min-w-[140px]"
+        className="relative cursor-pointer rounded-xl hover:bg-gray-700 px-4 py-2.5 pr-10 text-left text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all  "
       >
-        <span className="block truncate">
+        <span className="block truncate text-gray-400  text-sx " >
           {selectedModel?.name || t('chat.selectModel')}
         </span>
         <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -116,7 +116,7 @@ const ModelSelector = ({ value, onChange, disabled }) => {
               <div className="flex items-start gap-3">
                 <CheckIcon className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
                 <div className="flex-1 text-left">
-                  <div className="font-medium text-white text-sm">
+                  <div className="font-medium text-white text-sm   " >
                     {selectedModel?.name}
                   </div>
                   {selectedModel?.description && (

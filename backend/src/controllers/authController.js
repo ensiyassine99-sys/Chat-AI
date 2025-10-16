@@ -7,6 +7,7 @@ const emailService = require('../services/emailService');
 const { generateTokens, verifyRefreshToken } = require('../utils/jwt');
 const { Op } = require('sequelize');
 
+
 // Générer un JWT pour la vérification d'email
 const generateEmailVerificationToken = (userId, email) => {
     return jwt.sign(
@@ -184,9 +185,25 @@ const resendVerificationEmail = asyncHandler(async (req, res, next) => {
     });
 });
 
-// Connexion
+// À AJOUTER à la fin de authController.js, AVANT module.exports
+const googleAuthCallback = asyncHandler(async (req, res, next) => {
+    const user = req.user;
+
+    // Générer tokens
+    const { accessToken, refreshToken } = generateTokens(user.id);
+
+    // Mettre à jour lastLogin
+    await user.update({ lastLogin: new Date() });
+
+    const redirectUrl = `${process.env.FRONTEND_URL}/auth/callback?token=${accessToken}&refreshToken=${refreshToken}`;
+
+    res.redirect(redirectUrl);
+});;
+
 const login = asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
+
+    // Trouver l'utilisateur par email
     const user = await User.findOne({
         where: { email },
         include: [{
@@ -199,6 +216,15 @@ const login = asyncHandler(async (req, res, next) => {
         throw new AppError(req.t('auth.invalidCredentials'), 401);
     }
 
+    // ✅ VÉRIFIER SI C'EST UN COMPTE OAUTH (NOUVEAU)
+    if (user.provider === 'google') {
+        throw new AppError(
+            req.t('auth.useGoogleLogin') || 'This account uses Google login. Please sign in with Google.',
+            400
+        );
+    }
+
+    // Vérifier si le compte est verrouillé
     if (user.isLocked()) {
         throw new AppError(req.t('auth.accountLocked'), 423);
     }
@@ -218,6 +244,8 @@ const login = asyncHandler(async (req, res, next) => {
 
         if (process.env.SMTP_HOST) {
             await emailService.sendVerificationEmail(user.email, verificationToken, user.language);
+        } else {
+            logger.info(`Verification link: ${process.env.FRONTEND_URL}/verify-email/${verificationToken}`);
         }
 
         throw new AppError(req.t('auth.pleaseVerifyEmail'), 403);
@@ -228,15 +256,22 @@ const login = asyncHandler(async (req, res, next) => {
         throw new AppError(req.t('auth.accountDeactivated'), 403);
     }
 
+    // Réinitialiser les tentatives de connexion
     await user.resetLoginAttempts();
+
+    // Mettre à jour la date de dernière connexion
     await user.update({ lastLogin: new Date() });
 
+    // Générer les tokens JWT
     const { accessToken, refreshToken } = generateTokens(user.id);
 
+    // Changer la langue de la requête selon la préférence de l'utilisateur
     req.i18n.changeLanguage(user.language);
 
-    logger.info(`User logged in: ${user.email}`);
+    // Logger la connexion avec le provider
+    logger.info(`User logged in: ${user.email} (provider: ${user.provider || 'local'})`);
 
+    // Réponse de succès
     res.json({
         success: true,
         message: req.t('auth.loginSuccess'),
@@ -245,7 +280,6 @@ const login = asyncHandler(async (req, res, next) => {
         user: user.toJSON(),
     });
 });
-
 // Refresh Token
 const refreshToken = asyncHandler(async (req, res, next) => {
     const { refreshToken } = req.body;
@@ -501,5 +535,5 @@ module.exports = {
     forgotPassword,
     resetPassword,
     changePassword,
-    verifyResetToken, checkEmailExists
+    verifyResetToken, checkEmailExists, googleAuthCallback,
 };
