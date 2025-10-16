@@ -457,7 +457,8 @@ async function startServer() {
 
         // 3. Synchronisation des tables
         logger.info('🔄 Step 3/4: Checking database schema...');
-        if (process.env.NODE_ENV === 'development') {
+        // if (process.env.NODE_ENV === 'development'
+         if (true) {
             const queryInterface = sequelize.getQueryInterface();
             const tables = await queryInterface.showAllTables();
             logger.info(`📊 Existing tables: ${tables.join(', ') || 'none'}`);
