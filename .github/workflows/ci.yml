@@ -106,35 +106,106 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Create deployment directory on server
+      - name: Prepare environment on server
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "mkdir -p ~/chatbot-app/docker ~/chatbot-app/backend"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          echo 'Préparation de l environnement...' &&
+          mkdir -p ~/chatbot-app &&
+          
+          # Supprimer l'ancien fichier docker-compose
+          if [ -f ~/chatbot-app/docker-compose.yml ]; then
+            rm -f ~/chatbot-app/docker-compose.yml;
+            echo '- docker-compose.yml supprimé';
+          fi &&
+          
+          # Réinitialiser le répertoire docker
+          rm -rf ~/chatbot-app/docker &&
+          mkdir -p ~/chatbot-app/docker &&
+          echo '- Répertoire docker réinitialisé' &&
+          
+          # Créer le répertoire backend pour .env
+          rm -rf ~/chatbot-app/backend &&
+          mkdir -p ~/chatbot-app/backend &&
+          echo '- Répertoire backend créé' &&
+          
+          # Créer les répertoires pour les volumes
+          mkdir -p ~/chatbot-app/database &&
+          mkdir -p ~/chatbot-app/uploads &&
+          mkdir -p ~/chatbot-app/logs &&
+          echo '- Répertoires de données créés' &&
+          
+          echo 'Environnement préparé avec succès!'
+          "
 
-      - name: Copy files to server
+      - name: Copy configuration files to server
         run: |
           scp docker-compose.prod.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker-compose.yml
           scp docker/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker/nginx.conf
           scp backend/.env ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
 
-      - name: Login to GitHub Container Registry on server
+      - name: Stop and remove existing containers
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo '${{ secrets.GITHUB_TOKEN }}' | docker login ${{ env.DOCKER_REGISTRY }} -u ${{ github.actor }} --password-stdin"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          echo 'Gestion des conteneurs existants...' &&
+          
+          # Identifier les conteneurs de l'application par leurs noms
+          APP_CONTAINERS=\$(docker ps -a --format '{{.Names}}' | grep -E 'chatbot-redis|chatbot-backend|chatbot-frontend|chatbot-nginx' || true) &&
+          
+          if [ -n \"\$APP_CONTAINERS\" ]; then
+            echo 'Conteneurs existants trouvés. Arrêt et suppression...' &&
+            
+            # Arrêter d'abord tous les conteneurs identifiés
+            for CONTAINER in \$APP_CONTAINERS; do
+              echo \"- Arrêt de \$CONTAINER...\" &&
+              docker stop \$CONTAINER || true
+            done &&
+            
+            # Puis les supprimer
+            for CONTAINER in \$APP_CONTAINERS; do
+              echo \"- Suppression de \$CONTAINER...\" &&
+              docker rm \$CONTAINER || true
+            done
+          else
+            echo 'Aucun conteneur de l application trouvé. Premier déploiement.'
+          fi &&
+          
+          # Nettoyage des conteneurs arrêtés
+          echo 'Nettoyage final des conteneurs inutilisés...' &&
+          docker container prune -f
+          "
 
-      - name: Pull and restart services
+      - name: Login to registry and deploy services
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd ~/chatbot-app && docker-compose down && docker image prune -f && docker-compose pull && docker-compose up -d"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          cd ~/chatbot-app &&
+          echo 'Connexion au registre Docker...' &&
+          echo '${{ secrets.GITHUB_TOKEN }}' | docker login -u '${{ github.actor }}' --password-stdin '${{ env.DOCKER_REGISTRY }}' &&
+          
+          # Définition du nom du projet
+          export COMPOSE_PROJECT_NAME=chatbot-app &&
+          
+          # Pull des images
+          echo 'Téléchargement des images...' &&
+          docker-compose -f docker-compose.yml pull &&
+          
+          # Démarrage des services
+          echo 'Démarrage des services...' &&
+          docker-compose -f docker-compose.yml up -d
+          "
 
-      - name: Show container status
+      - name: Verify deployment and cleanup
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd ~/chatbot-app && docker-compose ps"
-
-      - name: Health check
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sleep 30 && cd ~/chatbot-app && docker-compose ps"
-
-      - name: Cleanup old images
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker system prune -af --volumes --filter 'until=48h'"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          echo 'Vérification des conteneurs...' &&
+          sleep 10 &&
+          docker ps &&
+          
+          # Nettoyage des images Docker inutilisées
+          echo 'Nettoyage des images inutilisées...' &&
+          docker image prune -f &&
+          
+          echo 'Déploiement terminé avec succès!'
+          "
 
   # ==================== JOB 3: NOTIFICATION ====================
   notify:
@@ -147,8 +218,10 @@ jobs:
       - name: Check deployment result
         run: |
           if [ "${{ needs.deploy.result }}" == "success" ]; then
-            echo "✅ Deployment successful!"
+            echo "🚀 Déploiement réussi!"
+            echo "✅ Backend: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
+            echo "✅ Frontend: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
           else
-            echo "❌ Deployment failed"
+            echo "❌ Échec du déploiement"
             exit 1
           fi
