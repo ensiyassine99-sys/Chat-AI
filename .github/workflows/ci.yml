@@ -117,14 +117,14 @@ jobs:
 
       - name: Create backend .env file on server
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'ENDSSH'
             cd ~/chatbot-app
             
             # Créer le dossier backend s'il n'existe pas
             mkdir -p backend
             
             # Créer le fichier .env pour le backend
-            cat > backend/.env << 'EOL'
+            cat > backend/.env << 'ENDENV'
 # AI CHATBOT - BACKEND CONFIGURATION
 # ============================================
 
@@ -210,7 +210,7 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=yassine.assiani@ensi-uma.tn
 SMTP_PASS=izrxkiedadmomlhe
-EMAIL_FROM="AI Chatbot <noreply@example.com>"
+EMAIL_FROM=AI Chatbot <noreply@example.com>
 
 # ------------------------------------------
 # Rate Limiting
@@ -258,10 +258,10 @@ MAX_CHAT_HISTORY=100
 MAX_MESSAGE_LENGTH=4000
 MAX_MESSAGES_PER_CHAT=1000
 MAX_CHATS_PER_USER=500
-EOL
+ENDENV
             
             echo "✅ Fichier backend/.env créé avec succès"
-          EOF
+          ENDSSH
 
       - name: Login to GitHub Container Registry on server
         run: |
