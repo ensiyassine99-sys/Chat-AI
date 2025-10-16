@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # Base de données Redis pour le cache et les sessions
   redis:
     image: redis:7-alpine
     container_name: chatbot-redis
@@ -10,7 +9,7 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    command: redis-server --appendonly yes
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-defaultpass}
     networks:
       - chatbot-network
     healthcheck:
@@ -19,7 +18,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # Backend API Node.js
   backend:
     image: ghcr.io/ensiyassine99-sys/chatbot-backend:latest
     container_name: chatbot-backend
@@ -28,6 +26,12 @@ services:
       - "5000"
     env_file: 
       - ./backend/.env
+    environment:
+      - PORT=5000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-defaultpass}
+      - NODE_ENV=production
     volumes:
       - ./database:/app/database
       - ./backend/uploads:/app/uploads
@@ -38,16 +42,18 @@ services:
     networks:
       - chatbot-network
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:5000/health || exit 1"]
-      interval: 15s
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:5000/health || exit 1"]
+      interval: 30s
       timeout: 10s
-      retries: 5
-      start_period: 60s
+      retries: 3
+      start_period: 90s
 
-  # Frontend React
   frontend:
     image: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest
     container_name: chatbot-frontend
+    args:
+      - VITE_API_URL=http://srv830042.hstgr.cloud/api/v1
+      - VITE_WS_URL=ws://srv830042.hstgr.cloud/ws
     restart: unless-stopped
     expose:
       - "80"
@@ -57,13 +63,12 @@ services:
     networks:
       - chatbot-network
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:80 || exit 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:80/ || exit 1"]
       interval: 15s
       timeout: 10s
       retries: 3
       start_period: 30s
 
-  # Nginx Reverse Proxy
   nginx:
     image: nginx:alpine
     container_name: chatbot-nginx
@@ -82,10 +87,11 @@ services:
     networks:
       - chatbot-network
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:80/health || exit 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:80/health || exit 1"]
       interval: 15s
       timeout: 10s
       retries: 3
+      start_period: 30s
 
 networks:
   chatbot-network:
