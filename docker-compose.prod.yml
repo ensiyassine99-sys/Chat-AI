@@ -10,7 +10,7 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-defaultpass}
+    command: redis-server --appendonly yes
     networks:
       - chatbot-network
     healthcheck:
@@ -21,20 +21,13 @@ services:
 
   # Backend API Node.js
   backend:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.backend
+    image: ghcr.io/ensiyassine99-sys/chatbot-backend:latest
     container_name: chatbot-backend
     restart: unless-stopped
     expose:
       - "5000"
     env_file: 
       - ./backend/.env
-    environment:
-      - PORT=5000
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=${REDIS_PASSWORD:-defaultpass}
     volumes:
       - ./database:/app/database
       - ./backend/uploads:/app/uploads
@@ -53,12 +46,7 @@ services:
 
   # Frontend React
   frontend:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.frontend
-      args:
-        - VITE_API_URL=http://api.localhost/api/v1
-        - VITE_WS_URL=ws://api.localhost/ws
+    image: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest
     container_name: chatbot-frontend
     restart: unless-stopped
     expose:
@@ -69,7 +57,7 @@ services:
     networks:
       - chatbot-network
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:5000/health || exit 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:80 || exit 1"]
       interval: 15s
       timeout: 10s
       retries: 3
