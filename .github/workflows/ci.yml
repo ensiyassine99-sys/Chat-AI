@@ -1,4 +1,3 @@
-
 name: Build and Deploy Chatbot Application
 
 on:
@@ -13,9 +12,9 @@ env:
   IMAGE_PREFIX: ensiyassine99-sys
   BACKEND_IMAGE: chatbot-backend
   FRONTEND_IMAGE: chatbot-frontend
-
+  VITE_API_URL: http://srv789193.hstgr.cloud/api/v1
+  VITE_WS_URL: ws://srv789193.hstgr.cloud
 jobs:
-  # ==================== JOB 1: BUILD ====================
   build:
     name: Build Docker Images
     runs-on: ubuntu-latest
@@ -47,6 +46,7 @@ jobs:
             type=ref,event=pr
             type=sha,prefix={{branch}}-
             type=raw,value=latest,enable={{is_default_branch}}
+
       - name: Extract metadata for Frontend
         id: meta-frontend
         uses: docker/metadata-action@v5
@@ -57,6 +57,7 @@ jobs:
             type=ref,event=pr
             type=sha,prefix={{branch}}-
             type=raw,value=latest,enable={{is_default_branch}}
+
       - name: Build and push Backend image
         uses: docker/build-push-action@v5
         with:
@@ -76,14 +77,19 @@ jobs:
           push: true
           tags: ${{ steps.meta-frontend.outputs.tags }}
           labels: ${{ steps.meta-frontend.outputs.labels }}
+          build-args: |
+            VITE_API_URL=${{ env.VITE_API_URL }}
+            VITE_WS_URL=${{ env.VITE_WS_URL }}
           cache-from: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache
           cache-to: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache,mode=max
 
-      - name: Image digest
+      - name: Image build summary
         run: |
-          echo "Backend: ${{ steps.meta-backend.outputs.tags }}"
-          echo "Frontend: ${{ steps.meta-frontend.outputs.tags }}"
-  # ==================== JOB 2: DEPLOY ====================
+          echo "✅ Backend image built and pushed"
+          echo "   Tag: ${{ steps.meta-backend.outputs.tags }}"
+          echo "✅ Frontend image built and pushed"
+          echo "   Tag: ${{ steps.meta-frontend.outputs.tags }}"
+
   deploy:
     name: Deploy to Production Server
     runs-on: ubuntu-latest
@@ -99,107 +105,117 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Add server to known hosts
+      - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          echo "Host ${{ secrets.SERVER_IP }}" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "  UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+          chmod 600 ~/.ssh/config
+
       - name: Prepare environment on server
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          echo 'Préparation de l environnement...' &&
+          echo 'Preparation de environnement...' &&
           mkdir -p ~/chatbot-app &&
           
-          # Supprimer l'ancien fichier docker-compose
           if [ -f ~/chatbot-app/docker-compose.yml ]; then
-            rm -f ~/chatbot-app/docker-compose.yml;
-            echo '- docker-compose.yml supprimé';
+            rm -f ~/chatbot-app/docker-compose.yml
+            echo '- docker-compose.yml supprime'
           fi &&
           
-          # Réinitialiser le répertoire docker
           rm -rf ~/chatbot-app/docker &&
           mkdir -p ~/chatbot-app/docker &&
-          echo '- Répertoire docker réinitialisé' &&
+          echo '- Repertoire docker reinitialise' &&
           
-          # Créer le répertoire backend pour .env
           rm -rf ~/chatbot-app/backend &&
           mkdir -p ~/chatbot-app/backend &&
-          echo '- Répertoire backend créé' &&
+          echo '- Repertoire backend reinitialise' &&
           
-          # Créer les répertoires pour les volumes
           mkdir -p ~/chatbot-app/database &&
           mkdir -p ~/chatbot-app/uploads &&
           mkdir -p ~/chatbot-app/logs &&
-          echo '- Répertoires de données créés' &&
+          echo '- Repertoires de donnees crees' &&
           
-          echo 'Environnement préparé avec succès!'
+          echo 'Environnement prepare avec succes'
           "
+
       - name: Copy configuration files to server
         run: |
+          echo "Copie des fichiers de configuration..."
           scp docker-compose.prod.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker-compose.yml
           scp docker/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker/nginx.conf
           scp backend/.env ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
+          echo "Fichiers copies avec succes"
+
       - name: Stop and remove existing containers
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          echo 'Gestion des conteneurs existants...' &&
+          echo 'Gestion des conteneurs existants' &&
           
-          # Identifier les conteneurs de l'application par leurs noms
           APP_CONTAINERS=\$(docker ps -a --format '{{.Names}}' | grep -E 'chatbot-redis|chatbot-backend|chatbot-frontend|chatbot-nginx' || true) &&
           
           if [ -n \"\$APP_CONTAINERS\" ]; then
-            echo 'Conteneurs existants trouvés. Arrêt et suppression...' &&
+            echo 'Conteneurs existants trouves. Arret et suppression' &&
             
-            # Arrêter d'abord tous les conteneurs identifiés
             for CONTAINER in \$APP_CONTAINERS; do
-              echo \"- Arrêt de \$CONTAINER...\" &&
+              echo \"- Arret de \$CONTAINER\" &&
               docker stop \$CONTAINER || true
             done &&
             
-            # Puis les supprimer
             for CONTAINER in \$APP_CONTAINERS; do
-              echo \"- Suppression de \$CONTAINER...\" &&
+              echo \"- Suppression de \$CONTAINER\" &&
               docker rm \$CONTAINER || true
             done
           else
-            echo 'Aucun conteneur de l application trouvé. Premier déploiement.'
+            echo 'Aucun conteneur trouve. Premier deploiement'
           fi &&
           
-          # Nettoyage des conteneurs arrêtés
-          echo 'Nettoyage final des conteneurs inutilisés...' &&
+          echo 'Nettoyage des conteneurs inutilises' &&
           docker container prune -f
           "
-      - name: Login to registry and deploy services
+
+      - name: Login to registry and pull images
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
           cd ~/chatbot-app &&
           echo 'Connexion au registre Docker...' &&
           echo '${{ secrets.GITHUB_TOKEN }}' | docker login -u '${{ github.actor }}' --password-stdin '${{ env.DOCKER_REGISTRY }}' &&
           
-          # Définition du nom du projet
           export COMPOSE_PROJECT_NAME=chatbot-app &&
           
-          # Pull des images
-          echo 'Téléchargement des images...' &&
+          echo 'Telechargement des images...' &&
           docker-compose -f docker-compose.yml pull &&
           
-          # Démarrage des services
-          echo 'Démarrage des services...' &&
-          docker-compose -f docker-compose.yml up -d
+          echo 'Images telechargees avec succes'
           "
-      - name: Verify deployment and cleanup
+
+      - name: Start services
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          echo 'Vérification des conteneurs...' &&
-          sleep 10 &&
+          cd ~/chatbot-app &&
+          
+          echo 'Demarrage des services...' &&
+          docker-compose -f docker-compose.yml up -d &&
+          
+          echo 'Services demarres avec succes'
+          "
+
+      - name: Verify deployment
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          echo 'Verification des conteneurs...' &&
+          sleep 30 &&
+          
+          echo 'Statut des conteneurs:' &&
           docker ps &&
           
-          # Nettoyage des images Docker inutilisées
-          echo 'Nettoyage des images inutilisées...' &&
+          echo 'Nettoyage des images inutilisees...' &&
           docker image prune -f &&
           
-          echo 'Déploiement terminé avec succès!'
+          echo 'Deploiement termine avec succes'
           "
-  # ==================== JOB 3: NOTIFICATION ====================
+
   notify:
     name: Deployment Status
     runs-on: ubuntu-latest
@@ -209,11 +225,19 @@ jobs:
     steps:
       - name: Check deployment result
         run: |
-          if [ "${{ needs.deploy.result }}" == "success" ]; then
-            echo "🚀 Déploiement réussi!"
-            echo "✅ Backend: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
-            echo "✅ Frontend: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
+          if [ "${{ needs.build.result }}" == "success" ] && [ "${{ needs.deploy.result }}" == "success" ]; then
+            echo "🚀 Deploiement complet reussi!"
+            echo "✅ Images built: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
+            echo "✅ Images built: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
+            echo "🌐 Application: http://srv789193.hstgr.cloud"
+            echo "🔗 API: http://srv789193.hstgr.cloud/api/v1"
+          elif [ "${{ needs.build.result }}" == "failure" ]; then
+            echo "❌ Echec du build des images"
+            exit 1
+          elif [ "${{ needs.deploy.result }}" == "failure" ]; then
+            echo "❌ Echec du deploiement sur le serveur"
+            exit 1
           else
-            echo "❌ Échec du déploiement"
+            echo "⚠️ Workflow incomplet"
             exit 1
           fi
