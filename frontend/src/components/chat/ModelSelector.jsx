@@ -52,20 +52,20 @@ const ModelSelector = ({ value, onChange, disabled }) => {
           provider: 'Google',
           premium: true,
         },
-        {
-          id: 'deepseek',
-          name: 'DeepSeek',
-          description: 'Modèle rapide et efficace.',
-          provider: 'DeepSeek',
-          premium: false,
-        },
-        {
-          id: 'llama-3.3',
-          name: 'Llama 3.3 8B Instruct',
-          description: 'Modèle open source performant.',
-          provider: 'Meta',
-          premium: false,
-        },
+        // {
+        //   id: 'deepseek',
+        //   name: 'DeepSeek',
+        //   description: 'Modèle rapide et efficace.',
+        //   provider: 'DeepSeek',
+        //   premium: false,
+        // },
+        // {
+        //   id: 'llama-3.3',
+        //   name: 'Llama 3.3 8B Instruct',
+        //   description: 'Modèle open source performant.',
+        //   provider: 'Meta',
+        //   premium: false,
+        // },
       ]);
     } finally {
       setIsLoading(false);

@@ -304,29 +304,29 @@ class AIService {
 
 
 
-        if (process.env.DEEPSEEK_API_KEY) {
-            models.push(
-                {
-                    id: 'deepseek/deepseek-chat-v3.1:free',
-                    name: 'DeepSeek',
-                    provider: 'DeepSeek',
-                    premium: false
-                },
+        // if (process.env.DEEPSEEK_API_KEY) {
+        //     models.push(
+        //         {
+        //             id: 'deepseek/deepseek-chat-v3.1:free',
+        //             name: 'DeepSeek',
+        //             provider: 'DeepSeek',
+        //             premium: false
+        //         },
 
 
-            );
-        }
+        //     );
+        // }
 
         // Toujours ajouter un modèle fallback
 
-        models.push(
-            {
-                id: 'llama-3.3-8b-instruct',
-                name: 'Llama 3.3 8B Instruct',
-                provider: 'Meta',
-                premium: false
-            }
-        );
+        // models.push(
+        //     {
+        //         id: 'llama-3.3-8b-instruct',
+        //         name: 'Llama 3.3 8B Instruct',
+        //         provider: 'Meta',
+        //         premium: false
+        //     }
+        // );
 
 
         return models;
