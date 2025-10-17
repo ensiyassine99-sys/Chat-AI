@@ -8,12 +8,18 @@ on:
   workflow_dispatch:
 
 env:
+  # ============================================
+  # CONFIGURATION CENTRALE - Modifier ici seulement
+  # ============================================
+  SERVER_DOMAIN: srv789193.hstgr.cloud
+  
+  # ============================================
+  # Configuration Docker
+  # ============================================
   DOCKER_REGISTRY: ghcr.io
   IMAGE_PREFIX: ensiyassine99-sys
   BACKEND_IMAGE: chatbot-backend
   FRONTEND_IMAGE: chatbot-frontend
-  VITE_API_URL: http://api.srv789193.hstgr.cloud/api/v1
-  VITE_WS_URL: ws://api.srv789193.hstgr.cloud
 
 jobs:
   build:
@@ -79,8 +85,8 @@ jobs:
           tags: ${{ steps.meta-frontend.outputs.tags }}
           labels: ${{ steps.meta-frontend.outputs.labels }}
           build-args: |
-            VITE_API_URL=${{ env.VITE_API_URL }}
-            VITE_WS_URL=${{ env.VITE_WS_URL }}
+            VITE_API_URL=http://${{ env.SERVER_DOMAIN }}/api/v1
+            VITE_WS_URL=ws://${{ env.SERVER_DOMAIN }}/ws
           cache-from: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache
           cache-to: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache,mode=max
 
@@ -88,6 +94,7 @@ jobs:
         run: |
           echo "✅ Backend image: ${{ steps.meta-backend.outputs.tags }}"
           echo "✅ Frontend image: ${{ steps.meta-frontend.outputs.tags }}"
+          echo "🌐 Server domain: ${{ env.SERVER_DOMAIN }}"
 
   deploy:
     name: Deploy to Production Server
@@ -141,10 +148,21 @@ jobs:
 
       - name: Copy configuration files to server
         run: |
-          echo "Copie des fichiers de configuration..."
+          echo "Generation des fichiers de configuration..."
+          
+          # Générer nginx.conf avec le bon domaine
+          sed "s/SERVER_DOMAIN/${{ env.SERVER_DOMAIN }}/g" docker/nginx.conf > /tmp/nginx.conf
+          
+          # Générer .env.production avec le bon domaine
+          sed "s/SERVER_DOMAIN/${{ env.SERVER_DOMAIN }}/g" backend/.env.production.template > /tmp/.env.production
+          
+          echo "Copie des fichiers vers le serveur..."
+          
+          # Copier les fichiers
           scp docker-compose.prod.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker-compose.yml
-          scp docker/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker/nginx.conf
-          scp backend/.env.production ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
+          scp /tmp/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker/nginx.conf
+          scp /tmp/.env.production ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
+          
           echo "Fichiers copies avec succes"
 
       - name: Stop and remove existing containers
@@ -232,14 +250,19 @@ jobs:
     if: always()
     
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
       - name: Check deployment result
+        env:
+          SERVER_DOMAIN: srv789193.hstgr.cloud
         run: |
           if [ "${{ needs.build.result }}" == "success" ] && [ "${{ needs.deploy.result }}" == "success" ]; then
             echo "🚀 Deploiement complet reussi!"
             echo "✅ Backend: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
             echo "✅ Frontend: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
-            echo "🌐 Application: http://srv789193.hstgr.cloud"
-            echo "🔗 API: http://srv789193.hstgr.cloud/api/v1"
+            echo "🌐 Application: http://$SERVER_DOMAIN"
+            echo "🔗 API: http://api.$SERVER_DOMAIN/api/v1"
           elif [ "${{ needs.build.result }}" == "failure" ]; then
             echo "❌ Echec du build des images"
             exit 1
