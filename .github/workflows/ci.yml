@@ -85,8 +85,8 @@ jobs:
           tags: ${{ steps.meta-frontend.outputs.tags }}
           labels: ${{ steps.meta-frontend.outputs.labels }}
           build-args: |
-            VITE_API_URL=http://${{ env.SERVER_DOMAIN }}/api/v1
-            VITE_WS_URL=ws://${{ env.SERVER_DOMAIN }}/ws
+            VITE_API_URL=http://api.${{ env.SERVER_DOMAIN }}/api/v1
+            VITE_WS_URL=ws://api.${{ env.SERVER_DOMAIN }}
           cache-from: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache
           cache-to: type=registry,ref=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ env.FRONTEND_IMAGE }}:buildcache,mode=max
 
