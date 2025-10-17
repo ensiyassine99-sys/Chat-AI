@@ -16,7 +16,6 @@ const AuthCallback = () => {
 
   useEffect(() => {
     if (error) {
-      console.log('❌ OAuth Callback Error:', error);
       toast.error(error);
       clearError();
     }
@@ -32,11 +31,6 @@ const AuthCallback = () => {
         const refreshToken = searchParams.get('refreshToken');
         const error = searchParams.get('error');
 
-        console.log('🔍 OAuth Callback - Params:', {
-          hasToken: !!token,
-          hasRefreshToken: !!refreshToken,
-          error
-        });
 
         // ============================================
         // 2. GÉRER LES ERREURS D'OAUTH
@@ -73,11 +67,10 @@ const AuthCallback = () => {
         // ============================================
         // 4. AUTHENTIFIER VIA LE HOOK
         // ============================================
-        console.log('🔐 Authenticating via OAuth...');
+
         const result = await oauthLogin(token, refreshToken);
 
         if (result.success) {
-          console.log('✅ OAuth authentication successful');
           setStatus('success');
 
           const username = result.data?.user?.username

@@ -158,11 +158,11 @@ const Sidebar = () => {
                             } border-slate-700/50 shadow-2xl z-40 overflow-y-auto`}
                     >
                         {/* Header */}
-                        <div className="p-4 sm:p-6 pt-6 sm:pt-8 border-b border-slate-700/30">
+                        <div className="p-3 sm:p-5 pt-5 sm:pt-6 border-b border-slate-700/30">
                             <div className="flex items-center justify-between">
                                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                                    <div className="h-8 w-8 sm:h-10 sm:w-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                                        <ChatBubbleLeftRightIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                                    <div className="h-5 w-5 sm:h-9 sm:w-9 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                                        <ChatBubbleLeftRightIcon className="h-2 w-2 sm:h-5 sm:w-5 text-white" />
                                     </div>
                                     <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                                         AI Chat
@@ -182,7 +182,7 @@ const Sidebar = () => {
                         </div>
 
                         {/* New Chat Button */}
-                        <div className="px-3 sm:px-4">
+                        <div className="px-3 sm:px-4 pt-5">
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
