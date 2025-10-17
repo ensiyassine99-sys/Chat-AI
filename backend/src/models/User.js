@@ -76,7 +76,7 @@ const User = sequelize.define('User', {
   },
   theme: {
     type: DataTypes.ENUM('light', 'dark', 'auto'),
-    defaultValue: 'light',
+    defaultValue: 'dark',
   },
   role: {
     type: DataTypes.ENUM('user', 'premium', 'admin'),

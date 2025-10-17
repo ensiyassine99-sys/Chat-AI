@@ -4,11 +4,23 @@ import { useAuth } from '../hooks/useAuth';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import { toast } from 'react-hot-toast';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const AuthCallback = () => {
   const [searchParams] = useSearchParams();
-  const { oauthLogin, user } = useAuth();
+  const { oauthLogin, error, clearError } = useAuth();
+  const { t, i18n } = useTranslation();
+
+
   const [status, setStatus] = useState('processing'); // processing | success | error
+
+  useEffect(() => {
+    if (error) {
+      console.log('❌ OAuth Callback Error:', error);
+      toast.error(error);
+      clearError();
+    }
+  }, [error, clearError, t]);
 
   useEffect(() => {
     const processOAuthCallback = async () => {

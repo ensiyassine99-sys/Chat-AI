@@ -95,6 +95,9 @@ const ProfilePage = () => {
         try {
           await userService.deleteAccount(password);
           toast.success(t('profile.accountDeleted'));
+          setTimeout(() => {
+            navigate('/chat');
+          }, 1000);
         } catch (error) {
           toast.error(t('errors.deleteFailed'));
         }

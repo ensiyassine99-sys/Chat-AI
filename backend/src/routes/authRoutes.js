@@ -11,6 +11,17 @@ require('../config/passport'); // Charger la configuration passport
 // Validation rules (with i18n)
 // =======================
 
+const handleDeletedAccountError = (err, req, res, next) => {
+    // Si c'est une erreur de compte supprimé, rediriger
+    if (err && err.isAccountDeleted && err.redirectUrl) {
+        logger.warn(`🔀 Redirection vers frontend pour compte supprimé`);
+        return res.redirect(err.redirectUrl);
+    }
+
+    // Sinon, passer au middleware suivant
+    next(err);
+};
+
 const signupValidation = [
     body('username')
         .trim()
@@ -107,7 +118,6 @@ router.get('/google',
     })
 );
 
-// Callback après authentification Google
 router.get('/google/callback',
     passport.authenticate('google', {
         session: false,
@@ -115,9 +125,6 @@ router.get('/google/callback',
     }),
     authController.googleAuthCallback
 );
-
- 
-
 // =======================
 // Routes protégées
 // =======================

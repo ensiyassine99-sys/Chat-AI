@@ -336,7 +336,7 @@ const getUserStatistics = asyncHandler(async (req, res, next) => {
 // Supprimer le compte
 const deleteAccount = asyncHandler(async (req, res, next) => {
   const userId = req.user.id;
-  const { password } = req.body;
+ 
   
   if (!password) {
     throw new AppError('Password required to delete account', 400);
@@ -348,13 +348,7 @@ const deleteAccount = asyncHandler(async (req, res, next) => {
     throw new AppError('User not found', 404);
   }
   
-  // Vérifier le mot de passe
-  const isValid = await user.comparePassword(password);
-  
-  if (!isValid) {
-    throw new AppError('Incorrect password', 401);
-  }
-  
+ 
   // Supprimer toutes les données associées (cascade delete)
   await user.destroy();
   

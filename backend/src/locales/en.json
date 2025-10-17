@@ -42,7 +42,7 @@
         "invalidId": "Invalid ID format",
         "invalidToken": "Invalid token",
         "tokenExpired": "Token expired",
-    
-        "useGoogleLogin": "This account uses Google login. Please sign in with Google."
+        "useGoogleLogin": "This account uses Google login. Please sign in with Google.",
+        "accountDeleted": "This account has been deleted. If you believe this is an error, please contact our support at support@yourapp.com"
     }
 }

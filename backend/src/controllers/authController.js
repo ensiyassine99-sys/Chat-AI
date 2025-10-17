@@ -26,15 +26,21 @@ const generateEmailVerificationToken = (userId, email) => {
 const signup = asyncHandler(async (req, res, next) => {
     const { username, email, password, language = 'en' } = req.body;
 
-    // Vérifier si l'utilisateur existe déjà
+    // ✅ Vérifier si l'utilisateur existe (INCLUANT les comptes supprimés)
     const existingUser = await User.findOne({
         where: {
             [Op.or]: [{ email }, { username }],
         },
+        paranoid: false, // ✅ IMPORTANT: Inclure les comptes soft-deleted
     });
 
     if (existingUser) {
-        // Utiliser la traduction selon le champ
+        // ✅ SI LE COMPTE EST SUPPRIMÉ
+        if (existingUser.deletedAt) {
+            throw new AppError(req.t('auth.accountDeleted'), 410);
+        }
+
+        // SI LE COMPTE EXISTE ET N'EST PAS SUPPRIMÉ
         if (existingUser.email === email) {
             throw new AppError(req.t('auth.emailExists'), 409);
         } else {
@@ -49,14 +55,14 @@ const signup = asyncHandler(async (req, res, next) => {
         password,
         language,
         emailVerified: false,
-        isActive: false, // Désactivé jusqu'à vérification
+        isActive: false,
     });
 
     // Créer un résumé utilisateur vide
     await UserSummary.create({
         userId: user.id,
         summary: req.t('auth.newUserSummary'),
-        summaryAr: req.t('auth.newUserSummary', { lng: 'ar' }), // version arabe forcée
+        summaryAr: req.t('auth.newUserSummary', { lng: 'ar' }),
     });
 
     // Générer JWT de vérification
@@ -70,7 +76,6 @@ const signup = asyncHandler(async (req, res, next) => {
             user.language
         );
     } else {
-        // En développement, logger le lien
         logger.info(
             `Verification link: ${process.env.FRONTEND_URL}/verify-email/${verificationToken}`
         );
@@ -78,7 +83,6 @@ const signup = asyncHandler(async (req, res, next) => {
 
     logger.info(`New user registered: ${user.email}`);
 
-    // NE PAS retourner de tokens - forcer la vérification
     res.status(201).json({
         success: true,
         message: req.t('auth.signupSuccess'),
@@ -86,7 +90,6 @@ const signup = asyncHandler(async (req, res, next) => {
         email: user.email,
     });
 });
-
 
 const verifyEmail = asyncHandler(async (req, res, next) => {
     const { token } = req.params;
@@ -203,20 +206,26 @@ const googleAuthCallback = asyncHandler(async (req, res, next) => {
 const login = asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
 
-    // Trouver l'utilisateur par email
+    // ✅ Trouver l'utilisateur INCLUANT les comptes supprimés (paranoid: false)
     const user = await User.findOne({
         where: { email },
         include: [{
             model: UserSummary,
             as: 'summary',
         }],
+        paranoid: false, // ✅ IMPORTANT: Inclure les comptes soft-deleted
     });
 
     if (!user) {
         throw new AppError(req.t('auth.invalidCredentials'), 401);
     }
 
-    // ✅ VÉRIFIER SI C'EST UN COMPTE OAUTH (NOUVEAU)
+    // ✅ VÉRIFIER SI LE COMPTE EST SUPPRIMÉ
+    if (user.deletedAt) {
+        throw new AppError(req.t('auth.accountDeleted'), 410);
+    }
+
+    // ✅ VÉRIFIER SI C'EST UN COMPTE OAUTH
     if (user.provider === 'google') {
         throw new AppError(
             req.t('auth.useGoogleLogin') || 'This account uses Google login. Please sign in with Google.',
@@ -239,7 +248,6 @@ const login = asyncHandler(async (req, res, next) => {
 
     // Vérifier si l'email est vérifié
     if (!user.emailVerified) {
-        // Générer un nouveau token et renvoyer
         const verificationToken = generateEmailVerificationToken(user.id, user.email);
 
         if (process.env.SMTP_HOST) {
@@ -268,10 +276,8 @@ const login = asyncHandler(async (req, res, next) => {
     // Changer la langue de la requête selon la préférence de l'utilisateur
     req.i18n.changeLanguage(user.language);
 
-    // Logger la connexion avec le provider
     logger.info(`User logged in: ${user.email} (provider: ${user.provider || 'local'})`);
 
-    // Réponse de succès
     res.json({
         success: true,
         message: req.t('auth.loginSuccess'),

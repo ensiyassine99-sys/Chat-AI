@@ -49,8 +49,8 @@ const userService = {
   },
   
   // Supprimer le compte
-  deleteAccount: async (password) => {
-    return await api.delete('/user/account', { data: { password } });
+  deleteAccount: async () => {
+    return await api.delete('/user/account');
   },
   
   // Exporter les données utilisateur

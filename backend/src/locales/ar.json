@@ -46,6 +46,7 @@
         "invalidId": "معرّف غير صالح",
         "invalidToken": "رمز الدخول غير صالح",
         "tokenExpired": "انتهت صلاحية الرمز",
-        "useGoogleLogin": "يستخدم هذا الحساب تسجيل الدخول عبر Google. يرجى تسجيل الدخول باستخدام Google."
+        "useGoogleLogin": "يستخدم هذا الحساب تسجيل الدخول عبر Google. يرجى تسجيل الدخول باستخدام Google.",
+        "accountDeleted": "تم حذف هذا الحساب. إذا كنت تعتقد أن هذا خطأ، يرجى الاتصال بالدعم على support@yourapp.com"
     }
 }
