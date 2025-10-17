@@ -60,6 +60,7 @@ const LoginPage = () => {
 
     console.log('Redirecting to Google OAuth URL:', googleAuthUrl); // Log de débogage  
     // window.location.href = googleAuthUrl; // ← Même URL pour tout
+    window.location.href = googleAuthUrl;
   };
   const handleTwitterLogin = () => {
     const currentLang = i18n.language;
