@@ -85,8 +85,8 @@ const Layout = ({ children }) => {
       {showSidebar ? (
         <div className="flex h-screen overflow-hidden">
           <Sidebar />
-          {/* Main content - padding top seulement pour le bouton hamburger mobile */}
-          <main className="flex-1 overflow-hidden bg-gray-50 dark:bg-gray-900 pt-16 lg:pt-0">
+          {/* Main content sans padding top */}
+          <main className="flex-1 overflow-hidden bg-gray-50 dark:bg-gray-900">
             <ErrorBoundary>
               <AnimatePresence mode="wait">
                 {children}

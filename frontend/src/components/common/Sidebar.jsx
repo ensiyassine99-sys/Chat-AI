@@ -155,7 +155,7 @@ const Sidebar = () => {
                         exit={{ x: isRTL ? 300 : -300 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                         className={`fixed ${isRTL ? 'right-0' : 'left-0'} top-0 h-screen w-64 sm:w-72 lg:w-64 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white flex flex-col ${isRTL ? 'border-l' : 'border-r'
-                            } border-slate-700/50 shadow-2xl z-40`}
+                            } border-slate-700/50 shadow-2xl z-40 overflow-y-auto`}
                     >
                         {/* Header */}
                         <div className="p-4 sm:p-6 pt-6 sm:pt-8 border-b border-slate-700/30">
