@@ -12,8 +12,9 @@ env:
   IMAGE_PREFIX: ensiyassine99-sys
   BACKEND_IMAGE: chatbot-backend
   FRONTEND_IMAGE: chatbot-frontend
-  VITE_API_URL: http://api.srv789193.hstgr.cloud/api/v1
-  VITE_WS_URL: ws://api.srv789193.hstgr.cloud
+  VITE_API_URL: http://srv789193.hstgr.cloud/api/v1
+  VITE_WS_URL: ws://srv789193.hstgr.cloud/ws
+
 jobs:
   build:
     name: Build Docker Images
@@ -85,10 +86,8 @@ jobs:
 
       - name: Image build summary
         run: |
-          echo "✅ Backend image built and pushed"
-          echo "   Tag: ${{ steps.meta-backend.outputs.tags }}"
-          echo "✅ Frontend image built and pushed"
-          echo "   Tag: ${{ steps.meta-frontend.outputs.tags }}"
+          echo "✅ Backend image: ${{ steps.meta-backend.outputs.tags }}"
+          echo "✅ Frontend image: ${{ steps.meta-frontend.outputs.tags }}"
 
   deploy:
     name: Deploy to Production Server
@@ -145,7 +144,7 @@ jobs:
           echo "Copie des fichiers de configuration..."
           scp docker-compose.prod.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker-compose.yml
           scp docker/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/docker/nginx.conf
-          scp backend/.env ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
+          scp backend/.env.production ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/chatbot-app/backend/.env
           echo "Fichiers copies avec succes"
 
       - name: Stop and remove existing containers
@@ -175,7 +174,7 @@ jobs:
           docker container prune -f
           "
 
-      - name: Login to registry and pull images
+      - name: Login to registry and deploy services
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
           cd ~/chatbot-app &&
@@ -185,17 +184,27 @@ jobs:
           export COMPOSE_PROJECT_NAME=chatbot-app &&
           
           echo 'Telechargement des images...' &&
+          JWT_SECRET='${{ secrets.JWT_SECRET }}' \
+          JWT_REFRESH_SECRET='${{ secrets.JWT_REFRESH_SECRET }}' \
+          SESSION_SECRET='${{ secrets.SESSION_SECRET }}' \
+          COOKIE_SECRET='${{ secrets.COOKIE_SECRET }}' \
+          GOOGLE_CLIENT_SECRET='${{ secrets.GOOGLE_CLIENT_SECRET }}' \
+          HUGGINGFACE_API_KEY='${{ secrets.HUGGINGFACE_API_KEY }}' \
+          DEEPSEEK_API_KEY='${{ secrets.DEEPSEEK_API_KEY }}' \
+          GOOGLE_AI_API_KEY='${{ secrets.GOOGLE_AI_API_KEY }}' \
+          SMTP_PASS='${{ secrets.SMTP_PASS }}' \
           docker-compose -f docker-compose.yml pull &&
           
-          echo 'Images telechargees avec succes'
-          "
-
-      - name: Start services
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          cd ~/chatbot-app &&
-          
           echo 'Demarrage des services...' &&
+          JWT_SECRET='${{ secrets.JWT_SECRET }}' \
+          JWT_REFRESH_SECRET='${{ secrets.JWT_REFRESH_SECRET }}' \
+          SESSION_SECRET='${{ secrets.SESSION_SECRET }}' \
+          COOKIE_SECRET='${{ secrets.COOKIE_SECRET }}' \
+          GOOGLE_CLIENT_SECRET='${{ secrets.GOOGLE_CLIENT_SECRET }}' \
+          HUGGINGFACE_API_KEY='${{ secrets.HUGGINGFACE_API_KEY }}' \
+          DEEPSEEK_API_KEY='${{ secrets.DEEPSEEK_API_KEY }}' \
+          GOOGLE_AI_API_KEY='${{ secrets.GOOGLE_AI_API_KEY }}' \
+          SMTP_PASS='${{ secrets.SMTP_PASS }}' \
           docker-compose -f docker-compose.yml up -d &&
           
           echo 'Services demarres avec succes'
@@ -227,8 +236,8 @@ jobs:
         run: |
           if [ "${{ needs.build.result }}" == "success" ] && [ "${{ needs.deploy.result }}" == "success" ]; then
             echo "🚀 Deploiement complet reussi!"
-            echo "✅ Images built: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
-            echo "✅ Images built: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
+            echo "✅ Backend: ghcr.io/ensiyassine99-sys/chatbot-backend:latest"
+            echo "✅ Frontend: ghcr.io/ensiyassine99-sys/chatbot-frontend:latest"
             echo "🌐 Application: http://srv789193.hstgr.cloud"
             echo "🔗 API: http://srv789193.hstgr.cloud/api/v1"
           elif [ "${{ needs.build.result }}" == "failure" ]; then

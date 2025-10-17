@@ -9,7 +9,7 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-defaultpass}
+    command: redis-server --appendonly yes
     networks:
       - chatbot-network
     healthcheck:
@@ -27,11 +27,16 @@ services:
     env_file: 
       - ./backend/.env
     environment:
-      - PORT=5000
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=${REDIS_PASSWORD:-defaultpass}
-      - NODE_ENV=production
+      # Secrets injectés depuis GitHub Actions
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - COOKIE_SECRET=${COOKIE_SECRET}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - HUGGINGFACE_API_KEY=${HUGGINGFACE_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - GOOGLE_AI_API_KEY=${GOOGLE_AI_API_KEY}
+      - SMTP_PASS=${SMTP_PASS}
     volumes:
       - ./database:/app/database
       - ./backend/uploads:/app/uploads
@@ -84,7 +89,7 @@ services:
     networks:
       - chatbot-network
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:80/health || exit 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:80 || exit 1"]
       interval: 15s
       timeout: 10s
       retries: 3
