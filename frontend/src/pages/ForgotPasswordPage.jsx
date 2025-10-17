@@ -48,7 +48,6 @@ const ForgotPasswordPage = () => {
 
             await authService.forgotPassword(email);
             setEmailSent(true);
-            toast.success(t('forgot.success.emailSent'));
         } catch (error) {
             toast.error(t('forgot.errors.sendFailed'));
         } finally {

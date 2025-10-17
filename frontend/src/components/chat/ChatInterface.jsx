@@ -200,7 +200,6 @@ const ChatInterface = () => {
                 prev.map(msg => msg.id === updatedMessage.id ? updatedMessage : msg)
             );
             dispatch(updateMessage(updatedMessage));
-            toast.success(t('chat.regenerateSuccess'));
         },
         onError: (error) => {
             toast.error(error.message || t('errors.regenerateFailed'));
@@ -219,7 +218,6 @@ const ChatInterface = () => {
                     msg.id === messageId ? { ...msg, feedback } : msg
                 )
             );
-            toast.success(t('chat.feedbackSent'));
         },
         onError: (error) => {
             toast.error(error.message || t('errors.feedbackFailed'));
@@ -238,14 +236,12 @@ const ChatInterface = () => {
     // Copy message to clipboard
     const handleCopy = (content) => {
         navigator.clipboard.writeText(content);
-        toast.success(t('chat.copied'));
     };
 
     // Delete message
     const handleDelete = async (messageId) => {
         setLocalMessages(prev => prev.filter(msg => msg.id !== messageId));
         dispatch(deleteMessage(messageId));
-        toast.success(t('chat.messageDeleted'));
     };
 
     // Edit message
@@ -269,7 +265,6 @@ const ChatInterface = () => {
             const response = await chatService.editMessage(messageId, newContent);
             setLocalMessages(prev => [...prev, { ...response.newMessage, isNew: true }]);
 
-            toast.success(t('chat.messageEditedAndRegenerated'));
         } catch (error) {
             console.error('Error editing message:', error);
             toast.error(t('errors.editFailed'));
@@ -290,7 +285,6 @@ const ChatInterface = () => {
             await chatService.updateChat(currentChatId, { title: newTitle });
             dispatch(setCurrentChat({ ...currentChat, title: newTitle }));
             setRenameModalOpen(false);
-            toast.success(t('chat.renamed'));
         } catch (error) {
             toast.error(t('errors.renameFailed'));
         }
@@ -303,7 +297,6 @@ const ChatInterface = () => {
         if (window.confirm(t('history.confirmDelete'))) {
             try {
                 await chatService.deleteChat(currentChatId);
-                toast.success(t('history.chatDeleted'));
                 navigate('/chat');
             } catch (error) {
                 toast.error(t('errors.deleteFailed'));

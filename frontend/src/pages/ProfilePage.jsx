@@ -64,7 +64,6 @@ const ProfilePage = () => {
     try {
       const response = await userService.updateProfile(profileData);
       dispatch({ type: 'auth/updateUser', payload: response.user });
-      toast.success(t('profile.updateSuccess'));
       setIsEditing(false);
     } catch (error) {
       toast.error(t('errors.updateFailed'));
@@ -76,7 +75,6 @@ const ProfilePage = () => {
     try {
       const response = await userService.generateUserSummary();
       setUserSummary(isRTL ? response.summary.summaryAr : response.summary.summary);
-      toast.success(t('profile.summaryGenerated'));
     } catch (error) {
       toast.error(t('errors.summaryGenerationFailed'));
     } finally {
@@ -87,7 +85,6 @@ const ProfilePage = () => {
   const handleExportData = async (format = 'json') => {
     try {
       await userService.exportUserData(format);
-      toast.success(t('profile.dataExported'));
     } catch (error) {
       toast.error(t('errors.exportFailed'));
     }
@@ -102,7 +99,6 @@ const ProfilePage = () => {
     setIsDeleting(true);
     try {
       await userService.deleteAccount(deletePassword);
-      toast.success(t('profile.accountDeleted'));
       setShowDeleteModal(false);
       setTimeout(() => {
         navigate('/chat');

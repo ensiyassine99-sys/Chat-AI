@@ -84,7 +84,6 @@ const VerifyEmailPage = () => {
 
         try {
             await authService.resendVerification(resendEmail);
-            toast.success(t('auth.verificationEmailSent'));
             setResendEmail('');
         } catch (error) {
             const message = error.response?.data?.message || t('auth.resendFailed');

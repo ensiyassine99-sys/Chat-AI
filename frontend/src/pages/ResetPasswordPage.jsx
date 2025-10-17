@@ -140,7 +140,6 @@ const ResetPasswordPage = () => {
         if (result.success) {
             setStatus('success');
             // ✅ CHANGEMENT: Utilisation des traductions
-            toast.success(t('auth.passwordResetSuccess'));
 
             setTimeout(() => {
                 navigate('/chat', { replace: true });
@@ -165,7 +164,6 @@ const ResetPasswordPage = () => {
         try {
             await authService.forgotPassword(resendEmail);
             // ✅ CHANGEMENT: Utilisation des traductions
-            toast.success(t('auth.resetEmailSent'));
             setResendEmail('');
         } catch (error) {
             // ✅ CHANGEMENT: Utilisation des traductions

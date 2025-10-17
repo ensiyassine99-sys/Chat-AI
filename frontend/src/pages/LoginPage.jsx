@@ -93,7 +93,6 @@ const LoginPage = () => {
 
       if (success) {
         if (data.rememberMe) localStorage.setItem('rememberMe', 'true');
-        toast.success(t('auth.loginSuccess'));
         navigate(from, { replace: true });
       }
     } catch (err) {

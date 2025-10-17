@@ -85,7 +85,8 @@ const Layout = ({ children }) => {
       {showSidebar ? (
         <div className="flex h-screen overflow-hidden">
           <Sidebar />
-          <main className="flex-1 overflow-hidden bg-gray-50 dark:bg-gray-900">
+          {/* Main content - padding top seulement pour le bouton hamburger mobile */}
+          <main className="flex-1 overflow-hidden bg-gray-50 dark:bg-gray-900 pt-16 lg:pt-0">
             <ErrorBoundary>
               <AnimatePresence mode="wait">
                 {children}
@@ -191,14 +192,17 @@ function App() {
                 </Suspense>
               </LayoutWrapper>
 
-              {/* Notifications Toast */}
+              {/* Notifications Toast - Responsive */}
               <Toaster
                 position="top-right"
                 toastOptions={{
                   duration: 4000,
+                  className: 'text-sm sm:text-base',
                   style: {
                     background: '#363636',
                     color: '#fff',
+                    padding: '12px 16px',
+                    fontSize: '14px',
                   },
                   success: {
                     duration: 3000,
@@ -214,6 +218,15 @@ function App() {
                       secondary: '#fff',
                     },
                   },
+                }}
+                containerStyle={{
+                  top: 16,
+                  right: 16,
+                  bottom: 16,
+                  left: 16,
+                }}
+                toastStyle={{
+                  maxWidth: '90vw',
                 }}
               />
             </SocketProvider>

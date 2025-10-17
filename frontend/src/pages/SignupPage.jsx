@@ -128,7 +128,6 @@ const SignupPage = () => {
       if (result) {
         setUserEmail(data.email);
         setEmailSent(true);
-        toast.success(t('auth.signupEmailSent'));
       }
     } catch (err) {
       console.error('Signup error:', err);
