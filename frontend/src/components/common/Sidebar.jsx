@@ -302,8 +302,7 @@ const Sidebar = () => {
                                     {/* Logout */}
                                     <button
                                         onClick={handleLogout}
-                                        className={`w-full flex items-center flex  justify-between gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors border-t border-slate-700/50 ${isRTL ? 'flex-row-reverse' : ''
-                                            }`}
+                                        className={`w-full flex items-center flex  gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors border-t border-slate-700/50 `}
                                     >
                                         <ArrowRightOnRectangleIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
                                         <span className="text-xs sm:text-sm font-medium">{t('auth.logout')}</span>
