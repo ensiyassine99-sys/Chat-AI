@@ -12,7 +12,7 @@ env:
   IMAGE_PREFIX: ensiyassine99-sys
   BACKEND_IMAGE: chatbot-backend
   FRONTEND_IMAGE: chatbot-frontend
-  VITE_API_URL: http://api.srv789193.hstgr.cloud/api/v1
+  VITE_API_URL: https://api.srv789193.hstgr.cloud/api/v1
   VITE_WS_URL: ws://api.srv789193.hstgr.cloud
 
 jobs:
