@@ -37,6 +37,11 @@ const Sidebar = () => {
     const [profileMenuOpen, setProfileMenuOpen] = useState(false);
     const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
+    useEffect(() => {
+        setProfileMenuOpen(false);
+        setLanguageMenuOpen(false);
+    }, [isOpen]);
+
     // Fermer la sidebar sur mobile lors du changement de route
     useEffect(() => {
         if (window.innerWidth < 1024) {
