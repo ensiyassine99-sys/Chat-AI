@@ -47,6 +47,10 @@ const ChatInterface = () => {
     const [newTitle, setNewTitle] = useState('');
     const [menuOpen, setMenuOpen] = useState(false);
 
+    // NOUVEAU: États pour gérer le loading global
+    const [isTyping, setIsTyping] = useState(false);
+    const [isProcessing, setIsProcessing] = useState(false);
+
     // Refs
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
@@ -55,6 +59,9 @@ const ChatInterface = () => {
     // Redux state
     const { currentChat } = useSelector(state => state.chat);
     const { user } = useSelector(state => state.auth);
+
+    // NOUVEAU: Loading global = backend loading OU typing OU processing
+
 
     // Initialize or get chat when component mounts or chatId changes
     useEffect(() => {
@@ -134,7 +141,7 @@ const ChatInterface = () => {
 
     // Send message
     const handleSend = async () => {
-        if (!input.trim()) return;
+        if (!input.trim() || isGlobalLoading) return;
 
         const messageContent = input.trim();
         setInput('');
@@ -192,6 +199,7 @@ const ChatInterface = () => {
     // Regenerate response mutation
     const regenerateMutation = useMutation({
         mutationFn: async (messageId) => {
+            setIsProcessing(true); // NOUVEAU: Active le loading
             return await chatService.regenerateResponse(messageId);
         },
         onSuccess: (data) => {
@@ -200,9 +208,11 @@ const ChatInterface = () => {
                 prev.map(msg => msg.id === updatedMessage.id ? updatedMessage : msg)
             );
             dispatch(updateMessage(updatedMessage));
+            setIsProcessing(false); // NOUVEAU: Désactive le loading après typing
         },
         onError: (error) => {
             toast.error(error.message || t('errors.regenerateFailed'));
+            setIsProcessing(false); // NOUVEAU: Désactive le loading en cas d'erreur
         },
     });
 
@@ -251,6 +261,7 @@ const ChatInterface = () => {
             if (messageIndex === -1) return;
 
             setIsEditing(null);
+            setIsProcessing(true); // NOUVEAU: Active le loading
 
             setLocalMessages(prev => {
                 const updated = [...prev];
@@ -265,14 +276,25 @@ const ChatInterface = () => {
             const response = await chatService.editMessage(messageId, newContent);
             setLocalMessages(prev => [...prev, { ...response.newMessage, isNew: true }]);
 
+            // Le loading sera désactivé après le typing dans MessageList
         } catch (error) {
             console.error('Error editing message:', error);
             toast.error(t('errors.editFailed'));
+            setIsProcessing(false); // NOUVEAU: Désactive le loading en cas d'erreur
 
             const chatData = await chatService.getChat(currentChatId);
             setLocalMessages(chatData.chat.messages);
         }
     };
+
+    // NOUVEAU: Callback quand le typing change
+    const handleTypingChange = useCallback((typing) => {
+        setIsTyping(typing);
+        // Désactiver isProcessing quand le typing est terminé
+        if (!typing) {
+            setIsProcessing(false);
+        }
+    }, []);
 
     // Rename chat
     const handleRenameChat = async () => {
@@ -303,6 +325,8 @@ const ChatInterface = () => {
             }
         }
     };
+
+    const isGlobalLoading = sendMessageMutation.isPending || isTyping || isProcessing;
 
     return (
         <div className="h-screen flex flex-col bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
@@ -406,6 +430,7 @@ const ChatInterface = () => {
                                 isEditing={isEditing}
                                 setIsEditing={setIsEditing}
                                 currentUserId={user?.id || 1}
+                                onTypingChange={handleTypingChange}
                             />
 
                             {sendMessageMutation.isPending && (
@@ -455,9 +480,6 @@ const ChatInterface = () => {
 
             {/* Input Area - TOUJOURS EN BAS */}
             <div className="flex-shrink-0 px-3 sm:px-6 py-3 sm:py-5 bg-gradient-to-t from-white via-white to-transparent dark:from-slate-900 dark:via-slate-900 z-30">
-                {/* Empty State Content - Au-dessus de l'input */}
-
-
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         layout
@@ -469,8 +491,8 @@ const ChatInterface = () => {
                             onChange={handleInputChange}
                             onKeyPress={handleKeyPress}
                             placeholder={t('chat.placeholder')}
-                            disabled={sendMessageMutation.isPending}
-                            className={`border-none outline-none focus:outline-none focus:ring-0 focus:border-none w-full px-4 sm:px-6 py-3 sm:py-4 bg-transparent resize-none text-slate-900 dark:text-white focus:outline-none rounded-2xl sm:rounded-3xl text-sm sm:text-base ${isRTL ? 'text-right' : 'text-left'} ${sendMessageMutation.isPending ? 'cursor-not-allowed opacity-60' : ''}`}
+                            disabled={isGlobalLoading}
+                            className={`border-none outline-none focus:outline-none focus:ring-0 focus:border-none w-full px-4 sm:px-6 py-3 sm:py-4 bg-transparent resize-none text-slate-900 dark:text-white focus:outline-none rounded-2xl sm:rounded-3xl text-sm sm:text-base ${isRTL ? 'text-right' : 'text-left'} ${isGlobalLoading ? 'cursor-not-allowed opacity-60' : ''}`}
                             rows={1}
                             style={{
                                 minHeight: '3rem',
@@ -486,25 +508,25 @@ const ChatInterface = () => {
                                     <ModelSelector
                                         value={selectedModel}
                                         onChange={setSelectedModel}
-                                        disabled={sendMessageMutation.isPending}
+                                        disabled={isGlobalLoading}
                                         className={`${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
                                     />
                                 </div>
 
                                 {/* Bouton envoyer */}
                                 <motion.button
-                                    whileHover={{ scale: sendMessageMutation.isPending ? 1 : 1.05 }}
-                                    whileTap={{ scale: sendMessageMutation.isPending ? 1 : 0.95 }}
+                                    whileHover={{ scale: isGlobalLoading ? 1 : 1.05 }}
+                                    whileTap={{ scale: isGlobalLoading ? 1 : 0.95 }}
                                     onClick={handleSend}
-                                    disabled={sendMessageMutation.isPending || !input.trim()}
-                                    className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all ${sendMessageMutation.isPending
+                                    disabled={isGlobalLoading || !input.trim() || sendMessageMutation.isPending}
+                                    className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all ${(isGlobalLoading || sendMessageMutation.isPending)
                                         ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg cursor-wait'
                                         : input.trim()
                                             ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg cursor-pointer'
                                             : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
                                         }`}
                                 >
-                                    {sendMessageMutation.isPending ? (
+                                    {isGlobalLoading || sendMessageMutation.isPending ? (
                                         <div className="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5">
                                             <LoadingSpinner size="small" color="white" />
                                         </div>

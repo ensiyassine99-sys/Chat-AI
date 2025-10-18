@@ -160,7 +160,7 @@ const Sidebar = () => {
                         {/* Header */}
                         <div className="p-3 sm:p-5 pt-5 sm:pt-6 border-b border-slate-700/30">
                             <div className="flex items-center justify-between">
-                                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                                <div className={`flex items-center gap-3`}>
                                     <div className="h-5 w-5 sm:h-9 sm:w-9 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                                         <ChatBubbleLeftRightIcon className="h-2 w-2 sm:h-5 sm:w-5 text-white" />
                                     </div>
@@ -190,7 +190,7 @@ const Sidebar = () => {
                                 className="w-full group relative overflow-hidden rounded-full p-1 mb-2"
                             >
                                 <div className="absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity" />
-                                <div className={`relative flex items-center gap-2 sm:gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                                <div className={`relative flex items-center gap-2 sm:gap-3 `}>
                                     <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600">
                                         <PlusIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                                     </div>
@@ -207,7 +207,7 @@ const Sidebar = () => {
                                 className={`w-full flex items-center gap-2 sm:gap-3 px-3 py-2.5 sm:py-3 rounded-xl transition-colors text-sm sm:text-base ${location.pathname === '/history'
                                     ? 'bg-slate-700/50 text-white'
                                     : 'text-slate-400 hover:bg-slate-700/30 hover:text-white'
-                                    } ${isRTL ? 'flex-row-reverse' : ''}`}
+                                    } `}
                             >
                                 <ChatBubbleLeftRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                                 <span className="font-medium">{t('history.conversations')}</span>
@@ -228,16 +228,14 @@ const Sidebar = () => {
                                 >
                                     <button
                                         onClick={() => handleLanguageChange('en')}
-                                        className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors ${isRTL ? 'flex-row-reverse' : ''
-                                            }`}
+                                        className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors `}
                                     >
                                         <span className="text-xs sm:text-sm font-medium">English</span>
                                         {i18n.language === 'en' && <CheckIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-400" />}
                                     </button>
                                     <button
                                         onClick={() => handleLanguageChange('ar')}
-                                        className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors ${isRTL ? 'flex-row-reverse' : ''
-                                            }`}
+                                        className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors `}
                                     >
                                         <span className="text-xs sm:text-sm font-medium">العربية</span>
                                         {i18n.language === 'ar' && <CheckIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-400" />}
@@ -257,7 +255,7 @@ const Sidebar = () => {
                                 >
                                     {/* User Info */}
                                     <div className="px-3 sm:px-4 py-2.5 sm:py-3 border-b border-slate-700/50">
-                                        <div className={`flex items-center gap-2 sm:gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                                        <div className={`flex items-center gap-2 sm:gap-3 `}>
                                             <div className="h-8 w-8 sm:h-10 sm:w-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                                                 <span className="text-xs sm:text-sm font-semibold">{getUserInitials()}</span>
                                             </div>
@@ -275,8 +273,7 @@ const Sidebar = () => {
                                             setProfileMenuOpen(false);
                                             if (window.innerWidth < 1024) setIsOpen(false);
                                         }}
-                                        className={`w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors ${isRTL ? 'flex-row-reverse' : ''
-                                            }`}
+                                        className={`w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors `}
                                     >
                                         <Cog6ToothIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
                                         <span className="text-xs sm:text-sm font-medium">{t('common.settings')}</span>
@@ -285,10 +282,9 @@ const Sidebar = () => {
                                     {/* Language Toggle */}
                                     <button
                                         onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                                        className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors ${isRTL ? 'flex-row-reverse' : ''
-                                            }`}
+                                        className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors `}
                                     >
-                                        <div className={`flex items-center gap-2 sm:gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                                        <div className={`flex items-center gap-2 sm:gap-3 `}>
                                             <LanguageIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
                                             <span className="text-xs sm:text-sm font-medium">{t('profile.language')}</span>
                                         </div>
@@ -301,7 +297,7 @@ const Sidebar = () => {
                                     {/* Logout */}
                                     <button
                                         onClick={handleLogout}
-                                        className={`w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors border-t border-slate-700/50 ${isRTL ? 'flex-row-reverse' : ''
+                                        className={`w-full flex items-center flex  justify-between gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-slate-700/50 transition-colors border-t border-slate-700/50 ${isRTL ? 'flex-row-reverse' : ''
                                             }`}
                                     >
                                         <ArrowRightOnRectangleIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
