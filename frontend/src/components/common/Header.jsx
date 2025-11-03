@@ -109,7 +109,7 @@ const Header = () => {
                 </div>
               </motion.div>
               <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-                AI Chat
+                Law CodeX
               </span>
             </Link>
 

@@ -131,7 +131,7 @@ const Message = ({
           <div
             className={`px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg ${isUser
               ? `bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-tr-sm `
-              : `bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-tl-sm `
+              : `bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-tl-sm pt-4 `
               }`}
           >
             {isEditingThis ? (

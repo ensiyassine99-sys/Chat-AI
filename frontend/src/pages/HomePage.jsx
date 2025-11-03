@@ -162,7 +162,7 @@ const HomePage = () => {
                 </div>
               </motion.div>
               <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-                AI Chat
+                Law CodeX
               </span>
             </Link>
 
@@ -621,7 +621,7 @@ const HomePage = () => {
                   <MessageSquare className="h-6 w-6 text-white" />
                 </div>
                 <span className="ml-2 rtl:mr-2 text-xl font-bold text-slate-900 dark:text-white">
-                  AI Chat
+                  Law CodeX
                 </span>
               </motion.div>
               <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
@@ -712,7 +712,7 @@ const HomePage = () => {
 
           <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
             <p className="text-center text-sm text-slate-500 dark:text-slate-400">
-              © {currentYear} AI Chat. {t('footer.allRightsReserved')}.
+              © {currentYear} Law CodeX. {t('footer.allRightsReserved')}.
               <span className="inline-flex items-center mx-1">
                 {t('footer.madeWith')} <Heart className="h-4 w-4 mx-1 text-red-500" fill="currentColor" /> {t('footer.by')}
               </span>

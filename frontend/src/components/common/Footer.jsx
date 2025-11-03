@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <ChatBubbleLeftRightIcon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
               <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">
-                AI Chat
+                Law CodeX
               </span>
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -114,7 +114,7 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-            © {currentYear} AI Chat. {t('footer.allRightsReserved')}. 
+            © {currentYear} Law CodeX. {t('footer.allRightsReserved')}. 
             Made with <HeartIcon className="h-4 w-4 inline text-red-500" /> by Your Team
           </p>
         </div>
